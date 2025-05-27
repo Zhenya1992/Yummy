@@ -6,10 +6,12 @@ from .categories import Categories
 
 
 class Products(Base):
+    """Класс продуктов"""
+
     __tablename__ = 'products'
     id: Mapped[int] = mapped_column(primary_key=True)
     product_name: Mapped[str] = mapped_column(String(50), unique=True)
-    descriptions: Mapped[str]
+    description: Mapped[str]
     image: Mapped[str] = mapped_column(String(255))
     price: Mapped[DECIMAL] = mapped_column(DECIMAL(4, 2))
     category_id: Mapped[int] = mapped_column(ForeignKey('categories.id'))

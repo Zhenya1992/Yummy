@@ -6,6 +6,8 @@ from .users import Users
 
 
 class Carts(Base):
+    """Класс предварительной корзины"""
+
     __tablename__ = "carts"
     id: Mapped[int] = mapped_column(primary_key=True)
     total_price: Mapped[int] = mapped_column(DECIMAL(4, 2), default=0)
@@ -20,6 +22,8 @@ class Carts(Base):
 
 
 class FinallyCarts(Base):
+    """Класс корзины с заказом на оплату"""
+
     __tablename__ = 'finally_carts'
     id: Mapped[int] = mapped_column(primary_key=True)
     product_name: Mapped[str] = mapped_column(String(50))

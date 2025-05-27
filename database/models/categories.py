@@ -5,6 +5,8 @@ from database.base import Base
 
 
 class Categories(Base):
+    """Класс продуктовых категорий"""
+
     __tablename__ = 'categories'
     id: Mapped[int] = mapped_column(primary_key=True)
     category_name: Mapped[str] = mapped_column(String(30), unique=True)
