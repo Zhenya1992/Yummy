@@ -3,6 +3,7 @@ from aiogram.filters import CommandStart, Text
 from aiogram.types import Message, FSInputFile
 
 from database.utils import db_register_user
+from handlers.h2_get_contact import show_main_menu
 from keyboards.reply_kb import start_keyboard, phone_button
 
 router = Router()
