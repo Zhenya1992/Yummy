@@ -1,14 +1,4 @@
-from aiogram.types import KeyboardButton
-from aiogram.utils.keyboard import ReplyKeyboardMarkup, ReplyKeyboardBuilder
-
-
-def start_keyboard():
-    """Кнопка для старта бота"""
-
-    return ReplyKeyboardMarkup(
-        keyboard=[[KeyboardButton(text='Начать 🎂')]],
-        resize_keyboard=True
-    )
+from aiogram.utils.keyboard import ReplyKeyboardBuilder
 
 
 def phone_button():
@@ -16,4 +6,15 @@ def phone_button():
 
     builder = ReplyKeyboardBuilder()
     builder.button(text="Отправить номер телефона 📞", request_contact=True)
+    return builder.as_markup(resize_keyboard=True)
+
+
+def get_main_menu():
+    """Функция для получения главного меню"""
+
+    builder = ReplyKeyboardBuilder()
+    builder.button(text='Сделать заказ')
+    builder.button(text='История заказов')
+    builder.button(text='Корзина')
+    builder.adjust(1, 2)
     return builder.as_markup(resize_keyboard=True)
