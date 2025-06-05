@@ -1,7 +1,8 @@
 from aiogram import Router, F
 from aiogram.types import Message
 
-from database.utils import db_update_user, db_create_user_cart
+from database.utils import db_create_user_cart, db_register_user
+from keyboards.reply_kb import get_main_menu
 
 router = Router()
 
@@ -10,19 +11,20 @@ async def handle_update_user(message: Message):
     """Обновление юзеров"""
 
     chat_id = message.chat.id
+    full_name = message.from_user.full_name
     phone = message.contact.phone_number
-    print(f"{chat_id=} {phone=}")
 
-    db_update_user(chat_id, phone)
+    db_register_user(full_name, chat_id, phone)
 
-    if db_create_user_cart(chat_id):
-        await message.answer(text='Регистрация прошла успешно!')
+    db_create_user_cart(chat_id)
+
+    await message.answer("Вы успешно зарегистрированы!")
     await show_main_menu(message)
-
 
 async def show_main_menu(message: Message):
     """Показ главного меню"""
 
     await message.answer(
         text='Сделайте свой выбор',
-    ) # здесь будет кнопка маин меню
+        reply_markup=get_main_menu()
+    )
