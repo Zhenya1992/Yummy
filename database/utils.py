@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy.sql.functions import func
 
 from database.base import engine
-from database.models import Users, Carts, Categories, FinallyCarts
+from database.models import Users, Carts, Categories, FinallyCarts, Products
 
 with Session(engine) as session:
     db_session = session
@@ -75,3 +75,13 @@ def db_get_last_orders(chat_id, limit=5):
         where(Users.telegram == chat_id).order_by(FinallyCarts.id.desc()).limit(limit)
     )
     return db_session.scalars(query).all()
+
+
+def db_get_products_from_category(category_id):
+    """Получение товаров из категории"""
+
+    query = (
+        select(Products).where(Products.category_id == category_id)
+    )
+
+    return db_session.scalars(query)

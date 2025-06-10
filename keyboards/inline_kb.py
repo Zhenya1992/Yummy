@@ -1,6 +1,8 @@
 from aiogram.utils.keyboard import InlineKeyboardBuilder
+from aiogram.types import InlineKeyboardButton
+from database.models import Products
+from database.utils import db_get_all_categories, db_get_finally_price, db_get_products_from_category
 
-from database.utils import db_get_all_categories, db_get_finally_price
 
 
 def show_category_menu(chat_id):
@@ -18,4 +20,18 @@ def show_category_menu(chat_id):
     )
 
     builder.adjust(1, 2)
+    return builder.as_markup()
+
+
+def show_product_by_category(category_id):
+    """Функция показа товаров по категории"""
+
+    products = db_get_products_from_category(category_id)
+
+    builder = InlineKeyboardBuilder()
+    [builder.button(text=product.product_name, callback_data=f"product_{product.id}") for product in products]
+
+    builder.adjust(1, 2)
+    builder.row(InlineKeyboardButton(text="🔙 Назад", callback_data="Назад"))
+
     return builder.as_markup()
