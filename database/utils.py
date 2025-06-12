@@ -85,3 +85,31 @@ def db_get_products_from_category(category_id):
     )
 
     return db_session.scalars(query)
+
+
+def db_get_product_by_id(product_id):
+    """Получение продукта по его ID"""
+
+    query = (
+        select(Products).where(Products.id == product_id)
+    )
+    return db_session.scalar(query)
+
+
+def db_get_user_cart(chat_id):
+    """Функция получения корзины юзера по ID"""
+
+    query = (
+        select(Carts).join(Users).where(Users.telegram == chat_id)
+    )
+    return db_session.scalar(query)
+
+
+def db_update_to_cart(price, cart_id, quantity=1):
+    """Функция обновления корзины пользователя"""
+
+    query = (
+        update(Carts).where(Carts.id == cart_id).values(total_price=price, products=quantity)
+    )
+    db_session.execute(query)
+    db_session.commit()
