@@ -6,7 +6,7 @@ from database.utils import db_get_all_categories, db_get_finally_price, db_get_p
 
 
 def show_category_menu(chat_id):
-    """Функция показа категорий товара"""
+    """Кнопка показа категорий товара"""
 
     categories = db_get_all_categories()
     total_price = db_get_finally_price(chat_id)
@@ -24,7 +24,7 @@ def show_category_menu(chat_id):
 
 
 def show_product_by_category(category_id):
-    """Функция показа товаров по категории"""
+    """Кнопка показа товаров по категории"""
 
     products = db_get_products_from_category(category_id)
 
@@ -35,3 +35,15 @@ def show_product_by_category(category_id):
     builder.row(InlineKeyboardButton(text="🔙 Назад", callback_data="Назад"))
 
     return builder.as_markup()
+
+
+def cart_quantity_controller(quantity=1):
+    """Кнопка контроллера количества товара"""
+
+    builder = InlineKeyboardBuilder()
+    builder.button(text="➕", callback_data="action +")
+    builder.button(text=str(quantity), callback_data="quantity")
+    builder.button(text="➖", callback_data="action -")
+    builder.button(text= "🧺 Добавить в корзину", callback_data="Положить в корзину")
+
+    builder.adjust(3, 1)
