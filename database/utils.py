@@ -97,7 +97,7 @@ def db_get_product_by_id(product_id):
 
 
 def db_get_user_cart(chat_id):
-    """Функция получения корзины юзера по ID"""
+    """Функция получения корзины пользователя по ID"""
 
     query = (
         select(Carts).join(Users).where(Users.telegram == chat_id)
