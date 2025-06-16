@@ -96,6 +96,15 @@ def db_get_product_by_id(product_id):
     return db_session.scalar(query)
 
 
+def db_get_product_by_name(product_name):
+    """Функция получения продукта по его имени"""
+
+    query = (
+        select(Products).where(Products.product_name == product_name)
+    )
+    return db_session.scalar(query)
+
+
 def db_get_user_cart(chat_id):
     """Функция получения корзины пользователя по ID"""
 
