@@ -31,7 +31,7 @@ async def order_history(message: Message):
 
     text = "История последних 5- заказов:\n\n"
     for order in orders:
-        text += f"{order.product.name} - {order.product.price}руб. в количестве: {order.quantity}\n"
+        text += f"{order.product_name} - {order.finally_price}руб. в количестве: {order.quantity}\n"
     await message.answer(text)
 
 
