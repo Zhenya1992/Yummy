@@ -54,7 +54,7 @@ async def change_product_quantity(callback: CallbackQuery, bot: Bot):
                 media=FSInputFile(path=product.image),
                 caption=caption,
             ),
-            reply_markup=cart_quantity_controller()
+            reply_markup=cart_quantity_controller(new_quantity)
         )
     except TelegramBadRequest:
         pass

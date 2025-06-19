@@ -47,3 +47,4 @@ def cart_quantity_controller(quantity=1):
     builder.button(text= "🧺 Добавить в корзину", callback_data="Положить в корзину")
 
     builder.adjust(3, 1)
+    return builder.as_markup()
