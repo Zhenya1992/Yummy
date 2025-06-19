@@ -4,6 +4,7 @@ from pyexpat.errors import messages
 
 from bot_utils.message_utils import text_for_caption
 from database.utils import db_get_product_by_id, db_get_user_cart, db_update_to_cart
+from keyboards.inline_kb import cart_quantity_controller
 from keyboards.reply_kb import back_arrow_button, phone_button
 
 router = Router()
@@ -41,5 +42,6 @@ async def show_detail_product_info(callback: CallbackQuery, bot: Bot):
             chat_id=chat_id,
             photo=product_image,
             caption=caption,
-            parse_mode='HTML'
+            parse_mode='HTML',
+            reply_markup=cart_quantity_controller()
         )

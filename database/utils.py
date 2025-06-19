@@ -122,3 +122,34 @@ def db_update_to_cart(price, cart_id, quantity=1):
     )
     db_session.execute(query)
     db_session.commit()
+
+
+
+def db_upsert_to_finally_cart(cart_id, product_name, total_price, total_products):
+    """Добавление и обновление товаров в итоговой корзине пользователя"""
+
+    try:
+        item = (
+            db_session.query(FinallyCarts).filter_by(cart_id = cart_id, product_name = product_name)
+        .first()
+        )
+        if item:
+            item.quantity = total_products
+            item.finally_price = total_price
+            db_session.commit()
+            return "Обновлено"
+
+        new_item = FinallyCarts(
+            cart_id = cart_id,
+            product_name = product_name,
+            quantity = total_products,
+            finally_price = total_price,
+        )
+
+        db_session.add(new_item)
+        db_session.commit()
+        return "Добавлено"
+
+    except Exception as e:
+        print(e, "Ошибка при добавлении в итоговую корзину")
+        return "Ошибка"
