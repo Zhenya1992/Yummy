@@ -6,11 +6,21 @@ from keyboards.inline_kb import cart_action_controller
 
 router = Router()
 
+
 @router.message(F.text == 'Корзина 🧺')
 async def handle_cart(message: Message):
     """Обработчик сообщения с текстом 'Корзина 🧺'"""
 
     await show_cart(chat_id=message.chat.id, send_fn=message.answer)
+
+
+@router.callback_query(F.data == 'Сумма заказа')
+async def open_cart(callback: CallbackQuery):
+    """Обработчик inline-кнопки на 'Сумму заказа'"""
+
+    await show_cart(chat_id=callback.from_user.id, send_fn=callback.message.answer)
+    await callback.answer()
+
 
 async def show_cart(chat_id: int, send_fn):
     """Функция показа содержимого корзины"""
