@@ -153,3 +153,14 @@ def db_upsert_to_finally_cart(cart_id, product_name, total_price, total_products
     except Exception as e:
         print(e, "Ошибка при добавлении в итоговую корзину")
         return "Ошибка"
+
+
+def db_get_cart_items(chat_id):
+    """Получение товаров из корзины пользователя"""
+
+    query = (
+        select(FinallyCarts).join(Carts, FinallyCarts.cart_id == Carts.id).
+        join(Users, Users.id == Carts.user_id).
+        where(Users.telegram == chat_id)
+    )
+    return db_session.scalars(query).all()

@@ -4,7 +4,6 @@ from database.models import Products
 from database.utils import db_get_all_categories, db_get_finally_price, db_get_products_from_category
 
 
-
 def show_category_menu(chat_id):
     """Кнопка показа категорий товара"""
 
@@ -44,7 +43,20 @@ def cart_quantity_controller(quantity=1):
     builder.button(text="➕", callback_data="action +")
     builder.button(text=str(quantity), callback_data="quantity")
     builder.button(text="➖", callback_data="action -")
-    builder.button(text= "🧺 Добавить в корзину", callback_data="Положить в корзину")
+    builder.button(text="🧺 Добавить в корзину", callback_data="Положить в корзину")
 
     builder.adjust(3, 1)
+    return builder.as_markup()
+
+
+def cart_action_controller():
+    """Кнопка контроллера корзины"""
+
+    builder = InlineKeyboardBuilder()
+    builder.row(
+        InlineKeyboardButton(text="Оформить заказ", callback_data="Confirm_order"),
+        InlineKeyboardButton(text="Убрать", callback_data="remove"),
+        InlineKeyboardButton(text="Добавить", callback_data="add"),
+    )
+    builder.adjust(1, 2)
     return builder.as_markup()
