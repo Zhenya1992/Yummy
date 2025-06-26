@@ -164,3 +164,17 @@ def db_get_cart_items(chat_id):
         where(Users.telegram == chat_id)
     )
     return db_session.scalars(query).all()
+
+
+def db_get_final_cart_items(chat_id):
+    """"Получение товаров из итоговой корзины пользователя"""
+
+    query = (
+        select(FinallyCarts.product_name,
+               FinallyCarts.quantity,
+               FinallyCarts.finally_price,
+               FinallyCarts.cart_id).
+        join(Carts).join(Users).
+        where(Users.telegram == chat_id)
+    )
+    return db_session.execute(query).fetchall()
