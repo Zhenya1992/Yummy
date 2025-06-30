@@ -10,6 +10,11 @@ with Session(engine) as session:
     db_session = session
 
 
+def get_session():
+    """Функция получения сессии"""
+    return Session(engine)
+
+
 def db_register_user(full_name, chat_id, phone):
     """Регистрация юзеров в базе данных"""
 
@@ -124,14 +129,13 @@ def db_update_to_cart(price, cart_id, quantity=1):
     db_session.commit()
 
 
-
 def db_upsert_to_finally_cart(cart_id, product_name, total_price, total_products):
     """Добавление и обновление товаров в итоговой корзине пользователя"""
 
     try:
         item = (
-            db_session.query(FinallyCarts).filter_by(cart_id = cart_id, product_name = product_name)
-        .first()
+            db_session.query(FinallyCarts).filter_by(cart_id=cart_id, product_name=product_name)
+            .first()
         )
         if item:
             item.quantity = total_products
@@ -140,10 +144,10 @@ def db_upsert_to_finally_cart(cart_id, product_name, total_price, total_products
             return "Обновлено"
 
         new_item = FinallyCarts(
-            cart_id = cart_id,
-            product_name = product_name,
-            quantity = total_products,
-            finally_price = total_price,
+            cart_id=cart_id,
+            product_name=product_name,
+            quantity=total_products,
+            finally_price=total_price,
         )
 
         db_session.add(new_item)
@@ -178,3 +182,25 @@ def db_get_final_cart_items(chat_id):
         where(Users.telegram == chat_id)
     )
     return db_session.execute(query).fetchall()
+
+
+def db_get_user_phone(chat_id):
+    """Функция получения телефона пользователя"""
+
+    query = (
+        select(Users.phone).where(Users.telegram == chat_id)
+    )
+    return db_session.execute(query).fetchone()[0]
+
+
+def db_get_products_for_delete(chat_id):
+    """Функция получения товаров для удаления из корзины"""
+
+    with get_session() as session:
+        query = (
+            select(FinallyCarts.id, FinallyCarts.product_name).
+        join(Carts, FinallyCarts.id == Carts.id).
+        join(Users, Carts.user_id == Users.id).
+                where(Users.telegram == chat_id)
+            )
+        return session.execute(query).fetchall()

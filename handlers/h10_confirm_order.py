@@ -1,9 +1,9 @@
 from aiogram import Router, F, Bot
 from aiogram.types import CallbackQuery
 from config import MANAGER_ID
-from database.models.users import Users
 
 from bot_utils.message_utils import counting_products_from_cart
+from database.utils import db_get_user_phone
 
 router = Router()
 
@@ -14,11 +14,9 @@ async def confirm_order(callback: CallbackQuery, bot: Bot):
 
     user = callback.from_user
 
-    print(user, "*" * 150)
-    phone = Users.phone
-    print(phone)
+    phone = db_get_user_phone(user.id)
     mention = f"<a href='tg://user?id={user.id}'>{user.full_name} </a>"
-    user_text = f"Новый заказ от {mention}"
+    user_text = f"Новый заказ от {mention}\nс номером телефона {phone}!"
     context = counting_products_from_cart(user.id, user_text)
     print(context)
 
