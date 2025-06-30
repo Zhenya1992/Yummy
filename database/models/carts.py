@@ -10,7 +10,7 @@ class Carts(Base):
 
     __tablename__ = "carts"
     id: Mapped[int] = mapped_column(primary_key=True)
-    total_price: Mapped[int] = mapped_column(DECIMAL(4, 2), default=0)
+    total_price: Mapped[int] = mapped_column(DECIMAL(5, 2), default=0)
     products: Mapped[int] = mapped_column(default=0)
     user_id: Mapped[int] = mapped_column(ForeignKey('users.id'), unique=True)
 
@@ -27,7 +27,7 @@ class FinallyCarts(Base):
     __tablename__ = 'finally_carts'
     id: Mapped[int] = mapped_column(primary_key=True)
     product_name: Mapped[str] = mapped_column(String(50))
-    finally_price: Mapped[DECIMAL] = mapped_column(DECIMAL(4, 2))
+    finally_price: Mapped[DECIMAL] = mapped_column(DECIMAL(5, 2))
     quantity: Mapped[int]
 
     cart_id: Mapped[int] = mapped_column(ForeignKey('carts.id'))
