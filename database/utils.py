@@ -204,3 +204,54 @@ def db_get_products_for_delete(chat_id):
                 where(Users.telegram == chat_id)
             )
         return session.execute(query).fetchall()
+
+
+def db_increase_product_quantity(final_cart_id):
+    """Функция увеличения количества товара в итоговой корзине"""
+
+    with get_session() as session:
+        item = session.execute(
+            select(FinallyCarts).where(FinallyCarts.id == final_cart_id)
+        ).scalar_one_or_none()
+
+        if not item:
+            return False
+
+        product = session.execute(
+            select(Products).where(Products.product_name == item.product_name)
+        ).scalar_one_or_none()
+
+        if not product:
+            return False
+
+        item.quantity += 1
+        item.finally_price = float(product.price) * item.quantity
+        session.commit()
+        return True
+
+
+def db_decrease_product_quantity(final_cart_id):
+    """Функция уменьшения количества товара в итоговой корзине"""
+
+    with get_session() as session:
+        item = session.execute(
+            select(FinallyCarts).where(FinallyCarts.id == final_cart_id)
+        ).scalar_one_or_none()
+
+        if not item:
+            return False
+
+        product = session.execute(
+            select(Products).where(Products.product_name == item.product_name)
+         ).scalar_one_or_none()
+
+        if not product:
+            return False
+
+        item.quantity -= 1
+        if item.quantity <= 0:
+            session.delete(item)
+        else:
+            item.finally_price = float(product.price) * item.quantity
+        session.commit()
+        return True
