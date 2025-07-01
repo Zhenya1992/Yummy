@@ -1,4 +1,4 @@
-from sqlalchemy import update, select, join
+from sqlalchemy import update, select, join, delete
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 from sqlalchemy.sql.functions import func
@@ -199,7 +199,7 @@ def db_get_products_for_delete(chat_id):
     with get_session() as session:
         query = (
             select(FinallyCarts.id, FinallyCarts.product_name).
-        join(Carts, FinallyCarts.id == Carts.id).
+        join(Carts, FinallyCarts.cart_id == Carts.id).
         join(Users, Carts.user_id == Users.id).
                 where(Users.telegram == chat_id)
             )
@@ -255,3 +255,17 @@ def db_decrease_product_quantity(final_cart_id):
             item.finally_price = float(product.price) * item.quantity
         session.commit()
         return True
+
+
+def db_clear_finally_cart(chat_id):
+    """Функция очистки итоговой корзины"""
+
+    cart = db_get_user_cart(chat_id)
+    if not cart:
+        return
+
+    with get_session() as session:
+        query = delete(FinallyCarts).where(FinallyCarts.cart_id == cart.id)
+
+        session.execute(query)
+        session.commit()
