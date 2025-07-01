@@ -10,31 +10,31 @@ from keyboards.reply_kb import back_to_main_menu
 router = Router()
 
 
-@router.callback_query(F.data == "add")
-async def choose_add_to_cart(callback: CallbackQuery):
+@router.callback_query(F.data == 'add')
+async def choose_product_to_add(callback: CallbackQuery):
     """Обработчик кнопки 'Добавления товаров' в корзине"""
 
     cart_products = db_get_products_for_delete(callback.from_user.id)
     builder = InlineKeyboardBuilder()
     for cart_id, name in cart_products:
-        builder.button(text=f"➕ {name}", callback_data=f"increase_{cart_id}")
-    builder.button(text='Назад', callback_data='back_to_cart_review')
+        builder.button(text=f'➕ {name}', callback_data=f'increase_{cart_id}')
+    builder.button(text=" Назад", callback_data="back_to_cart_review")
     builder.adjust(1)
-    await callback.message.edit_text('Выберите товар для увеличения количества:', reply_markup=builder.as_markup())
+    await callback.message.edit_text("Выберите товар для увеличения количества:", reply_markup=builder.as_markup())
     await callback.answer()
 
 
-@router.callback_query(F.data == "remove")
-async def choose_add_to_cart(callback: CallbackQuery):
+@router.callback_query(F.data == 'remove')
+async def choose_product_to_remove(callback: CallbackQuery):
     """Обработчик кнопки 'Удаления товаров' в корзине"""
 
     cart_products = db_get_products_for_delete(callback.from_user.id)
     builder = InlineKeyboardBuilder()
     for cart_id, name in cart_products:
-        builder.button(text=f"➖ {name}", callback_data=f"decrease_{cart_id}")
-    builder.button(text='Назад', callback_data='back_to_cart_review')
+        builder.button(text=f'➖ {name}', callback_data=f'decrease_{cart_id}')
+    builder.button(text=" Назад", callback_data="back_to_cart_review")
     builder.adjust(1)
-    await callback.message.edit_text('Выберите товар для уменьшения количества:', reply_markup=builder.as_markup())
+    await callback.message.edit_text("Выберите товар для уменьшения количества:", reply_markup=builder.as_markup())
     await callback.answer()
 
 
@@ -45,7 +45,7 @@ async def increase_quantity(callback: CallbackQuery):
     cart_id = int(callback.data.split('_')[1])
     db_increase_product_quantity(cart_id)
     await callback.answer(text='Количество товара увеличено!')
-    await choose_add_to_cart(callback)
+    await choose_product_to_add(callback)
 
 
 @router.callback_query(F.data.startswith("decrease_"))
