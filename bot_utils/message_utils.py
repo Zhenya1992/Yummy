@@ -27,3 +27,21 @@ def counting_products_from_cart(chat_id, user_text):
                  f'{total_price}BYN.')
         context = (count, text, total_price, cart_id)
         return context
+
+
+def get_cart_text(cart_items):
+    """Генерация текста для корзины."""
+
+    if not cart_items:
+        return (
+            "Ваша корзина пуста.\n"
+            "Добавьте товары в корзину с помощью команды /add"
+        )
+    text = 'Корзина:\n\n'
+    total = 0
+    for item in cart_items:
+        subtotal = float(item.finally_price)
+        total += subtotal
+        text += f'{item.product_name} - {item.quantity} шт. - {subtotal:.2f} BYN\n'
+    text += f'\n💰 Общая сумма: {total:.2f} BYN\n\n'
+    return text
