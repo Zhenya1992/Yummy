@@ -12,6 +12,7 @@ with Session(engine) as session:
 
 def get_session():
     """Функция получения сессии"""
+
     return Session(engine)
 
 
@@ -159,15 +160,17 @@ def db_upsert_to_finally_cart(cart_id, product_name, total_price, total_products
         return "Ошибка"
 
 
-def db_get_cart_items(chat_id):
+def db_get_cart_items(chat_id: int):
     """Получение товаров из корзины пользователя"""
 
-    query = (
-        select(FinallyCarts).join(Carts, FinallyCarts.cart_id == Carts.id).
-        join(Users, Users.id == Carts.user_id).
-        where(Users.telegram == chat_id)
-    )
-    return db_session.scalars(query).all()
+    with get_session() as session:
+        query = (
+            select(FinallyCarts)
+            .join(Carts, FinallyCarts.cart_id == Carts.id)
+            .join(Users, Users.id == Carts.user_id)
+            .where(Users.telegram == chat_id)
+        )
+        return session.scalars(query).all()
 
 
 def db_get_final_cart_items(chat_id):
@@ -193,66 +196,59 @@ def db_get_user_phone(chat_id):
     return db_session.execute(query).fetchone()[0]
 
 
-def db_get_products_for_delete(chat_id):
-    """Функция получения товаров для удаления из корзины"""
+def db_get_products_for_delete(chat_id: int):
+    """Получение товаров для удаления из корзины"""
 
     with get_session() as session:
         query = (
-            select(FinallyCarts.id, FinallyCarts.product_name).
-        join(Carts, FinallyCarts.cart_id == Carts.id).
-        join(Users, Carts.user_id == Users.id).
-                where(Users.telegram == chat_id)
-            )
+            select(FinallyCarts.id, FinallyCarts.product_name)
+            .join(Carts, FinallyCarts.cart_id == Carts.id)
+            .join(Users, Carts.user_id == Users.id)
+            .where(Users.telegram == chat_id)
+        )
         return session.execute(query).fetchall()
 
 
-def db_increase_product_quantity(final_cart_id):
-    """Функция увеличения количества товара в итоговой корзине"""
+def db_increase_product_quantity(finally_cart_id: int):
+    """Функция увеличения количества товара в корзине"""
 
     with get_session() as session:
-        item = session.execute(
-            select(FinallyCarts).where(FinallyCarts.id == final_cart_id)
-        ).scalar_one_or_none()
-
+        item = session.execute(select(FinallyCarts).where(FinallyCarts.id == finally_cart_id)).scalar_one_or_none()
         if not item:
             return False
 
         product = session.execute(
-            select(Products).where(Products.product_name == item.product_name)
-        ).scalar_one_or_none()
-
+            select(Products).where(Products.product_name == item.product_name)).scalar_one_or_none()
         if not product:
             return False
 
         item.quantity += 1
-        item.finally_price = float(product.price) * item.quantity
+        item.final_price = float(product.price) * item.quantity
+
         session.commit()
         return True
 
 
-def db_decrease_product_quantity(final_cart_id):
-    """Функция уменьшения количества товара в итоговой корзине"""
+def db_decrease_product_quantity(finally_cart_id: int):
+    """Функция уменьшения количества товара в корзине"""
 
     with get_session() as session:
-        item = session.execute(
-            select(FinallyCarts).where(FinallyCarts.id == final_cart_id)
-        ).scalar_one_or_none()
-
+        item = session.execute(select(FinallyCarts).where(FinallyCarts.id == finally_cart_id)).scalar_one_or_none()
         if not item:
             return False
 
         product = session.execute(
-            select(Products).where(Products.product_name == item.product_name)
-         ).scalar_one_or_none()
-
+            select(Products).where(Products.product_name == item.product_name)).scalar_one_or_none()
         if not product:
             return False
 
         item.quantity -= 1
+
         if item.quantity <= 0:
             session.delete(item)
         else:
-            item.finally_price = float(product.price) * item.quantity
+            item.final_price = float(product.price) * item.quantity
+
         session.commit()
         return True
 
