@@ -223,7 +223,7 @@ def db_increase_product_quantity(finally_cart_id: int):
             return False
 
         item.quantity += 1
-        item.final_price = float(product.price) * item.quantity
+        item.finally_price = float(product.price) * item.quantity
 
         session.commit()
         return True
@@ -247,7 +247,7 @@ def db_decrease_product_quantity(finally_cart_id: int):
         if item.quantity <= 0:
             session.delete(item)
         else:
-            item.final_price = float(product.price) * item.quantity
+            item.finally_price = float(product.price) * item.quantity
 
         session.commit()
         return True
