@@ -1,8 +1,9 @@
 from sqlalchemy.orm import Session
-from sqlalchemy import text
+from sqlalchemy import text, select
 
 from database.base import engine, Base
 from database.models import Categories, Products
+from database.models import Orders
 
 
 def create_db():
@@ -32,12 +33,18 @@ def create_db():
         cats_map = {}
 
         for name in categories:
-            category = Categories(category_name=name)
-            session.add(category)
-            session.flush()
+            category = session.scalar(select(Categories).where(Categories.category_name == name))
+            if not category:
+                category = Categories(category_name=name)
+                session.add(category)
+                session.flush()
             cats_map[name] = category.id
 
         for category_name, name, price, description, image in products:
+            product_exist = session.scalar(select(Products).where(Products.product_name == name))
+            if not product_exist:
+                continue
+
             category_id = cats_map.get(category_name)
             if category_id:
                 product = Products(
