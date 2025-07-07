@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy.sql.functions import func
 
 from database.base import engine
-from database.models import Users, Carts, Categories, FinallyCarts, Products
+from database.models import Users, Carts, Categories, FinallyCarts, Products, Orders
 
 
 def get_session():
@@ -84,9 +84,12 @@ def db_get_last_orders(chat_id, limit=5):
 
     with get_session() as session:
         query = (
-            select(FinallyCarts).join(Carts, FinallyCarts.cart_id == Carts.id).
+            select(Orders).
+            join(Carts, Orders.cart_id == Carts.id).
             join(Users, Users.id == Carts.user_id).
-            where(Users.telegram == chat_id).order_by(FinallyCarts.id.desc()).limit(limit)
+            where(Users.telegram == chat_id).
+            order_by(Orders.id.desc()).
+            limit(limit)
         )
         return session.scalars(query).all()
 
@@ -279,4 +282,26 @@ def db_clear_finally_cart(chat_id):
         query = delete(FinallyCarts).where(FinallyCarts.cart_id == cart.id)
 
         session.execute(query)
+        session.commit()
+
+
+def db_save_order_history(chat_id):
+    """Функция сохранения истории заказов"""
+
+    cart = db_get_user_cart(chat_id)
+    if not cart:
+        return
+
+    with get_session() as session:
+        final_items = session.query(FinallyCarts).filter_by(cart_id=cart.id).all()
+
+        for item in final_items:
+            session.add(
+                Orders(
+                    cart_id=cart.id,
+                    product_name=item.product_name,
+                    quantity=item.quantity,
+                    final_price=item.finally_price,
+            ))
+
         session.commit()

@@ -10,7 +10,7 @@ def create_db():
     """Функция создания базы данных"""
 
     with engine.connect() as conn:
-        # conn.execute(text("DROP SCHEMA IF EXISTS public CASCADE"))
+        conn.execute(text("DROP SCHEMA IF EXISTS public CASCADE"))
         conn.execute(text("CREATE SCHEMA IF NOT EXISTS public"))
         conn.commit()
 
@@ -41,9 +41,9 @@ def create_db():
             cats_map[name] = category.id
 
         for category_name, name, price, description, image in products:
-            product_exist = session.scalar(select(Products).where(Products.product_name == name))
-            if not product_exist:
-                continue
+            # product_exist = session.scalar(select(Products).where(Products.product_name == name))
+            # if not product_exist:
+             #   continue
 
             category_id = cats_map.get(category_name)
             if category_id:
