@@ -305,3 +305,28 @@ def db_save_order_history(chat_id):
             ))
 
         session.commit()
+
+
+def db_delete_user_by_telegram_id(chat_id):
+    """Функция удаления пользователя по ID"""
+
+    with get_session() as session:
+        user = session.scalar(
+            select(Users).where(Users.telegram == chat_id)
+        )
+        if not user:
+            return False
+
+        cart = session.scalar(
+            select(Carts).where(Carts.user_id == user.id)
+        )
+
+        if cart:
+            session.execute(delete(Orders).where(Orders.cart_id == cart.id))
+            session.execute(delete(FinallyCarts).where(FinallyCarts.cart_id == cart.id))
+            session.execute(delete(Carts).where(Carts.id == cart.id))
+
+        session.execute(delete(Users).where(Users.telegram == chat_id))
+        session.commit()
+
+        return True
