@@ -16,7 +16,8 @@ def get_main_menu():
     builder.button(text='Сделать заказ 📖')
     builder.button(text='Корзина 🧺')
     builder.button(text='История заказов 📚')
-    builder.adjust(1, 2)
+    builder.button(text='Настройки ⚙️')
+    builder.adjust(1, 2, 1)
     return builder.as_markup(resize_keyboard=True)
 
 

@@ -60,3 +60,13 @@ def cart_action_controller():
     )
     builder.adjust(1, 2)
     return builder.as_markup()
+
+
+def show_settings_menu():
+    """Кнопка показа настроек"""
+
+    builder = InlineKeyboardBuilder()
+    builder.button(text='Удалить аккаунт', callback_data='delete_account')
+    builder.button(text='Назад', callback_data='back_to_main_menu')
+    builder.adjust(1, 2)
+    return builder.as_markup()

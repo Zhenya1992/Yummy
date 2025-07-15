@@ -5,7 +5,7 @@ from config import TOKEN
 from handlers import (
     h1_startup, h2_get_contact, h3_make_order, h4_categories,
     h5_navigation, h6_product_detail, h7_cart_quantity, h8_add_to_cart,
-    h9_open_cart, h10_confirm_order, h11_cart_modify
+    h9_open_cart, h10_confirm_order, h11_cart_modify, h12_settings,
 )
 
 bot = Bot(token=TOKEN)
@@ -22,6 +22,7 @@ dp.include_router(h8_add_to_cart.router)
 dp.include_router(h9_open_cart.router)
 dp.include_router(h10_confirm_order.router)
 dp.include_router(h11_cart_modify.router)
+dp.include_router(h12_settings.router)
 
 async def main():
     await dp.start_polling(bot)
