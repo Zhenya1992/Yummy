@@ -1,7 +1,8 @@
-from aiogram import Router, F
+from aiogram import Router, F, Bot
 from aiogram.types import Message, CallbackQuery
 
-from database.utils import db_delete_user_by_telegram_id
+from config import MANAGER_ID
+from database.utils import db_delete_user_by_telegram_id, db_get_user_phone
 from keyboards.inline_kb import show_settings_menu, delete_account_kb
 from keyboards.reply_kb import get_main_menu, phone_button
 
@@ -31,18 +32,34 @@ async def handle_delete_account(callback: CallbackQuery):
 
 
 @router.callback_query(F.data == 'delete_account_confirm')
-async def handle_delete_account(callback: CallbackQuery):
+async def handle_delete_account(callback: CallbackQuery, bot: Bot):
     """Удаление аккаунта"""
 
     telegram_id = callback.from_user.id
     full_name = callback.from_user.full_name
+    phone = db_get_user_phone(telegram_id)
 
     result = db_delete_user_by_telegram_id(telegram_id)
 
     if result:
         await callback.message.delete()
 
-        await callback.message.answer(text=f"Аккаунт пользователя {full_name} успешно удален!", reply_markup=phone_button())
+        await callback.message.answer(
+            text=f"Аккаунт пользователя {full_name} успешно удален!",
+            reply_markup=phone_button())
 
+        await callback.bot.send_message(
+            MANAGER_ID,
+            f'Пользователь {full_name}\n,с номером телефона {phone} удален!')
     else:
         await callback.message.edit_text("Ошибка при удалении аккаунта!", reply_markup=show_settings_menu())
+
+
+@router.callback_query(F.data == 'show_settings')
+async def handle_show_settings(callback: CallbackQuery):
+    """Отмена удаления аккаунта"""
+
+    await callback.message.delete()
+    await callback.message.answer(
+        text='Аккаунт не был удален!\nВы можете выбрать изи меню⬇️',
+        reply_markup=get_main_menu())
