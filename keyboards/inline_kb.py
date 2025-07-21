@@ -67,8 +67,9 @@ def show_settings_menu():
 
     builder = InlineKeyboardBuilder()
     builder.button(text='Удалить аккаунт', callback_data='delete_account')
+    builder.button(text='Открыть профиль Instagram', callback_data='open_instagram')
     builder.button(text='Назад', callback_data='get_main_menu')
-    builder.adjust(1, 2)
+    builder.adjust(2, 1)
     return builder.as_markup()
 
 def delete_account_kb():
@@ -78,4 +79,13 @@ def delete_account_kb():
     builder.button(text='Да', callback_data='delete_account_confirm')
     builder.button(text='Нет', callback_data='show_settings')
     builder.adjust(2)
+    return builder.as_markup()
+
+def open_instagram():
+    """Кнопка подтверждения перехода в профиль Instagram"""
+
+    builder = InlineKeyboardBuilder()
+    builder.button(text='Добро пожаловать в мир вкуснейших десертов', url='https://www.instagram.com/golenko.cake27/')
+    builder.button(text='Назад', callback_data='get_settings_menu')
+    builder.adjust(1, 1)
     return builder.as_markup()
