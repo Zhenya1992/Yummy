@@ -14,6 +14,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -93,3 +94,39 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+JAZZMIN_SETTINGS = {
+    'site_title': 'Админ панель Yummy',
+    'site_header': 'Админ панель Yummy',
+    'site_brand': 'Yummy',
+    'welcome_sign': 'Добро пожаловать',
+
+    "top_menu_links": [
+        {"name": "Главная",
+         "url": "admin:index",
+         "permissions": ["auth.view_user"]},
+    ],
+    "icons": {
+        "dashboard.Users": "fas fa-user",
+        "dashboard.Categories": "fas fa-tag",
+        "dashboard.Products": "fas fa-cookie"
+    },
+    'show_sidebar': True,
+    'navigation_expanded': True,
+    'hide_apps': [],
+    'order_with_respect_to': ['dashboard', 'auth']
+}
+
+JAZZMIN_UI_TWEAKS = {
+    "theme": "darkly",  # другие: darkly, cyborg, journal, lux, minty, solar, etc, flatly
+    "navbar_small_text": False,
+    "footer_small_text": False,
+    "body_small_text": False,
+    "brand_colour": "navbar-green",
+    "accent": "accent-green",
+    "navbar": "navbar-black navbar-green",
+    "no_navbar_border": False,
+    "sidebar": "sidebar-light-blue",
+    "sidebar_nav_small_text": False,
+   # "custom_css": "css/custom_admin.css",
+}

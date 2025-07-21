@@ -5,7 +5,45 @@ class Users(models.Model):
     """Класс для хранения информации о пользователях"""
 
     name = models.CharField(max_length=50)
-    telegram = models.BigIntegerField(unique=True,)
+    telegram = models.BigIntegerField(unique=True, )
     phone = models.CharField(max_length=15, null=True)
 
+    class Meta:
+        db_table = 'users'
+        verbose_name = 'Пользователь'
+        verbose_name_plural = 'Пользователи'
 
+    def __str__(self):
+        return self.name
+
+
+class Categories(models.Model):
+    """Класс для хранения информации о категориях товаров"""
+
+    category_name = models.CharField(max_length=30, unique=True)
+
+    class Meta:
+        db_table = 'categories'
+        verbose_name = 'Категория'
+        verbose_name_plural = 'Категории'
+
+    def __str__(self):
+        return self.category_name
+
+
+class Products(models.Model):
+    """Класс для хранения информации о товарах"""
+
+    product_name = models.CharField(max_length=50, unique=True)
+    description = models.TextField()
+    image = models.CharField(max_length=255)
+    price = models.DecimalField(max_digits=6, decimal_places=2)
+    category = models.ForeignKey(Categories, on_delete=models.CASCADE, related_name='products')
+
+    class Meta:
+        db_table = 'products'
+        verbose_name = 'Товар'
+        verbose_name_plural = 'Товары'
+
+    def __str__(self):
+        return self.product_name
