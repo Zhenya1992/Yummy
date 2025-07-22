@@ -2,6 +2,7 @@ from aiogram.utils.keyboard import InlineKeyboardBuilder
 from aiogram.types import InlineKeyboardButton
 from database.models import Products
 from database.utils import db_get_all_categories, db_get_finally_price, db_get_products_from_category
+from config import MANAGER_ID
 
 
 def show_category_menu(chat_id):
@@ -67,7 +68,12 @@ def show_settings_menu():
 
     builder = InlineKeyboardBuilder()
     builder.button(text='Удалить аккаунт', callback_data='delete_account')
-    builder.button(text='Открыть профиль Instagram', callback_data='open_instagram')
+    builder.button(text='Открыть профиль Instagram', url='https://www.instagram.com/golenko.cake27/')
+    if MANAGER_ID:
+        builder.button(
+            text='Связаться с менеджером 📲',
+            url=f'tg://user?id={MANAGER_ID}',
+        )
     builder.button(text='Назад', callback_data='get_main_menu')
     builder.adjust(2, 1)
     return builder.as_markup()
@@ -79,13 +85,4 @@ def delete_account_kb():
     builder.button(text='Да', callback_data='delete_account_confirm')
     builder.button(text='Нет', callback_data='show_settings')
     builder.adjust(2)
-    return builder.as_markup()
-
-def open_instagram():
-    """Кнопка подтверждения перехода в профиль Instagram"""
-
-    builder = InlineKeyboardBuilder()
-    builder.button(text='Добро пожаловать в мир вкуснейших десертов', url='https://www.instagram.com/golenko.cake27/')
-    builder.button(text='Назад', callback_data='get_settings_menu')
-    builder.adjust(1, 1)
     return builder.as_markup()
