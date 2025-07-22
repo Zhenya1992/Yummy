@@ -3,7 +3,7 @@ from aiogram.types import Message, CallbackQuery
 
 from config import MANAGER_ID
 from database.utils import db_delete_user_by_telegram_id, db_get_user_phone
-from keyboards.inline_kb import show_settings_menu, delete_account_kb, open_instagram
+from keyboards.inline_kb import show_settings_menu, delete_account_kb
 from keyboards.reply_kb import get_main_menu, phone_button
 
 router = Router()
@@ -20,7 +20,6 @@ async def handle_settings(message: Message):
 async def handle_main_menu(callback: CallbackQuery):
     """Обработчик кнопки Назад в настройках"""
 
-    await callback.message.delete()
     await callback.message.answer('Главное меню 🏠', reply_markup=get_main_menu())
 
 
@@ -63,13 +62,6 @@ async def handle_show_settings(callback: CallbackQuery):
     await callback.message.answer(
         text='Аккаунт не был удален!\nВы можете выбрать из меню⬇️',
         reply_markup=get_main_menu())
-
-
-@router.callback_query(F.data == 'open_instagram')
-async def handle_open_instagram(callback: CallbackQuery):
-    """Открытие профиля в инстаграме"""
-
-    await callback.message.edit_text(text='Вы хотите открыть профиль в инстаграме?', reply_markup=open_instagram())
 
 
 @router.callback_query(F.data == 'get_settings_menu')

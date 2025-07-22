@@ -12,6 +12,7 @@ class Users(models.Model):
         db_table = 'users'
         verbose_name = 'Пользователь'
         verbose_name_plural = 'Пользователи'
+        ordering = ['id']
 
     def __str__(self):
         return self.name
@@ -26,6 +27,7 @@ class Categories(models.Model):
         db_table = 'categories'
         verbose_name = 'Категория'
         verbose_name_plural = 'Категории'
+        ordering = ['id']
 
     def __str__(self):
         return self.category_name
@@ -44,6 +46,7 @@ class Products(models.Model):
         db_table = 'products'
         verbose_name = 'Товар'
         verbose_name_plural = 'Товары'
+        ordering = ['id']
 
     def __str__(self):
         return self.product_name
