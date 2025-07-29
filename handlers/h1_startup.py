@@ -5,6 +5,7 @@ from aiogram.types import Message, FSInputFile
 from database.utils import db_register_user, db_is_registered
 from handlers.h2_get_contact import show_main_menu
 from keyboards.reply_kb import phone_button
+from log_actions import log_register_user
 
 router = Router()
 
@@ -37,7 +38,8 @@ async def register_user(message: Message):
 
     chat_id = message.chat.id
     full_name = message.from_user.full_name
-    print(full_name)
+
+    log_register_user(username=full_name)
 
     if db_register_user(full_name, chat_id):
         await message.answer(text='Приветствуем Вас 😊')
