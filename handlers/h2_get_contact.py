@@ -3,7 +3,7 @@ from aiogram.types import Message
 
 from database.utils import db_create_user_cart, db_register_user
 from keyboards.reply_kb import get_main_menu
-
+from log_actions import log_phone_number
 router = Router()
 
 @router.message(F.contact)
@@ -16,6 +16,7 @@ async def handle_update_user(message: Message):
 
     db_register_user(full_name, chat_id, phone)
 
+    log_phone_number(username=full_name, phone_number=phone)
     db_create_user_cart(chat_id)
 
     await message.answer("Вы успешно зарегистрированы!")
