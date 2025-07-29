@@ -20,6 +20,6 @@ class CategoriesAdmin(admin.ModelAdmin):
 @admin.register(Products)
 class ProductsAdmin(admin.ModelAdmin):
 
-    list_display = ('id', 'product_name', 'description', 'price', 'category')
+    list_display = ('id', 'product_name', 'description', 'image', 'price', 'category')
     search_fields = ('id', 'price', 'category')
     ordering = ['id']
