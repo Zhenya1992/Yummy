@@ -1,13 +1,20 @@
-from aiogram import Router
+from aiogram import Router, F
 from aiogram.filters import CommandStart
 from aiogram.types import Message, FSInputFile
 
 from database.utils import db_register_user, db_is_registered
 from handlers.h2_get_contact import show_main_menu
-from keyboards.reply_kb import phone_button
+from keyboards.reply_kb import phone_button, first_button
 from log_actions import log_register_user
 
 router = Router()
+
+
+@router.message(F.text == 'Добро пожаловать! 👋')
+async def welcome_handler(message: Message):
+    """Обработчик реакции на команду старт"""
+
+    await greet_handler(message)
 
 
 @router.message(CommandStart())
@@ -21,9 +28,9 @@ async def command_start_handler(message: Message):
             photo=photo,
             caption=f"С возвращением 😊, <i>{message.from_user.full_name}</i>!",
             parse_mode='HTML',
+            reply_markup=first_button(),
         )
 
-        await show_main_menu(message)
     else:
         await message.answer_photo(
             photo=photo,
@@ -31,6 +38,12 @@ async def command_start_handler(message: Message):
             parse_mode='HTML',
             reply_markup=phone_button()
         )
+
+
+async def greet_handler(message: Message):
+    """Корутина приветствия пользователя"""
+
+    await register_user(message)
 
 
 async def register_user(message: Message):

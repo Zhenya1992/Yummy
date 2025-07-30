@@ -1,4 +1,12 @@
-from aiogram.utils.keyboard import ReplyKeyboardBuilder
+from aiogram.utils.keyboard import ReplyKeyboardBuilder, ReplyKeyboardMarkup
+from aiogram.types import KeyboardButton
+
+
+def first_button():
+    """Стартовая кнопка"""
+
+    return ReplyKeyboardMarkup(
+        keyboard=[[KeyboardButton(text='Добро пожаловать! 👋')]], resize_keyboard=True)
 
 
 def phone_button():

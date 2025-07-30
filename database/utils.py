@@ -13,17 +13,17 @@ def get_session():
     return Session(engine)
 
 
-def db_register_user(full_name, chat_id, phone):
+def db_register_user(full_name, chat_id):
     """Регистрация юзеров в базе данных"""
 
-    with get_session() as session:
-        try:
-            query = Users(name=full_name, telegram=chat_id, phone=phone)
+    try:
+        with get_session() as session:
+            query = Users(name=full_name, telegram=chat_id)
             session.add(query)
             session.commit()
-        except IntegrityError:
-            session.rollback()
-            raise
+        return False
+    except IntegrityError:
+        return True
 
 
 def db_is_registered(chat_id):
