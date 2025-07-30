@@ -14,7 +14,7 @@ async def handle_update_user(message: Message):
     full_name = message.from_user.full_name
     phone = message.contact.phone_number
 
-    db_register_user(full_name, chat_id, phone)
+    db_register_user(full_name, chat_id)
 
     log_phone_number(username=full_name, phone_number=phone)
     db_create_user_cart(chat_id)
