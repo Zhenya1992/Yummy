@@ -50,9 +50,10 @@ async def register_user(message: Message):
     """Корутина регистрации пользователя"""
 
     chat_id = message.chat.id
+    user_id = message.from_user.id
     full_name = message.from_user.full_name
 
-    log_register_user(username=full_name)
+    log_register_user(username=full_name, user_id=user_id)
 
     if db_register_user(full_name, chat_id):
         await message.answer(text='Приветствуем Вас 😊')
