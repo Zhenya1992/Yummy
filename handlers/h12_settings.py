@@ -5,6 +5,7 @@ from config import MANAGER_ID
 from database.utils import db_delete_user_by_telegram_id, db_get_user_phone
 from keyboards.inline_kb import show_settings_menu, delete_account_kb
 from keyboards.reply_kb import get_main_menu, phone_button
+from log_actions import log_delete_user
 
 router = Router()
 
@@ -41,6 +42,7 @@ async def handle_delete_account(callback: CallbackQuery, bot: Bot):
     result = db_delete_user_by_telegram_id(telegram_id)
 
     if result:
+        log_delete_user(username=full_name, user_id=telegram_id)
         await callback.message.delete()
 
         await callback.message.answer(
