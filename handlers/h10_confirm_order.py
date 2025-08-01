@@ -37,7 +37,7 @@ async def confirm_order(callback: CallbackQuery, bot: Bot):
     await bot.send_message(MANAGER_ID, text, parse_mode="HTML")
 
     db_save_order_history(user.id)
-    schedule_time(order_id=cart_id)
+    schedule_time(cart_id)
     db_clear_finally_cart(callback.from_user.id)
 
     await callback.message.edit_text("Ваш заказ принят! ✅ Ожидайте обратной связи от менеджера!")

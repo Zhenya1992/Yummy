@@ -331,20 +331,19 @@ def db_delete_user_by_telegram_id(chat_id):
 
         return True
 
-def db_get_order_info(order_id):
-    """Функция для получения данных для напоминания менеджеру"""
 
+def db_get_order_info(cart_id):
+    """Получение информации о заказе"""
+
+    from sqlalchemy import func
     with get_session() as session:
-        order = session.query(Orders).filter_by(id=order_id).first()
-        if not order:
-            return {
-                "username": 'Отсутствует',
-                "phone": 'Отсутствует',
-                "total_price": 0.0,
-            }
-        cart_id = order.cart_id
-        total = session.query(func.sum(Orders.final_price)).filter(Orders.cart_id==cart_id).scalar()or 0.0
-        user = session.query(Users).join(Carts, Users.id == Carts.user_id).filter(Carts.id == order.cart_id).first()
+        total = session.query(func.sum(Orders.final_price)) \
+                    .filter(Orders.cart_id == cart_id).scalar() or 0.0
+
+        user = session.query(Users) \
+            .join(Carts, Users.id == Carts.user_id) \
+            .filter(Carts.id == cart_id).first()
+
         return {
             "username": user.name if user else 'Отсутствует',
             "phone": user.phone if user else 'Отсутствует',
