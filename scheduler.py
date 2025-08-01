@@ -33,20 +33,20 @@ jobstores = {
 scheduler = AsyncIOScheduler(jobstores=jobstores)
 
 
-async def manage_scheduler(order_id, manager_id):
+async def manage_scheduler(cart_id, manager_id):
     """Управление планировщиком"""
 
     bot = Bot(token=BOT_TOKEN)
 
-    order_info = db_get_order_info(order_id)
+    order_info = db_get_order_info(cart_id)
 
     if not order_info:
-        logger.error(f'Заказ {order_id} не найден')
+        logger.error(f'Заказ {cart_id} не найден')
         await bot.session.close()
         return
 
     text = (
-        f"Заказ с номером: {order_id}"
+        f"Заказ с номером: {cart_id} "
         f"Клиент: {order_info['username']}"
         f"Сумма: {order_info['total_price']:.2f} BYN"
     )
@@ -56,19 +56,19 @@ async def manage_scheduler(order_id, manager_id):
     logger.info(f"Напоминание менеджеру отправлено")
 
 
-def schedule_time(order_id):
+def schedule_time(cart_id):
     """Планирование времени напоминания"""
 
-    run_date = datetime.now() + timedelta(minutes=1)
+    run_date = datetime.now() + timedelta(seconds=10)
     scheduler.add_job(
         manage_scheduler,
         "date",
         run_date=run_date,
-        args=[order_id, MANAGER_ID],
-        id=f"reminder_{order_id}",
+        args=[cart_id, MANAGER_ID],
+        id=f"reminder_{cart_id}",
         replace_existing=True,
     )
-    logger.info(f"Напоминание для заказа {order_id} запланировано на {run_date}")
+    logger.info(f"Напоминание для заказа {cart_id} запланировано на {run_date}")
 
 
 def start_scheduler():
