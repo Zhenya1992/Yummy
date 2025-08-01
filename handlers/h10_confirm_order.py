@@ -4,7 +4,7 @@ from config import MANAGER_ID
 
 from bot_utils.message_utils import counting_products_from_cart
 from database.utils import db_get_user_phone, db_clear_finally_cart, db_save_order_history
-from scheduler import start_scheduler, schedule_time
+from scheduler import schedule_time
 
 router = Router()
 
