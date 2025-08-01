@@ -6,6 +6,7 @@ from aiogram import Bot
 import logging
 from dotenv import load_dotenv
 
+from database.utils import db_get_order_info
 
 load_dotenv()
 
