@@ -7,6 +7,7 @@ from handlers import (
     h5_navigation, h6_product_detail, h7_cart_quantity, h8_add_to_cart,
     h9_open_cart, h10_confirm_order, h11_cart_modify, h12_settings,
 )
+from scheduler import start_scheduler
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
@@ -25,6 +26,7 @@ dp.include_router(h11_cart_modify.router)
 dp.include_router(h12_settings.router)
 
 async def main():
+    start_scheduler()
     await dp.start_polling(bot)
 
 
