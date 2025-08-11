@@ -42,4 +42,4 @@ async def add_to_cart(callback: CallbackQuery, bot: Bot):
         case "Ошибка":
             await bot.send_message(chat_id=chat_id, text= "Ошибка!")
 
-    return return_to_category_menu(message, bot)
+    await return_to_category_menu(message, bot)

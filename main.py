@@ -8,6 +8,7 @@ from handlers import (
     h9_open_cart, h10_confirm_order, h11_cart_modify, h12_settings,
 )
 from scheduler import start_scheduler
+from database.initial_db import create_db
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
@@ -25,7 +26,9 @@ dp.include_router(h10_confirm_order.router)
 dp.include_router(h11_cart_modify.router)
 dp.include_router(h12_settings.router)
 
+
 async def main():
+    create_db()
     start_scheduler()
     await dp.start_polling(bot)
 
