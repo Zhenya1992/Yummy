@@ -46,8 +46,8 @@ async def manage_scheduler(cart_id, manager_id):
         return
 
     text = (
-        f"Заказ с номером: {cart_id} "
-        f"Клиент: {order_info['username']}"
+        f"Заказ с номером: {cart_id} \n"
+        f"Клиент: {order_info['username']}\n"
         f"Сумма: {order_info['total_price']:.2f} BYN"
     )
 

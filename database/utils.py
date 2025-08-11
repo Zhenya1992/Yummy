@@ -333,7 +333,7 @@ def db_delete_user_by_telegram_id(chat_id):
 
 
 def db_get_order_info(cart_id):
-    """Получение информации о заказе"""
+    """Функция для получения данных для напоминания менеджеру"""
 
     from sqlalchemy import func
     with get_session() as session:
