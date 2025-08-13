@@ -291,7 +291,7 @@ def db_save_order_history(chat_id):
                     product_name=item.product_name,
                     quantity=item.quantity,
                     final_price=item.finally_price,
-            ))
+                ))
 
         session.commit()
 
@@ -321,20 +321,38 @@ def db_delete_user_by_telegram_id(chat_id):
         return True
 
 
-def db_get_order_info(cart_id):
-    """Функция для получения данных для напоминания менеджеру"""
+# def db_get_order_info(cart_id):
+#     """Функция для получения данных для напоминания менеджеру"""
+#
+#     from sqlalchemy import func
+#     with get_session() as session:
+#         total = session.query(func.sum(Orders.final_price)) \
+#                     .filter(Orders.cart_id == cart_id).scalar() or 0.0
+#
+#         user = session.query(Users) \
+#             .join(Carts, Users.id == Carts.user_id) \
+#             .filter(Carts.id == cart_id).first()
+#
+#         return {
+#             "username": user.name if user else 'Отсутствует',
+#             "phone": user.phone if user else 'Отсутствует',
+#             "total_price": float(total)
+#         }
 
-    from sqlalchemy import func
+def db_get_last_order_info(order_id: int):
     with get_session() as session:
-        total = session.query(func.sum(Orders.final_price)) \
-                    .filter(Orders.cart_id == cart_id).scalar() or 0.0
+        order = session.query(Orders).filter_by(id=order_id).first()
+        if not order:
+            return {"username": "Неизвестно", "phone": "-", "total_price": 0.0}
 
-        user = session.query(Users) \
-            .join(Carts, Users.id == Carts.user_id) \
-            .filter(Carts.id == cart_id).first()
+        user = (session.query(Users)
+            .join(Carts, Users.id == Carts.user_id)
+            .filter(Carts.id == order.cart_id)
+            .first()
+        )
 
         return {
-            "username": user.name if user else 'Отсутствует',
-            "phone": user.phone if user else 'Отсутствует',
-            "total_price": float(total)
+            "username": user.name if user else "Неизвестно",
+            "phone": user.phone if user else "-",
+            "total_price": float(order.final_price)
         }

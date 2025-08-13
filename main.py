@@ -28,7 +28,7 @@ dp.include_router(h12_settings.router)
 
 
 async def main():
-    create_db()
+    # create_db()
     start_scheduler()
     await dp.start_polling(bot)
 

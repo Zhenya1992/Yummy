@@ -10,7 +10,7 @@ def create_db():
     """Функция создания базы данных"""
 
     with engine.connect() as conn:
-        conn.execute(text("DROP SCHEMA IF EXISTS public CASCADE"))
+        # conn.execute(text("DROP SCHEMA IF EXISTS public CASCADE"))
         conn.execute(text("CREATE SCHEMA IF NOT EXISTS public"))
         conn.commit()
 

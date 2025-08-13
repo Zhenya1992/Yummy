@@ -4,7 +4,7 @@ from config import MANAGER_ID
 
 from bot_utils.message_utils import counting_products_from_cart
 from database.utils import db_get_user_phone, db_clear_finally_cart, db_save_order_history
-from scheduler import schedule_time
+from scheduler import schedule_reminder
 
 router = Router()
 
@@ -37,7 +37,7 @@ async def confirm_order(callback: CallbackQuery, bot: Bot):
     await bot.send_message(MANAGER_ID, text, parse_mode="HTML")
 
     db_save_order_history(user.id)
-    schedule_time(cart_id)
+    schedule_reminder(order_id=cart_id)
     db_clear_finally_cart(callback.from_user.id)
 
     await callback.message.edit_text("Ваш заказ принят! ✅ Ожидайте обратной связи от менеджера!\n"

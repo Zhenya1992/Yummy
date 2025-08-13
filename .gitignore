@@ -18,3 +18,5 @@ pycache/
 media/*
 !media/.gitkeep
 TODO
+
+logs/
