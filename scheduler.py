@@ -54,9 +54,9 @@ async def remind_manager(order_id: int, manager_chat_id: int):
             logger.exception(f"Ошибка при отправке напоминания: {e}")
 
 
-def schedule_reminder(order_id: int, seconds: int = 3):
+def schedule_reminder(order_id: int):
 
-    run_date = datetime.now() + timedelta(seconds=seconds)
+    run_date = datetime.now() + timedelta(seconds=3)
     scheduler.add_job(
         remind_manager,
         "date",
