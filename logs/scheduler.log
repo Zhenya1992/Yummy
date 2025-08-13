@@ -3320,3 +3320,1771 @@ WHERE users.telegram = %(telegram_1)s
 2025-08-11 01:31:31,172 - INFO - Update id=269744290 is handled. Duration 202 ms by bot id=8008057895
 2025-08-11 01:31:51,190 - INFO - Polling stopped
 2025-08-11 01:31:51,191 - INFO - Polling stopped for bot @Yummy20_05_bot id=8008057895 - 'Yummy20_05'
+2025-08-11 11:26:15,088 - INFO - select pg_catalog.version()
+2025-08-11 11:26:15,089 - INFO - [raw sql] {}
+2025-08-11 11:26:15,090 - INFO - select current_schema()
+2025-08-11 11:26:15,090 - INFO - [raw sql] {}
+2025-08-11 11:26:15,091 - INFO - show standard_conforming_strings
+2025-08-11 11:26:15,091 - INFO - [raw sql] {}
+2025-08-11 11:26:15,092 - INFO - BEGIN (implicit)
+2025-08-11 11:26:15,093 - INFO - DROP SCHEMA IF EXISTS public CASCADE
+2025-08-11 11:26:15,093 - INFO - [generated in 0.00026s] {}
+2025-08-11 11:26:15,104 - INFO - CREATE SCHEMA IF NOT EXISTS public
+2025-08-11 11:26:15,104 - INFO - [generated in 0.00026s] {}
+2025-08-11 11:26:15,106 - INFO - COMMIT
+2025-08-11 11:26:15,156 - INFO - BEGIN (implicit)
+2025-08-11 11:26:15,161 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-08-11 11:26:15,161 - INFO - [generated in 0.00035s] {'table_name': 'categories', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-08-11 11:26:15,165 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-08-11 11:26:15,165 - INFO - [cached since 0.004852s ago] {'table_name': 'users', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-08-11 11:26:15,165 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-08-11 11:26:15,166 - INFO - [cached since 0.005715s ago] {'table_name': 'carts', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-08-11 11:26:15,166 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-08-11 11:26:15,166 - INFO - [cached since 0.006583s ago] {'table_name': 'finally_carts', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-08-11 11:26:15,167 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-08-11 11:26:15,167 - INFO - [cached since 0.007361s ago] {'table_name': 'products', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-08-11 11:26:15,168 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-08-11 11:26:15,168 - INFO - [cached since 0.008626s ago] {'table_name': 'orders', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-08-11 11:26:15,170 - INFO - 
+CREATE TABLE categories (
+	id SERIAL NOT NULL, 
+	category_name VARCHAR(30) NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (category_name)
+)
+
+
+2025-08-11 11:26:15,171 - INFO - [no key 0.00015s] {}
+2025-08-11 11:26:15,183 - INFO - 
+CREATE TABLE users (
+	id SERIAL NOT NULL, 
+	name VARCHAR(50), 
+	telegram BIGINT NOT NULL, 
+	phone VARCHAR, 
+	PRIMARY KEY (id), 
+	UNIQUE (telegram)
+)
+
+
+2025-08-11 11:26:15,183 - INFO - [no key 0.00031s] {}
+2025-08-11 11:26:15,190 - INFO - 
+CREATE TABLE carts (
+	id SERIAL NOT NULL, 
+	total_price DECIMAL(5, 2) NOT NULL, 
+	products INTEGER NOT NULL, 
+	user_id INTEGER NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (user_id), 
+	FOREIGN KEY(user_id) REFERENCES users (id)
+)
+
+
+2025-08-11 11:26:15,191 - INFO - [no key 0.00032s] {}
+2025-08-11 11:26:15,196 - INFO - 
+CREATE TABLE products (
+	id SERIAL NOT NULL, 
+	product_name VARCHAR(50) NOT NULL, 
+	description VARCHAR NOT NULL, 
+	image VARCHAR(255) NOT NULL, 
+	price DECIMAL(5, 2) NOT NULL, 
+	category_id INTEGER NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (product_name), 
+	FOREIGN KEY(category_id) REFERENCES categories (id)
+)
+
+
+2025-08-11 11:26:15,198 - INFO - [no key 0.00029s] {}
+2025-08-11 11:26:15,204 - INFO - 
+CREATE TABLE finally_carts (
+	id SERIAL NOT NULL, 
+	product_name VARCHAR(50) NOT NULL, 
+	finally_price DECIMAL(5, 2) NOT NULL, 
+	quantity INTEGER NOT NULL, 
+	cart_id INTEGER NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(cart_id) REFERENCES carts (id)
+)
+
+
+2025-08-11 11:26:15,204 - INFO - [no key 0.00027s] {}
+2025-08-11 11:26:15,212 - INFO - 
+CREATE TABLE orders (
+	id SERIAL NOT NULL, 
+	cart_id INTEGER NOT NULL, 
+	product_name VARCHAR(50) NOT NULL, 
+	quantity INTEGER NOT NULL, 
+	final_price DECIMAL(6, 2) NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(cart_id) REFERENCES carts (id)
+)
+
+
+2025-08-11 11:26:15,212 - INFO - [no key 0.00029s] {}
+2025-08-11 11:26:15,216 - INFO - COMMIT
+2025-08-11 11:26:15,219 - INFO - BEGIN (implicit)
+2025-08-11 11:26:15,228 - INFO - SELECT categories.id, categories.category_name 
+FROM categories 
+WHERE categories.category_name = %(category_name_1)s
+2025-08-11 11:26:15,230 - INFO - [generated in 0.00033s] {'category_name_1': 'Торты'}
+2025-08-11 11:26:15,235 - INFO - INSERT INTO categories (category_name) VALUES (%(category_name)s) RETURNING categories.id
+2025-08-11 11:26:15,235 - INFO - [generated in 0.00033s] {'category_name': 'Торты'}
+2025-08-11 11:26:15,237 - INFO - SELECT categories.id, categories.category_name 
+FROM categories 
+WHERE categories.category_name = %(category_name_1)s
+2025-08-11 11:26:15,237 - INFO - [cached since 0.008213s ago] {'category_name_1': 'Зефир'}
+2025-08-11 11:26:15,238 - INFO - INSERT INTO categories (category_name) VALUES (%(category_name)s) RETURNING categories.id
+2025-08-11 11:26:15,238 - INFO - [cached since 0.003849s ago] {'category_name': 'Зефир'}
+2025-08-11 11:26:15,239 - INFO - SELECT categories.id, categories.category_name 
+FROM categories 
+WHERE categories.category_name = %(category_name_1)s
+2025-08-11 11:26:15,240 - INFO - [cached since 0.01069s ago] {'category_name_1': 'Пирожные'}
+2025-08-11 11:26:15,240 - INFO - INSERT INTO categories (category_name) VALUES (%(category_name)s) RETURNING categories.id
+2025-08-11 11:26:15,240 - INFO - [cached since 0.005743s ago] {'category_name': 'Пирожные'}
+2025-08-11 11:26:15,243 - INFO - INSERT INTO products (product_name, description, image, price, category_id) SELECT p0::VARCHAR, p1::VARCHAR, p2::VARCHAR, p3::NUMERIC(5, 2), p4::INTEGER FROM (VALUES (%(product_name__0)s, %(description__0)s, %(image__0)s, %(price__0)s, %(category_id_ ... 582 characters truncated ... en(p0, p1, p2, p3, p4, sen_counter) ORDER BY sen_counter RETURNING products.id, products.id AS id__1
+2025-08-11 11:26:15,244 - INFO - [generated in 0.00009s (insertmanyvalues) 1/1 (ordered)] {'description__0': 'Медовые коржи со сметанным или карамельным кремом, ягодным конфи, орехами и сухофруктами', 'category_id__0': 1, 'price__0': 60, 'product_name__0': 'Медовик', 'image__0': 'media/cakes/cake1.jpg', 'description__1': 'Воздушные коржи на сгущённом молоке со сливочным кремом, ягодным конфи', 'category_id__1': 1, 'price__1': 60, 'product_name__1': 'Молочная девочка', 'image__1': 'media/cakes/cake2.jpg', 'description__2': 'Шоколадный бисквит со сливочно-творожном кремом и ягодным конфи', 'category_id__2': 1, 'price__2': 60, 'product_name__2': 'Красный бархат', 'image__2': 'media/cakes/cake3.jpg', 'description__3': 'Нежнейший цветочный зефир, таящий во рту из фруктово-ягодной начинки', 'category_id__3': 2, 'price__3': 30, 'product_name__3': 'Фруктово-ягодный', 'image__3': 'media/marshmallows/marshmallow1.jpg', 'description__4': 'Нежнейший цветочный зефир, таящий во рту со вкусом кокоса', 'category_id__4': 2, 'price__4': 30, 'product_name__4': 'Кокосовый', 'image__4': 'media/marshmallows/marshmallow2.jpg', 'description__5': 'Воздушное медовое тесто с различным декором', 'category_id__5': 3, 'price__5': 35, 'product_name__5': 'Медовый', 'image__5': 'media/pies/pie1.jpg', 'description__6': 'Воздушное вишнево-шоколадное тесто с различным декором', 'category_id__6': 3, 'price__6': 35, 'product_name__6': 'Вишня-шоколад', 'image__6': 'media/pies/pie2.jpg'}
+2025-08-11 11:26:15,250 - INFO - COMMIT
+2025-08-11 11:26:15,482 - INFO - Scheduler started
+2025-08-11 11:26:15,482 - INFO - Планировщик запущен.
+2025-08-11 11:26:15,482 - INFO - Start polling
+2025-08-11 11:26:15,887 - INFO - Run polling for bot @Yummy20_05_bot id=8008057895 - 'Yummy20_05'
+2025-08-11 11:26:16,505 - INFO - Update id=269744299 is handled. Duration 500 ms by bot id=8008057895
+2025-08-11 11:26:19,367 - INFO - BEGIN (implicit)
+2025-08-11 11:26:19,368 - INFO - SELECT categories.id, categories.category_name 
+FROM categories
+2025-08-11 11:26:19,368 - INFO - [generated in 0.00022s] {}
+2025-08-11 11:26:19,370 - INFO - ROLLBACK
+2025-08-11 11:26:19,371 - INFO - BEGIN (implicit)
+2025-08-11 11:26:19,373 - INFO - SELECT sum(finally_carts.finally_price) AS sum_1 
+FROM carts JOIN finally_carts ON carts.id = finally_carts.cart_id JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-11 11:26:19,373 - INFO - [generated in 0.00019s] {'telegram_1': 915010491}
+2025-08-11 11:26:19,379 - INFO - ROLLBACK
+2025-08-11 11:26:19,487 - INFO - Update id=269744300 is handled. Duration 311 ms by bot id=8008057895
+2025-08-11 11:26:23,448 - INFO - Polling stopped
+2025-08-11 11:26:23,448 - INFO - Polling stopped for bot @Yummy20_05_bot id=8008057895 - 'Yummy20_05'
+2025-08-13 09:24:16,739 - INFO - select pg_catalog.version()
+2025-08-13 09:24:16,740 - INFO - [raw sql] {}
+2025-08-13 09:24:16,743 - INFO - select current_schema()
+2025-08-13 09:24:16,744 - INFO - [raw sql] {}
+2025-08-13 09:24:16,746 - INFO - show standard_conforming_strings
+2025-08-13 09:24:16,746 - INFO - [raw sql] {}
+2025-08-13 09:24:16,747 - INFO - BEGIN (implicit)
+2025-08-13 09:24:16,747 - INFO - DROP SCHEMA IF EXISTS public CASCADE
+2025-08-13 09:24:16,748 - INFO - [generated in 0.00060s] {}
+2025-08-13 09:24:16,777 - INFO - CREATE SCHEMA IF NOT EXISTS public
+2025-08-13 09:24:16,777 - INFO - [generated in 0.00030s] {}
+2025-08-13 09:24:16,780 - INFO - COMMIT
+2025-08-13 09:24:16,801 - INFO - BEGIN (implicit)
+2025-08-13 09:24:16,805 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-08-13 09:24:16,805 - INFO - [generated in 0.00045s] {'table_name': 'categories', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-08-13 09:24:16,810 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-08-13 09:24:16,810 - INFO - [cached since 0.006378s ago] {'table_name': 'users', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-08-13 09:24:16,812 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-08-13 09:24:16,812 - INFO - [cached since 0.007251s ago] {'table_name': 'carts', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-08-13 09:24:16,813 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-08-13 09:24:16,813 - INFO - [cached since 0.007905s ago] {'table_name': 'finally_carts', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-08-13 09:24:16,813 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-08-13 09:24:16,814 - INFO - [cached since 0.00855s ago] {'table_name': 'products', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-08-13 09:24:16,814 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-08-13 09:24:16,814 - INFO - [cached since 0.009293s ago] {'table_name': 'orders', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-08-13 09:24:16,815 - INFO - 
+CREATE TABLE categories (
+	id SERIAL NOT NULL, 
+	category_name VARCHAR(30) NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (category_name)
+)
+
+
+2025-08-13 09:24:16,816 - INFO - [no key 0.00016s] {}
+2025-08-13 09:24:16,839 - INFO - 
+CREATE TABLE users (
+	id SERIAL NOT NULL, 
+	name VARCHAR(50), 
+	telegram BIGINT NOT NULL, 
+	phone VARCHAR, 
+	PRIMARY KEY (id), 
+	UNIQUE (telegram)
+)
+
+
+2025-08-13 09:24:16,840 - INFO - [no key 0.00055s] {}
+2025-08-13 09:24:16,848 - INFO - 
+CREATE TABLE carts (
+	id SERIAL NOT NULL, 
+	total_price DECIMAL(5, 2) NOT NULL, 
+	products INTEGER NOT NULL, 
+	user_id INTEGER NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (user_id), 
+	FOREIGN KEY(user_id) REFERENCES users (id)
+)
+
+
+2025-08-13 09:24:16,848 - INFO - [no key 0.00025s] {}
+2025-08-13 09:24:16,856 - INFO - 
+CREATE TABLE products (
+	id SERIAL NOT NULL, 
+	product_name VARCHAR(50) NOT NULL, 
+	description VARCHAR NOT NULL, 
+	image VARCHAR(255) NOT NULL, 
+	price DECIMAL(5, 2) NOT NULL, 
+	category_id INTEGER NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (product_name), 
+	FOREIGN KEY(category_id) REFERENCES categories (id)
+)
+
+
+2025-08-13 09:24:16,856 - INFO - [no key 0.00027s] {}
+2025-08-13 09:24:16,863 - INFO - 
+CREATE TABLE finally_carts (
+	id SERIAL NOT NULL, 
+	product_name VARCHAR(50) NOT NULL, 
+	finally_price DECIMAL(5, 2) NOT NULL, 
+	quantity INTEGER NOT NULL, 
+	cart_id INTEGER NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(cart_id) REFERENCES carts (id)
+)
+
+
+2025-08-13 09:24:16,863 - INFO - [no key 0.00027s] {}
+2025-08-13 09:24:16,867 - INFO - 
+CREATE TABLE orders (
+	id SERIAL NOT NULL, 
+	cart_id INTEGER NOT NULL, 
+	product_name VARCHAR(50) NOT NULL, 
+	quantity INTEGER NOT NULL, 
+	final_price DECIMAL(6, 2) NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(cart_id) REFERENCES carts (id)
+)
+
+
+2025-08-13 09:24:16,868 - INFO - [no key 0.00032s] {}
+2025-08-13 09:24:16,871 - INFO - COMMIT
+2025-08-13 09:24:16,873 - INFO - BEGIN (implicit)
+2025-08-13 09:24:16,883 - INFO - SELECT categories.id, categories.category_name 
+FROM categories 
+WHERE categories.category_name = %(category_name_1)s
+2025-08-13 09:24:16,884 - INFO - [generated in 0.00024s] {'category_name_1': 'Торты'}
+2025-08-13 09:24:16,891 - INFO - INSERT INTO categories (category_name) VALUES (%(category_name)s) RETURNING categories.id
+2025-08-13 09:24:16,891 - INFO - [generated in 0.00028s] {'category_name': 'Торты'}
+2025-08-13 09:24:16,894 - INFO - SELECT categories.id, categories.category_name 
+FROM categories 
+WHERE categories.category_name = %(category_name_1)s
+2025-08-13 09:24:16,894 - INFO - [cached since 0.01101s ago] {'category_name_1': 'Зефир'}
+2025-08-13 09:24:16,895 - INFO - INSERT INTO categories (category_name) VALUES (%(category_name)s) RETURNING categories.id
+2025-08-13 09:24:16,895 - INFO - [cached since 0.004725s ago] {'category_name': 'Зефир'}
+2025-08-13 09:24:16,896 - INFO - SELECT categories.id, categories.category_name 
+FROM categories 
+WHERE categories.category_name = %(category_name_1)s
+2025-08-13 09:24:16,896 - INFO - [cached since 0.01302s ago] {'category_name_1': 'Пирожные'}
+2025-08-13 09:24:16,896 - INFO - INSERT INTO categories (category_name) VALUES (%(category_name)s) RETURNING categories.id
+2025-08-13 09:24:16,897 - INFO - [cached since 0.006343s ago] {'category_name': 'Пирожные'}
+2025-08-13 09:24:16,899 - INFO - INSERT INTO products (product_name, description, image, price, category_id) SELECT p0::VARCHAR, p1::VARCHAR, p2::VARCHAR, p3::NUMERIC(5, 2), p4::INTEGER FROM (VALUES (%(product_name__0)s, %(description__0)s, %(image__0)s, %(price__0)s, %(category_id_ ... 582 characters truncated ... en(p0, p1, p2, p3, p4, sen_counter) ORDER BY sen_counter RETURNING products.id, products.id AS id__1
+2025-08-13 09:24:16,899 - INFO - [generated in 0.00008s (insertmanyvalues) 1/1 (ordered)] {'product_name__0': 'Медовик', 'description__0': 'Медовые коржи со сметанным или карамельным кремом, ягодным конфи, орехами и сухофруктами', 'price__0': 60, 'category_id__0': 1, 'image__0': 'media/cakes/cake1.jpg', 'product_name__1': 'Молочная девочка', 'description__1': 'Воздушные коржи на сгущённом молоке со сливочным кремом, ягодным конфи', 'price__1': 60, 'category_id__1': 1, 'image__1': 'media/cakes/cake2.jpg', 'product_name__2': 'Красный бархат', 'description__2': 'Шоколадный бисквит со сливочно-творожном кремом и ягодным конфи', 'price__2': 60, 'category_id__2': 1, 'image__2': 'media/cakes/cake3.jpg', 'product_name__3': 'Фруктово-ягодный', 'description__3': 'Нежнейший цветочный зефир, таящий во рту из фруктово-ягодной начинки', 'price__3': 30, 'category_id__3': 2, 'image__3': 'media/marshmallows/marshmallow1.jpg', 'product_name__4': 'Кокосовый', 'description__4': 'Нежнейший цветочный зефир, таящий во рту со вкусом кокоса', 'price__4': 30, 'category_id__4': 2, 'image__4': 'media/marshmallows/marshmallow2.jpg', 'product_name__5': 'Медовый', 'description__5': 'Воздушное медовое тесто с различным декором', 'price__5': 35, 'category_id__5': 3, 'image__5': 'media/pies/pie1.jpg', 'product_name__6': 'Вишня-шоколад', 'description__6': 'Воздушное вишнево-шоколадное тесто с различным декором', 'price__6': 35, 'category_id__6': 3, 'image__6': 'media/pies/pie2.jpg'}
+2025-08-13 09:24:16,906 - INFO - COMMIT
+2025-08-13 09:24:17,019 - INFO - Scheduler started
+2025-08-13 09:24:17,020 - INFO - Планировщик запущен.
+2025-08-13 09:24:17,020 - INFO - Start polling
+2025-08-13 09:24:17,539 - INFO - Run polling for bot @Yummy20_05_bot id=8008057895 - 'Yummy20_05'
+2025-08-13 09:24:23,908 - INFO - Update id=269744301 is handled. Duration 515 ms by bot id=8008057895
+2025-08-13 09:24:28,196 - INFO - BEGIN (implicit)
+2025-08-13 09:24:28,197 - INFO - SELECT users.id, users.name, users.telegram, users.phone 
+FROM users 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 09:24:28,197 - INFO - [generated in 0.00025s] {'telegram_1': 915010491}
+2025-08-13 09:24:28,202 - INFO - ROLLBACK
+2025-08-13 09:24:28,810 - INFO - Update id=269744302 is handled. Duration 608 ms by bot id=8008057895
+2025-08-13 09:26:56,625 - INFO - Polling stopped
+2025-08-13 09:26:56,625 - INFO - Polling stopped for bot @Yummy20_05_bot id=8008057895 - 'Yummy20_05'
+2025-08-13 09:33:05,392 - INFO - Scheduler started
+2025-08-13 09:33:05,392 - INFO - Планировщик запущен.
+2025-08-13 09:33:05,392 - INFO - Start polling
+2025-08-13 09:33:05,571 - INFO - Run polling for bot @Yummy20_05_bot id=8008057895 - 'Yummy20_05'
+2025-08-13 09:33:09,413 - INFO - select pg_catalog.version()
+2025-08-13 09:33:09,413 - INFO - [raw sql] {}
+2025-08-13 09:33:09,413 - INFO - select current_schema()
+2025-08-13 09:33:09,415 - INFO - [raw sql] {}
+2025-08-13 09:33:09,415 - INFO - show standard_conforming_strings
+2025-08-13 09:33:09,415 - INFO - [raw sql] {}
+2025-08-13 09:33:09,416 - INFO - BEGIN (implicit)
+2025-08-13 09:33:09,425 - INFO - SELECT users.id, users.name, users.telegram, users.phone 
+FROM users 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 09:33:09,425 - INFO - [generated in 0.00028s] {'telegram_1': 915010491}
+2025-08-13 09:33:09,428 - INFO - ROLLBACK
+2025-08-13 09:33:09,765 - INFO - Update id=269744303 is handled. Duration 437 ms by bot id=8008057895
+2025-08-13 09:33:16,917 - INFO - BEGIN (implicit)
+2025-08-13 09:33:16,919 - INFO - INSERT INTO users (name, telegram, phone) VALUES (%(name)s, %(telegram)s, %(phone)s) RETURNING users.id
+2025-08-13 09:33:16,919 - INFO - [generated in 0.00023s] {'name': 'Евгений', 'telegram': 915010491, 'phone': None}
+2025-08-13 09:33:16,921 - INFO - COMMIT
+2025-08-13 09:33:16,948 - INFO - BEGIN (implicit)
+2025-08-13 09:33:16,950 - INFO - SELECT users.id, users.name, users.telegram, users.phone 
+FROM users 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 09:33:16,950 - INFO - [cached since 7.525s ago] {'telegram_1': 915010491}
+2025-08-13 09:33:16,953 - INFO - INSERT INTO carts (total_price, products, user_id) VALUES (%(total_price)s, %(products)s, %(user_id)s) RETURNING carts.id
+2025-08-13 09:33:16,955 - INFO - [generated in 0.00038s] {'total_price': 0, 'products': 0, 'user_id': 1}
+2025-08-13 09:33:16,958 - INFO - COMMIT
+2025-08-13 09:33:17,188 - INFO - Update id=269744304 is handled. Duration 265 ms by bot id=8008057895
+2025-08-13 09:33:25,470 - INFO - BEGIN (implicit)
+2025-08-13 09:33:25,473 - INFO - SELECT categories.id, categories.category_name 
+FROM categories
+2025-08-13 09:33:25,473 - INFO - [generated in 0.00028s] {}
+2025-08-13 09:33:25,491 - INFO - ROLLBACK
+2025-08-13 09:33:25,493 - INFO - BEGIN (implicit)
+2025-08-13 09:33:25,495 - INFO - SELECT sum(finally_carts.finally_price) AS sum_1 
+FROM carts JOIN finally_carts ON carts.id = finally_carts.cart_id JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 09:33:25,495 - INFO - [generated in 0.00021s] {'telegram_1': 915010491}
+2025-08-13 09:33:25,503 - INFO - ROLLBACK
+2025-08-13 09:33:25,612 - INFO - Update id=269744305 is handled. Duration 219 ms by bot id=8008057895
+2025-08-13 09:33:26,320 - INFO - BEGIN (implicit)
+2025-08-13 09:33:26,322 - INFO - SELECT products.id, products.product_name, products.description, products.image, products.price, products.category_id 
+FROM products 
+WHERE products.category_id = %(category_id_1)s
+2025-08-13 09:33:26,322 - INFO - [generated in 0.00024s] {'category_id_1': 1}
+2025-08-13 09:33:26,441 - INFO - Update id=269744306 is handled. Duration 109 ms by bot id=8008057895
+2025-08-13 09:33:27,881 - INFO - BEGIN (implicit)
+2025-08-13 09:33:27,883 - INFO - SELECT products.id, products.product_name, products.description, products.image, products.price, products.category_id 
+FROM products 
+WHERE products.id = %(id_1)s
+2025-08-13 09:33:27,883 - INFO - [generated in 0.00020s] {'id_1': 1}
+2025-08-13 09:33:27,887 - INFO - ROLLBACK
+2025-08-13 09:33:27,888 - INFO - BEGIN (implicit)
+2025-08-13 09:33:27,890 - INFO - SELECT carts.id, carts.total_price, carts.products, carts.user_id 
+FROM carts JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 09:33:27,890 - INFO - [generated in 0.00024s] {'telegram_1': 915010491}
+2025-08-13 09:33:27,895 - INFO - ROLLBACK
+2025-08-13 09:33:27,897 - INFO - BEGIN (implicit)
+2025-08-13 09:33:27,898 - INFO - UPDATE carts SET total_price=%(total_price)s, products=%(products)s WHERE carts.id = %(id_1)s
+2025-08-13 09:33:27,898 - INFO - [generated in 0.00020s] {'total_price': Decimal('60.00'), 'products': 1, 'id_1': 1}
+2025-08-13 09:33:27,928 - INFO - COMMIT
+2025-08-13 09:33:28,456 - INFO - Update id=269744307 is handled. Duration 827 ms by bot id=8008057895
+2025-08-13 09:33:29,208 - INFO - BEGIN (implicit)
+2025-08-13 09:33:29,209 - INFO - SELECT carts.id, carts.total_price, carts.products, carts.user_id 
+FROM carts JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 09:33:29,209 - INFO - [cached since 1.318s ago] {'telegram_1': 915010491}
+2025-08-13 09:33:29,210 - INFO - ROLLBACK
+2025-08-13 09:33:29,267 - INFO - BEGIN (implicit)
+2025-08-13 09:33:29,269 - INFO - SELECT finally_carts.id AS finally_carts_id, finally_carts.product_name AS finally_carts_product_name, finally_carts.finally_price AS finally_carts_finally_price, finally_carts.quantity AS finally_carts_quantity, finally_carts.cart_id AS finally_carts_cart_id 
+FROM finally_carts 
+WHERE finally_carts.cart_id = %(cart_id_1)s AND finally_carts.product_name = %(product_name_1)s 
+ LIMIT %(param_1)s
+2025-08-13 09:33:29,270 - INFO - [generated in 0.00042s] {'cart_id_1': 1, 'product_name_1': 'Медовик', 'param_1': 1}
+2025-08-13 09:33:29,276 - INFO - INSERT INTO finally_carts (product_name, finally_price, quantity, cart_id) VALUES (%(product_name)s, %(finally_price)s, %(quantity)s, %(cart_id)s) RETURNING finally_carts.id
+2025-08-13 09:33:29,277 - INFO - [generated in 0.00039s] {'product_name': 'Медовик', 'finally_price': Decimal('60.00'), 'quantity': 1, 'cart_id': 1}
+2025-08-13 09:33:29,279 - INFO - COMMIT
+2025-08-13 09:33:29,586 - INFO - BEGIN (implicit)
+2025-08-13 09:33:29,587 - INFO - SELECT categories.id, categories.category_name 
+FROM categories
+2025-08-13 09:33:29,587 - INFO - [cached since 4.114s ago] {}
+2025-08-13 09:33:29,590 - INFO - ROLLBACK
+2025-08-13 09:33:29,592 - INFO - BEGIN (implicit)
+2025-08-13 09:33:29,593 - INFO - SELECT sum(finally_carts.finally_price) AS sum_1 
+FROM carts JOIN finally_carts ON carts.id = finally_carts.cart_id JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 09:33:29,593 - INFO - [cached since 4.098s ago] {'telegram_1': 915010491}
+2025-08-13 09:33:29,595 - INFO - ROLLBACK
+2025-08-13 09:33:29,701 - INFO - Update id=269744308 is handled. Duration 500 ms by bot id=8008057895
+2025-08-13 09:33:30,945 - INFO - BEGIN (implicit)
+2025-08-13 09:33:30,949 - INFO - SELECT finally_carts.id, finally_carts.product_name, finally_carts.finally_price, finally_carts.quantity, finally_carts.cart_id 
+FROM finally_carts JOIN carts ON finally_carts.cart_id = carts.id JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 09:33:30,949 - INFO - [generated in 0.00056s] {'telegram_1': 915010491}
+2025-08-13 09:33:30,951 - INFO - ROLLBACK
+2025-08-13 09:33:31,097 - INFO - Update id=269744309 is handled. Duration 156 ms by bot id=8008057895
+2025-08-13 09:33:32,626 - INFO - BEGIN (implicit)
+2025-08-13 09:33:32,627 - INFO - SELECT users.phone 
+FROM users 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 09:33:32,627 - INFO - [generated in 0.00023s] {'telegram_1': 915010491}
+2025-08-13 09:33:32,630 - INFO - ROLLBACK
+2025-08-13 09:33:32,630 - INFO - BEGIN (implicit)
+2025-08-13 09:33:32,631 - INFO - SELECT finally_carts.product_name, finally_carts.quantity, finally_carts.finally_price, finally_carts.cart_id 
+FROM finally_carts JOIN carts ON carts.id = finally_carts.cart_id JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 09:33:32,631 - INFO - [generated in 0.00025s] {'telegram_1': 915010491}
+2025-08-13 09:33:32,633 - INFO - ROLLBACK
+2025-08-13 09:33:32,712 - INFO - BEGIN (implicit)
+2025-08-13 09:33:32,712 - INFO - SELECT carts.id, carts.total_price, carts.products, carts.user_id 
+FROM carts JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 09:33:32,712 - INFO - [cached since 4.822s ago] {'telegram_1': 915010491}
+2025-08-13 09:33:32,714 - INFO - ROLLBACK
+2025-08-13 09:33:32,715 - INFO - BEGIN (implicit)
+2025-08-13 09:33:32,716 - INFO - SELECT finally_carts.id AS finally_carts_id, finally_carts.product_name AS finally_carts_product_name, finally_carts.finally_price AS finally_carts_finally_price, finally_carts.quantity AS finally_carts_quantity, finally_carts.cart_id AS finally_carts_cart_id 
+FROM finally_carts 
+WHERE finally_carts.cart_id = %(cart_id_1)s
+2025-08-13 09:33:32,716 - INFO - [generated in 0.00026s] {'cart_id_1': 1}
+2025-08-13 09:33:32,719 - INFO - INSERT INTO orders (cart_id, product_name, quantity, final_price) VALUES (%(cart_id)s, %(product_name)s, %(quantity)s, %(final_price)s) RETURNING orders.id
+2025-08-13 09:33:32,719 - INFO - [generated in 0.00028s] {'cart_id': 1, 'product_name': 'Медовик', 'quantity': 1, 'final_price': Decimal('60.00')}
+2025-08-13 09:33:32,723 - INFO - COMMIT
+2025-08-13 09:33:32,753 - INFO - Added job "manage_scheduler" to job store "default"
+2025-08-13 09:33:32,753 - INFO - Напоминание для заказа 1 запланировано на 2025-08-13 09:33:42.746523
+2025-08-13 09:33:32,754 - INFO - BEGIN (implicit)
+2025-08-13 09:33:32,754 - INFO - SELECT carts.id, carts.total_price, carts.products, carts.user_id 
+FROM carts JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 09:33:32,754 - INFO - [cached since 4.863s ago] {'telegram_1': 915010491}
+2025-08-13 09:33:32,755 - INFO - ROLLBACK
+2025-08-13 09:33:32,756 - INFO - BEGIN (implicit)
+2025-08-13 09:33:32,757 - INFO - DELETE FROM finally_carts WHERE finally_carts.cart_id = %(cart_id_1)s
+2025-08-13 09:33:32,757 - INFO - [generated in 0.00024s] {'cart_id_1': 1}
+2025-08-13 09:33:32,758 - INFO - COMMIT
+2025-08-13 09:33:32,937 - INFO - Update id=269744310 is handled. Duration 312 ms by bot id=8008057895
+2025-08-13 09:33:42,777 - INFO - Removed job reminder_1
+2025-08-13 09:33:42,779 - INFO - Running job "manage_scheduler (trigger: date[2025-08-13 09:33:42 +03], next run at: 2025-08-13 09:33:42 +03)" (scheduled at 2025-08-13 09:33:42.746523+03:00)
+2025-08-13 09:33:42,790 - INFO - BEGIN (implicit)
+2025-08-13 09:33:42,791 - INFO - SELECT sum(orders.final_price) AS sum_1 
+FROM orders 
+WHERE orders.cart_id = %(cart_id_1)s
+2025-08-13 09:33:42,791 - INFO - [generated in 0.00022s] {'cart_id_1': 1}
+2025-08-13 09:33:42,793 - INFO - SELECT users.id AS users_id, users.name AS users_name, users.telegram AS users_telegram, users.phone AS users_phone 
+FROM users JOIN carts ON users.id = carts.user_id 
+WHERE carts.id = %(id_1)s 
+ LIMIT %(param_1)s
+2025-08-13 09:33:42,793 - INFO - [generated in 0.00020s] {'id_1': 1, 'param_1': 1}
+2025-08-13 09:33:42,795 - INFO - ROLLBACK
+2025-08-13 09:33:43,286 - INFO - Напоминание менеджеру отправлено
+2025-08-13 09:33:43,288 - INFO - Job "manage_scheduler (trigger: date[2025-08-13 09:33:42 +03], next run at: 2025-08-13 09:33:42 +03)" executed successfully
+2025-08-13 09:35:31,262 - INFO - Update id=269744311 is handled. Duration 280 ms by bot id=8008057895
+2025-08-13 09:35:32,483 - INFO - BEGIN (implicit)
+2025-08-13 09:35:32,483 - INFO - SELECT categories.id, categories.category_name 
+FROM categories
+2025-08-13 09:35:32,483 - INFO - [cached since 127s ago] {}
+2025-08-13 09:35:32,486 - INFO - ROLLBACK
+2025-08-13 09:35:32,488 - INFO - BEGIN (implicit)
+2025-08-13 09:35:32,488 - INFO - SELECT sum(finally_carts.finally_price) AS sum_1 
+FROM carts JOIN finally_carts ON carts.id = finally_carts.cart_id JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 09:35:32,488 - INFO - [cached since 127s ago] {'telegram_1': 915010491}
+2025-08-13 09:35:32,492 - INFO - ROLLBACK
+2025-08-13 09:35:32,579 - INFO - Update id=269744312 is handled. Duration 202 ms by bot id=8008057895
+2025-08-13 09:35:34,454 - INFO - BEGIN (implicit)
+2025-08-13 09:35:34,454 - INFO - SELECT products.id, products.product_name, products.description, products.image, products.price, products.category_id 
+FROM products 
+WHERE products.category_id = %(category_id_1)s
+2025-08-13 09:35:34,454 - INFO - [cached since 128.1s ago] {'category_id_1': 3}
+2025-08-13 09:35:34,546 - INFO - Update id=269744313 is handled. Duration 94 ms by bot id=8008057895
+2025-08-13 09:37:45,103 - INFO - BEGIN (implicit)
+2025-08-13 09:37:45,103 - INFO - SELECT products.id, products.product_name, products.description, products.image, products.price, products.category_id 
+FROM products 
+WHERE products.id = %(id_1)s
+2025-08-13 09:37:45,103 - INFO - [cached since 257.2s ago] {'id_1': 7}
+2025-08-13 09:37:45,107 - INFO - ROLLBACK
+2025-08-13 09:37:45,108 - INFO - BEGIN (implicit)
+2025-08-13 09:37:45,108 - INFO - SELECT carts.id, carts.total_price, carts.products, carts.user_id 
+FROM carts JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 09:37:45,109 - INFO - [cached since 257.2s ago] {'telegram_1': 915010491}
+2025-08-13 09:37:45,114 - INFO - ROLLBACK
+2025-08-13 09:37:45,115 - INFO - BEGIN (implicit)
+2025-08-13 09:37:45,115 - INFO - UPDATE carts SET total_price=%(total_price)s, products=%(products)s WHERE carts.id = %(id_1)s
+2025-08-13 09:37:45,115 - INFO - [cached since 257.2s ago] {'total_price': Decimal('35.00'), 'products': 1, 'id_1': 1}
+2025-08-13 09:37:45,117 - INFO - COMMIT
+2025-08-13 09:37:45,429 - INFO - Update id=269744314 is handled. Duration 593 ms by bot id=8008057895
+2025-08-13 09:37:48,409 - INFO - BEGIN (implicit)
+2025-08-13 09:37:48,410 - INFO - SELECT carts.id, carts.total_price, carts.products, carts.user_id 
+FROM carts JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 09:37:48,410 - INFO - [cached since 260.5s ago] {'telegram_1': 915010491}
+2025-08-13 09:37:48,412 - INFO - ROLLBACK
+2025-08-13 09:37:48,611 - INFO - BEGIN (implicit)
+2025-08-13 09:37:48,611 - INFO - SELECT finally_carts.id AS finally_carts_id, finally_carts.product_name AS finally_carts_product_name, finally_carts.finally_price AS finally_carts_finally_price, finally_carts.quantity AS finally_carts_quantity, finally_carts.cart_id AS finally_carts_cart_id 
+FROM finally_carts 
+WHERE finally_carts.cart_id = %(cart_id_1)s AND finally_carts.product_name = %(product_name_1)s 
+ LIMIT %(param_1)s
+2025-08-13 09:37:48,611 - INFO - [cached since 259.3s ago] {'cart_id_1': 1, 'product_name_1': 'Вишня-шоколад', 'param_1': 1}
+2025-08-13 09:37:48,612 - INFO - INSERT INTO finally_carts (product_name, finally_price, quantity, cart_id) VALUES (%(product_name)s, %(finally_price)s, %(quantity)s, %(cart_id)s) RETURNING finally_carts.id
+2025-08-13 09:37:48,613 - INFO - [cached since 259.3s ago] {'product_name': 'Вишня-шоколад', 'finally_price': Decimal('35.00'), 'quantity': 1, 'cart_id': 1}
+2025-08-13 09:37:48,614 - INFO - COMMIT
+2025-08-13 09:37:49,271 - INFO - BEGIN (implicit)
+2025-08-13 09:37:49,272 - INFO - SELECT categories.id, categories.category_name 
+FROM categories
+2025-08-13 09:37:49,272 - INFO - [cached since 263.8s ago] {}
+2025-08-13 09:37:49,275 - INFO - ROLLBACK
+2025-08-13 09:37:49,276 - INFO - BEGIN (implicit)
+2025-08-13 09:37:49,277 - INFO - SELECT sum(finally_carts.finally_price) AS sum_1 
+FROM carts JOIN finally_carts ON carts.id = finally_carts.cart_id JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 09:37:49,277 - INFO - [cached since 263.8s ago] {'telegram_1': 915010491}
+2025-08-13 09:37:49,278 - INFO - ROLLBACK
+2025-08-13 09:37:49,413 - INFO - Update id=269744315 is handled. Duration 1016 ms by bot id=8008057895
+2025-08-13 09:37:51,435 - INFO - BEGIN (implicit)
+2025-08-13 09:37:51,435 - INFO - SELECT products.id, products.product_name, products.description, products.image, products.price, products.category_id 
+FROM products 
+WHERE products.category_id = %(category_id_1)s
+2025-08-13 09:37:51,436 - INFO - [cached since 265.1s ago] {'category_id_1': 3}
+2025-08-13 09:37:51,552 - INFO - Update id=269744316 is handled. Duration 109 ms by bot id=8008057895
+2025-08-13 09:37:53,007 - INFO - BEGIN (implicit)
+2025-08-13 09:37:53,009 - INFO - SELECT categories.id, categories.category_name 
+FROM categories
+2025-08-13 09:37:53,009 - INFO - [cached since 267.5s ago] {}
+2025-08-13 09:37:53,010 - INFO - ROLLBACK
+2025-08-13 09:37:53,011 - INFO - BEGIN (implicit)
+2025-08-13 09:37:53,011 - INFO - SELECT sum(finally_carts.finally_price) AS sum_1 
+FROM carts JOIN finally_carts ON carts.id = finally_carts.cart_id JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 09:37:53,011 - INFO - [cached since 267.5s ago] {'telegram_1': 915010491}
+2025-08-13 09:37:53,012 - INFO - ROLLBACK
+2025-08-13 09:37:53,094 - INFO - Update id=269744317 is handled. Duration 78 ms by bot id=8008057895
+2025-08-13 09:37:54,089 - INFO - BEGIN (implicit)
+2025-08-13 09:37:54,089 - INFO - SELECT products.id, products.product_name, products.description, products.image, products.price, products.category_id 
+FROM products 
+WHERE products.category_id = %(category_id_1)s
+2025-08-13 09:37:54,089 - INFO - [cached since 267.8s ago] {'category_id_1': 2}
+2025-08-13 09:37:54,175 - INFO - Update id=269744318 is handled. Duration 77 ms by bot id=8008057895
+2025-08-13 09:37:55,644 - INFO - BEGIN (implicit)
+2025-08-13 09:37:55,644 - INFO - SELECT products.id, products.product_name, products.description, products.image, products.price, products.category_id 
+FROM products 
+WHERE products.id = %(id_1)s
+2025-08-13 09:37:55,644 - INFO - [cached since 267.8s ago] {'id_1': 4}
+2025-08-13 09:37:55,646 - INFO - ROLLBACK
+2025-08-13 09:37:55,646 - INFO - BEGIN (implicit)
+2025-08-13 09:37:55,647 - INFO - SELECT carts.id, carts.total_price, carts.products, carts.user_id 
+FROM carts JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 09:37:55,647 - INFO - [cached since 267.8s ago] {'telegram_1': 915010491}
+2025-08-13 09:37:55,649 - INFO - ROLLBACK
+2025-08-13 09:37:55,650 - INFO - BEGIN (implicit)
+2025-08-13 09:37:55,651 - INFO - UPDATE carts SET total_price=%(total_price)s, products=%(products)s WHERE carts.id = %(id_1)s
+2025-08-13 09:37:55,651 - INFO - [cached since 267.8s ago] {'total_price': Decimal('30.00'), 'products': 1, 'id_1': 1}
+2025-08-13 09:37:55,651 - INFO - COMMIT
+2025-08-13 09:37:56,104 - INFO - Update id=269744319 is handled. Duration 531 ms by bot id=8008057895
+2025-08-13 09:37:58,234 - INFO - BEGIN (implicit)
+2025-08-13 09:37:58,235 - INFO - SELECT carts.id, carts.total_price, carts.products, carts.user_id 
+FROM carts JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 09:37:58,235 - INFO - [cached since 270.3s ago] {'telegram_1': 915010491}
+2025-08-13 09:37:58,237 - INFO - ROLLBACK
+2025-08-13 09:37:58,330 - INFO - BEGIN (implicit)
+2025-08-13 09:37:58,330 - INFO - SELECT finally_carts.id AS finally_carts_id, finally_carts.product_name AS finally_carts_product_name, finally_carts.finally_price AS finally_carts_finally_price, finally_carts.quantity AS finally_carts_quantity, finally_carts.cart_id AS finally_carts_cart_id 
+FROM finally_carts 
+WHERE finally_carts.cart_id = %(cart_id_1)s AND finally_carts.product_name = %(product_name_1)s 
+ LIMIT %(param_1)s
+2025-08-13 09:37:58,330 - INFO - [cached since 269.1s ago] {'cart_id_1': 1, 'product_name_1': 'Фруктово-ягодный', 'param_1': 1}
+2025-08-13 09:37:58,336 - INFO - INSERT INTO finally_carts (product_name, finally_price, quantity, cart_id) VALUES (%(product_name)s, %(finally_price)s, %(quantity)s, %(cart_id)s) RETURNING finally_carts.id
+2025-08-13 09:37:58,336 - INFO - [cached since 269.1s ago] {'product_name': 'Фруктово-ягодный', 'finally_price': Decimal('30.00'), 'quantity': 1, 'cart_id': 1}
+2025-08-13 09:37:58,337 - INFO - COMMIT
+2025-08-13 09:37:58,650 - INFO - BEGIN (implicit)
+2025-08-13 09:37:58,651 - INFO - SELECT categories.id, categories.category_name 
+FROM categories
+2025-08-13 09:37:58,651 - INFO - [cached since 273.2s ago] {}
+2025-08-13 09:37:58,652 - INFO - ROLLBACK
+2025-08-13 09:37:58,654 - INFO - BEGIN (implicit)
+2025-08-13 09:37:58,654 - INFO - SELECT sum(finally_carts.finally_price) AS sum_1 
+FROM carts JOIN finally_carts ON carts.id = finally_carts.cart_id JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 09:37:58,654 - INFO - [cached since 273.2s ago] {'telegram_1': 915010491}
+2025-08-13 09:37:58,655 - INFO - ROLLBACK
+2025-08-13 09:37:58,787 - INFO - Update id=269744320 is handled. Duration 546 ms by bot id=8008057895
+2025-08-13 09:39:01,397 - INFO - BEGIN (implicit)
+2025-08-13 09:39:01,398 - INFO - SELECT finally_carts.id, finally_carts.product_name, finally_carts.finally_price, finally_carts.quantity, finally_carts.cart_id 
+FROM finally_carts JOIN carts ON finally_carts.cart_id = carts.id JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 09:39:01,398 - INFO - [cached since 330.4s ago] {'telegram_1': 915010491}
+2025-08-13 09:39:01,399 - INFO - ROLLBACK
+2025-08-13 09:39:01,535 - INFO - Update id=269744321 is handled. Duration 140 ms by bot id=8008057895
+2025-08-13 09:39:02,799 - INFO - BEGIN (implicit)
+2025-08-13 09:39:02,799 - INFO - SELECT users.phone 
+FROM users 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 09:39:02,799 - INFO - [cached since 330.2s ago] {'telegram_1': 915010491}
+2025-08-13 09:39:02,801 - INFO - ROLLBACK
+2025-08-13 09:39:02,802 - INFO - BEGIN (implicit)
+2025-08-13 09:39:02,802 - INFO - SELECT finally_carts.product_name, finally_carts.quantity, finally_carts.finally_price, finally_carts.cart_id 
+FROM finally_carts JOIN carts ON carts.id = finally_carts.cart_id JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 09:39:02,802 - INFO - [cached since 330.2s ago] {'telegram_1': 915010491}
+2025-08-13 09:39:02,804 - INFO - ROLLBACK
+2025-08-13 09:39:02,879 - INFO - BEGIN (implicit)
+2025-08-13 09:39:02,879 - INFO - SELECT carts.id, carts.total_price, carts.products, carts.user_id 
+FROM carts JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 09:39:02,879 - INFO - [cached since 335s ago] {'telegram_1': 915010491}
+2025-08-13 09:39:02,880 - INFO - ROLLBACK
+2025-08-13 09:39:02,881 - INFO - BEGIN (implicit)
+2025-08-13 09:39:02,881 - INFO - SELECT finally_carts.id AS finally_carts_id, finally_carts.product_name AS finally_carts_product_name, finally_carts.finally_price AS finally_carts_finally_price, finally_carts.quantity AS finally_carts_quantity, finally_carts.cart_id AS finally_carts_cart_id 
+FROM finally_carts 
+WHERE finally_carts.cart_id = %(cart_id_1)s
+2025-08-13 09:39:02,881 - INFO - [cached since 330.2s ago] {'cart_id_1': 1}
+2025-08-13 09:39:02,884 - INFO - INSERT INTO orders (cart_id, product_name, quantity, final_price) SELECT p0::INTEGER, p1::VARCHAR, p2::INTEGER, p3::NUMERIC(6, 2) FROM (VALUES (%(cart_id__0)s, %(product_name__0)s, %(quantity__0)s, %(final_price__0)s, 0), (%(cart_id__1)s, %(product_name__1)s, %(quantity__1)s, %(final_price__1)s, 1)) AS imp_sen(p0, p1, p2, p3, sen_counter) ORDER BY sen_counter RETURNING orders.id, orders.id AS id__1
+2025-08-13 09:39:02,884 - INFO - [generated in 0.00011s (insertmanyvalues) 1/1 (ordered)] {'product_name__0': 'Вишня-шоколад', 'cart_id__0': 1, 'quantity__0': 1, 'final_price__0': Decimal('35.00'), 'product_name__1': 'Фруктово-ягодный', 'cart_id__1': 1, 'quantity__1': 1, 'final_price__1': Decimal('30.00')}
+2025-08-13 09:39:02,887 - INFO - COMMIT
+2025-08-13 09:39:02,890 - INFO - Added job "manage_scheduler" to job store "default"
+2025-08-13 09:39:02,890 - INFO - Напоминание для заказа 1 запланировано на 2025-08-13 09:39:12.888756
+2025-08-13 09:39:02,890 - INFO - BEGIN (implicit)
+2025-08-13 09:39:02,891 - INFO - SELECT carts.id, carts.total_price, carts.products, carts.user_id 
+FROM carts JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 09:39:02,891 - INFO - [cached since 335s ago] {'telegram_1': 915010491}
+2025-08-13 09:39:02,891 - INFO - ROLLBACK
+2025-08-13 09:39:02,893 - INFO - BEGIN (implicit)
+2025-08-13 09:39:02,893 - INFO - DELETE FROM finally_carts WHERE finally_carts.cart_id = %(cart_id_1)s
+2025-08-13 09:39:02,893 - INFO - [cached since 330.1s ago] {'cart_id_1': 1}
+2025-08-13 09:39:02,894 - INFO - COMMIT
+2025-08-13 09:39:03,037 - INFO - Update id=269744322 is handled. Duration 233 ms by bot id=8008057895
+2025-08-13 09:39:12,941 - INFO - Removed job reminder_1
+2025-08-13 09:39:12,944 - INFO - Running job "manage_scheduler (trigger: date[2025-08-13 09:39:12 +03], next run at: 2025-08-13 09:39:12 +03)" (scheduled at 2025-08-13 09:39:12.888756+03:00)
+2025-08-13 09:39:12,958 - INFO - BEGIN (implicit)
+2025-08-13 09:39:12,959 - INFO - SELECT sum(orders.final_price) AS sum_1 
+FROM orders 
+WHERE orders.cart_id = %(cart_id_1)s
+2025-08-13 09:39:12,959 - INFO - [cached since 330.2s ago] {'cart_id_1': 1}
+2025-08-13 09:39:12,962 - INFO - SELECT users.id AS users_id, users.name AS users_name, users.telegram AS users_telegram, users.phone AS users_phone 
+FROM users JOIN carts ON users.id = carts.user_id 
+WHERE carts.id = %(id_1)s 
+ LIMIT %(param_1)s
+2025-08-13 09:39:12,962 - INFO - [cached since 330.2s ago] {'id_1': 1, 'param_1': 1}
+2025-08-13 09:39:12,963 - INFO - ROLLBACK
+2025-08-13 09:39:13,486 - INFO - Напоминание менеджеру отправлено
+2025-08-13 09:39:13,489 - INFO - Job "manage_scheduler (trigger: date[2025-08-13 09:39:12 +03], next run at: 2025-08-13 09:39:12 +03)" executed successfully
+2025-08-13 09:46:21,154 - INFO - Polling stopped
+2025-08-13 09:46:21,155 - INFO - Polling stopped for bot @Yummy20_05_bot id=8008057895 - 'Yummy20_05'
+2025-08-13 10:03:38,042 - INFO - Scheduler started
+2025-08-13 10:03:38,043 - INFO - Планировщик запущен.
+2025-08-13 10:03:38,043 - INFO - Start polling
+2025-08-13 10:03:38,210 - INFO - Run polling for bot @Yummy20_05_bot id=8008057895 - 'Yummy20_05'
+2025-08-13 10:03:38,352 - INFO - select pg_catalog.version()
+2025-08-13 10:03:38,353 - INFO - [raw sql] {}
+2025-08-13 10:03:38,354 - INFO - select current_schema()
+2025-08-13 10:03:38,354 - INFO - [raw sql] {}
+2025-08-13 10:03:38,354 - INFO - show standard_conforming_strings
+2025-08-13 10:03:38,355 - INFO - [raw sql] {}
+2025-08-13 10:03:38,355 - INFO - BEGIN (implicit)
+2025-08-13 10:03:38,366 - INFO - SELECT users.id, users.name, users.telegram, users.phone 
+FROM users 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:03:38,367 - INFO - [generated in 0.00083s] {'telegram_1': 915010491}
+2025-08-13 10:03:38,370 - INFO - ROLLBACK
+2025-08-13 10:03:38,610 - INFO - Update id=269744323 is handled. Duration 344 ms by bot id=8008057895
+2025-08-13 10:03:42,576 - INFO - BEGIN (implicit)
+2025-08-13 10:03:42,577 - INFO - INSERT INTO users (name, telegram, phone) VALUES (%(name)s, %(telegram)s, %(phone)s) RETURNING users.id
+2025-08-13 10:03:42,578 - INFO - [generated in 0.00021s] {'name': 'Евгений', 'telegram': 915010491, 'phone': None}
+2025-08-13 10:03:42,587 - INFO - ROLLBACK
+2025-08-13 10:03:42,755 - INFO - Update id=269744324 is handled. Duration 172 ms by bot id=8008057895
+2025-08-13 10:04:01,396 - INFO - BEGIN (implicit)
+2025-08-13 10:04:01,397 - INFO - SELECT categories.id, categories.category_name 
+FROM categories
+2025-08-13 10:04:01,398 - INFO - [generated in 0.00043s] {}
+2025-08-13 10:04:01,406 - INFO - ROLLBACK
+2025-08-13 10:04:01,408 - INFO - BEGIN (implicit)
+2025-08-13 10:04:01,413 - INFO - SELECT sum(finally_carts.finally_price) AS sum_1 
+FROM carts JOIN finally_carts ON carts.id = finally_carts.cart_id JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:04:01,413 - INFO - [generated in 0.00033s] {'telegram_1': 915010491}
+2025-08-13 10:04:01,419 - INFO - ROLLBACK
+2025-08-13 10:04:01,503 - INFO - Update id=269744325 is handled. Duration 202 ms by bot id=8008057895
+2025-08-13 10:04:02,185 - INFO - BEGIN (implicit)
+2025-08-13 10:04:02,188 - INFO - SELECT products.id, products.product_name, products.description, products.image, products.price, products.category_id 
+FROM products 
+WHERE products.category_id = %(category_id_1)s
+2025-08-13 10:04:02,189 - INFO - [generated in 0.00129s] {'category_id_1': 1}
+2025-08-13 10:04:02,278 - INFO - Update id=269744326 is handled. Duration 94 ms by bot id=8008057895
+2025-08-13 10:04:03,035 - INFO - BEGIN (implicit)
+2025-08-13 10:04:03,035 - INFO - SELECT products.id, products.product_name, products.description, products.image, products.price, products.category_id 
+FROM products 
+WHERE products.id = %(id_1)s
+2025-08-13 10:04:03,035 - INFO - [generated in 0.00021s] {'id_1': 1}
+2025-08-13 10:04:03,037 - INFO - ROLLBACK
+2025-08-13 10:04:03,038 - INFO - BEGIN (implicit)
+2025-08-13 10:04:03,039 - INFO - SELECT carts.id, carts.total_price, carts.products, carts.user_id 
+FROM carts JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:04:03,039 - INFO - [generated in 0.00019s] {'telegram_1': 915010491}
+2025-08-13 10:04:03,043 - INFO - ROLLBACK
+2025-08-13 10:04:03,046 - INFO - BEGIN (implicit)
+2025-08-13 10:04:03,047 - INFO - UPDATE carts SET total_price=%(total_price)s, products=%(products)s WHERE carts.id = %(id_1)s
+2025-08-13 10:04:03,047 - INFO - [generated in 0.00038s] {'total_price': Decimal('60.00'), 'products': 1, 'id_1': 1}
+2025-08-13 10:04:03,048 - INFO - COMMIT
+2025-08-13 10:04:04,182 - INFO - Update id=269744327 is handled. Duration 1264 ms by bot id=8008057895
+2025-08-13 10:04:05,260 - INFO - BEGIN (implicit)
+2025-08-13 10:04:05,260 - INFO - SELECT carts.id, carts.total_price, carts.products, carts.user_id 
+FROM carts JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:04:05,260 - INFO - [cached since 2.221s ago] {'telegram_1': 915010491}
+2025-08-13 10:04:05,261 - INFO - ROLLBACK
+2025-08-13 10:04:05,339 - INFO - BEGIN (implicit)
+2025-08-13 10:04:05,342 - INFO - SELECT finally_carts.id AS finally_carts_id, finally_carts.product_name AS finally_carts_product_name, finally_carts.finally_price AS finally_carts_finally_price, finally_carts.quantity AS finally_carts_quantity, finally_carts.cart_id AS finally_carts_cart_id 
+FROM finally_carts 
+WHERE finally_carts.cart_id = %(cart_id_1)s AND finally_carts.product_name = %(product_name_1)s 
+ LIMIT %(param_1)s
+2025-08-13 10:04:05,342 - INFO - [generated in 0.00032s] {'cart_id_1': 1, 'product_name_1': 'Медовик', 'param_1': 1}
+2025-08-13 10:04:05,347 - INFO - INSERT INTO finally_carts (product_name, finally_price, quantity, cart_id) VALUES (%(product_name)s, %(finally_price)s, %(quantity)s, %(cart_id)s) RETURNING finally_carts.id
+2025-08-13 10:04:05,348 - INFO - [generated in 0.00060s] {'product_name': 'Медовик', 'finally_price': Decimal('60.00'), 'quantity': 1, 'cart_id': 1}
+2025-08-13 10:04:05,349 - INFO - COMMIT
+2025-08-13 10:04:05,560 - INFO - BEGIN (implicit)
+2025-08-13 10:04:05,560 - INFO - SELECT categories.id, categories.category_name 
+FROM categories
+2025-08-13 10:04:05,560 - INFO - [cached since 4.163s ago] {}
+2025-08-13 10:04:05,562 - INFO - ROLLBACK
+2025-08-13 10:04:05,564 - INFO - BEGIN (implicit)
+2025-08-13 10:04:05,564 - INFO - SELECT sum(finally_carts.finally_price) AS sum_1 
+FROM carts JOIN finally_carts ON carts.id = finally_carts.cart_id JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:04:05,564 - INFO - [cached since 4.151s ago] {'telegram_1': 915010491}
+2025-08-13 10:04:05,565 - INFO - ROLLBACK
+2025-08-13 10:04:05,635 - INFO - Update id=269744328 is handled. Duration 389 ms by bot id=8008057895
+2025-08-13 10:04:07,047 - INFO - BEGIN (implicit)
+2025-08-13 10:04:07,049 - INFO - SELECT finally_carts.id, finally_carts.product_name, finally_carts.finally_price, finally_carts.quantity, finally_carts.cart_id 
+FROM finally_carts JOIN carts ON finally_carts.cart_id = carts.id JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:04:07,049 - INFO - [generated in 0.00026s] {'telegram_1': 915010491}
+2025-08-13 10:04:07,051 - INFO - ROLLBACK
+2025-08-13 10:04:07,215 - INFO - Update id=269744329 is handled. Duration 172 ms by bot id=8008057895
+2025-08-13 10:04:08,672 - INFO - BEGIN (implicit)
+2025-08-13 10:04:08,673 - INFO - SELECT users.phone 
+FROM users 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:04:08,673 - INFO - [generated in 0.00028s] {'telegram_1': 915010491}
+2025-08-13 10:04:08,676 - INFO - ROLLBACK
+2025-08-13 10:04:08,677 - INFO - BEGIN (implicit)
+2025-08-13 10:04:08,678 - INFO - SELECT finally_carts.product_name, finally_carts.quantity, finally_carts.finally_price, finally_carts.cart_id 
+FROM finally_carts JOIN carts ON carts.id = finally_carts.cart_id JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:04:08,678 - INFO - [generated in 0.00023s] {'telegram_1': 915010491}
+2025-08-13 10:04:08,680 - INFO - ROLLBACK
+2025-08-13 10:04:08,753 - INFO - BEGIN (implicit)
+2025-08-13 10:04:08,755 - INFO - SELECT carts.id, carts.total_price, carts.products, carts.user_id 
+FROM carts JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:04:08,755 - INFO - [cached since 5.715s ago] {'telegram_1': 915010491}
+2025-08-13 10:04:08,757 - INFO - ROLLBACK
+2025-08-13 10:04:08,758 - INFO - BEGIN (implicit)
+2025-08-13 10:04:08,759 - INFO - SELECT finally_carts.id AS finally_carts_id, finally_carts.product_name AS finally_carts_product_name, finally_carts.finally_price AS finally_carts_finally_price, finally_carts.quantity AS finally_carts_quantity, finally_carts.cart_id AS finally_carts_cart_id 
+FROM finally_carts 
+WHERE finally_carts.cart_id = %(cart_id_1)s
+2025-08-13 10:04:08,759 - INFO - [generated in 0.00022s] {'cart_id_1': 1}
+2025-08-13 10:04:08,761 - INFO - INSERT INTO orders (cart_id, product_name, quantity, final_price) VALUES (%(cart_id)s, %(product_name)s, %(quantity)s, %(final_price)s) RETURNING orders.id
+2025-08-13 10:04:08,761 - INFO - [generated in 0.00019s] {'cart_id': 1, 'product_name': 'Медовик', 'quantity': 1, 'final_price': Decimal('60.00')}
+2025-08-13 10:04:08,765 - INFO - COMMIT
+2025-08-13 10:04:08,777 - INFO - Added job "manage_scheduler" to job store "default"
+2025-08-13 10:04:08,777 - INFO - Напоминание для заказа 1 запланировано на 2025-08-13 10:04:18.772985
+2025-08-13 10:04:08,778 - INFO - BEGIN (implicit)
+2025-08-13 10:04:08,778 - INFO - SELECT carts.id, carts.total_price, carts.products, carts.user_id 
+FROM carts JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:04:08,778 - INFO - [cached since 5.739s ago] {'telegram_1': 915010491}
+2025-08-13 10:04:08,779 - INFO - ROLLBACK
+2025-08-13 10:04:08,781 - INFO - BEGIN (implicit)
+2025-08-13 10:04:08,782 - INFO - DELETE FROM finally_carts WHERE finally_carts.cart_id = %(cart_id_1)s
+2025-08-13 10:04:08,782 - INFO - [generated in 0.00018s] {'cart_id_1': 1}
+2025-08-13 10:04:08,783 - INFO - COMMIT
+2025-08-13 10:04:08,907 - INFO - Update id=269744330 is handled. Duration 233 ms by bot id=8008057895
+2025-08-13 10:04:18,820 - INFO - Removed job reminder_1
+2025-08-13 10:04:18,822 - INFO - Running job "manage_scheduler (trigger: date[2025-08-13 10:04:18 +03], next run at: 2025-08-13 10:04:18 +03)" (scheduled at 2025-08-13 10:04:18.772985+03:00)
+2025-08-13 10:04:18,837 - INFO - BEGIN (implicit)
+2025-08-13 10:04:18,839 - INFO - SELECT sum(orders.final_price) AS sum_1 
+FROM orders 
+WHERE orders.cart_id = %(cart_id_1)s
+2025-08-13 10:04:18,839 - INFO - [generated in 0.00033s] {'cart_id_1': 1}
+2025-08-13 10:04:18,842 - INFO - SELECT users.id AS users_id, users.name AS users_name, users.telegram AS users_telegram, users.phone AS users_phone 
+FROM users JOIN carts ON users.id = carts.user_id 
+WHERE carts.id = %(id_1)s 
+ LIMIT %(param_1)s
+2025-08-13 10:04:18,842 - INFO - [generated in 0.00035s] {'id_1': 1, 'param_1': 1}
+2025-08-13 10:04:18,845 - INFO - ROLLBACK
+2025-08-13 10:04:19,290 - INFO - Напоминание менеджеру отправлено
+2025-08-13 10:04:19,294 - INFO - Job "manage_scheduler (trigger: date[2025-08-13 10:04:18 +03], next run at: 2025-08-13 10:04:18 +03)" executed successfully
+2025-08-13 10:06:49,164 - INFO - BEGIN (implicit)
+2025-08-13 10:06:49,165 - INFO - SELECT users.id, users.name, users.telegram, users.phone 
+FROM users 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:06:49,165 - INFO - [cached since 190.8s ago] {'telegram_1': 915010491}
+2025-08-13 10:06:49,167 - INFO - ROLLBACK
+2025-08-13 10:06:49,241 - INFO - Update id=269744331 is handled. Duration 77 ms by bot id=8008057895
+2025-08-13 10:07:42,621 - INFO - BEGIN (implicit)
+2025-08-13 10:07:42,621 - INFO - INSERT INTO users (name, telegram, phone) VALUES (%(name)s, %(telegram)s, %(phone)s) RETURNING users.id
+2025-08-13 10:07:42,621 - INFO - [cached since 240s ago] {'name': 'Евгений', 'telegram': 915010491, 'phone': None}
+2025-08-13 10:07:42,623 - INFO - COMMIT
+2025-08-13 10:07:42,632 - INFO - BEGIN (implicit)
+2025-08-13 10:07:42,632 - INFO - SELECT users.id, users.name, users.telegram, users.phone 
+FROM users 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:07:42,633 - INFO - [cached since 244.3s ago] {'telegram_1': 915010491}
+2025-08-13 10:07:42,636 - INFO - INSERT INTO carts (total_price, products, user_id) VALUES (%(total_price)s, %(products)s, %(user_id)s) RETURNING carts.id
+2025-08-13 10:07:42,637 - INFO - [generated in 0.00032s] {'total_price': 0, 'products': 0, 'user_id': 3}
+2025-08-13 10:07:42,639 - INFO - COMMIT
+2025-08-13 10:07:42,781 - INFO - Update id=269744332 is handled. Duration 155 ms by bot id=8008057895
+2025-08-13 10:13:41,099 - INFO - Polling stopped for bot @Yummy20_05_bot id=8008057895 - 'Yummy20_05'
+2025-08-13 10:13:41,100 - INFO - Polling stopped
+2025-08-13 10:13:45,980 - INFO - Scheduler started
+2025-08-13 10:13:45,980 - INFO - Планировщик запущен.
+2025-08-13 10:13:45,982 - INFO - Start polling
+2025-08-13 10:13:46,147 - INFO - Run polling for bot @Yummy20_05_bot id=8008057895 - 'Yummy20_05'
+2025-08-13 10:14:05,650 - INFO - select pg_catalog.version()
+2025-08-13 10:14:05,650 - INFO - [raw sql] {}
+2025-08-13 10:14:05,650 - INFO - select current_schema()
+2025-08-13 10:14:05,650 - INFO - [raw sql] {}
+2025-08-13 10:14:05,651 - INFO - show standard_conforming_strings
+2025-08-13 10:14:05,651 - INFO - [raw sql] {}
+2025-08-13 10:14:05,651 - INFO - BEGIN (implicit)
+2025-08-13 10:14:05,661 - INFO - SELECT users.id, users.name, users.telegram, users.phone 
+FROM users 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:14:05,661 - INFO - [generated in 0.00033s] {'telegram_1': 915010491}
+2025-08-13 10:14:05,664 - INFO - ROLLBACK
+2025-08-13 10:14:05,904 - INFO - Update id=269744333 is handled. Duration 344 ms by bot id=8008057895
+2025-08-13 10:14:08,048 - INFO - BEGIN (implicit)
+2025-08-13 10:14:08,048 - INFO - INSERT INTO users (name, telegram, phone) VALUES (%(name)s, %(telegram)s, %(phone)s) RETURNING users.id
+2025-08-13 10:14:08,048 - INFO - [generated in 0.00026s] {'name': 'Евгений', 'telegram': 915010491, 'phone': None}
+2025-08-13 10:14:08,056 - INFO - ROLLBACK
+2025-08-13 10:14:08,214 - INFO - Update id=269744334 is handled. Duration 172 ms by bot id=8008057895
+2025-08-13 10:14:19,265 - INFO - BEGIN (implicit)
+2025-08-13 10:14:19,268 - INFO - SELECT categories.id, categories.category_name 
+FROM categories
+2025-08-13 10:14:19,268 - INFO - [generated in 0.00022s] {}
+2025-08-13 10:14:19,273 - INFO - ROLLBACK
+2025-08-13 10:14:19,275 - INFO - BEGIN (implicit)
+2025-08-13 10:14:19,281 - INFO - SELECT sum(finally_carts.finally_price) AS sum_1 
+FROM carts JOIN finally_carts ON carts.id = finally_carts.cart_id JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:14:19,281 - INFO - [generated in 0.00037s] {'telegram_1': 915010491}
+2025-08-13 10:14:19,286 - INFO - ROLLBACK
+2025-08-13 10:14:19,365 - INFO - Update id=269744335 is handled. Duration 155 ms by bot id=8008057895
+2025-08-13 10:14:21,112 - INFO - BEGIN (implicit)
+2025-08-13 10:14:21,114 - INFO - SELECT products.id, products.product_name, products.description, products.image, products.price, products.category_id 
+FROM products 
+WHERE products.category_id = %(category_id_1)s
+2025-08-13 10:14:21,114 - INFO - [generated in 0.00038s] {'category_id_1': 2}
+2025-08-13 10:14:21,245 - INFO - Update id=269744336 is handled. Duration 141 ms by bot id=8008057895
+2025-08-13 10:14:22,285 - INFO - BEGIN (implicit)
+2025-08-13 10:14:22,286 - INFO - SELECT products.id, products.product_name, products.description, products.image, products.price, products.category_id 
+FROM products 
+WHERE products.id = %(id_1)s
+2025-08-13 10:14:22,286 - INFO - [generated in 0.00028s] {'id_1': 5}
+2025-08-13 10:14:22,288 - INFO - ROLLBACK
+2025-08-13 10:14:22,289 - INFO - BEGIN (implicit)
+2025-08-13 10:14:22,291 - INFO - SELECT carts.id, carts.total_price, carts.products, carts.user_id 
+FROM carts JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:14:22,291 - INFO - [generated in 0.00068s] {'telegram_1': 915010491}
+2025-08-13 10:14:22,295 - INFO - ROLLBACK
+2025-08-13 10:14:22,297 - INFO - BEGIN (implicit)
+2025-08-13 10:14:22,298 - INFO - UPDATE carts SET total_price=%(total_price)s, products=%(products)s WHERE carts.id = %(id_1)s
+2025-08-13 10:14:22,298 - INFO - [generated in 0.00023s] {'total_price': Decimal('30.00'), 'products': 1, 'id_1': 2}
+2025-08-13 10:14:22,300 - INFO - COMMIT
+2025-08-13 10:14:22,667 - INFO - Update id=269744337 is handled. Duration 452 ms by bot id=8008057895
+2025-08-13 10:14:24,399 - INFO - BEGIN (implicit)
+2025-08-13 10:14:24,399 - INFO - SELECT carts.id, carts.total_price, carts.products, carts.user_id 
+FROM carts JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:14:24,399 - INFO - [cached since 2.108s ago] {'telegram_1': 915010491}
+2025-08-13 10:14:24,400 - INFO - ROLLBACK
+2025-08-13 10:14:24,530 - INFO - BEGIN (implicit)
+2025-08-13 10:14:24,532 - INFO - SELECT finally_carts.id AS finally_carts_id, finally_carts.product_name AS finally_carts_product_name, finally_carts.finally_price AS finally_carts_finally_price, finally_carts.quantity AS finally_carts_quantity, finally_carts.cart_id AS finally_carts_cart_id 
+FROM finally_carts 
+WHERE finally_carts.cart_id = %(cart_id_1)s AND finally_carts.product_name = %(product_name_1)s 
+ LIMIT %(param_1)s
+2025-08-13 10:14:24,532 - INFO - [generated in 0.00051s] {'cart_id_1': 2, 'product_name_1': 'Кокосовый', 'param_1': 1}
+2025-08-13 10:14:24,538 - INFO - INSERT INTO finally_carts (product_name, finally_price, quantity, cart_id) VALUES (%(product_name)s, %(finally_price)s, %(quantity)s, %(cart_id)s) RETURNING finally_carts.id
+2025-08-13 10:14:24,543 - INFO - [generated in 0.00479s] {'product_name': 'Кокосовый', 'finally_price': Decimal('30.00'), 'quantity': 1, 'cart_id': 2}
+2025-08-13 10:14:24,546 - INFO - COMMIT
+2025-08-13 10:14:24,855 - INFO - BEGIN (implicit)
+2025-08-13 10:14:24,856 - INFO - SELECT categories.id, categories.category_name 
+FROM categories
+2025-08-13 10:14:24,856 - INFO - [cached since 5.588s ago] {}
+2025-08-13 10:14:24,858 - INFO - ROLLBACK
+2025-08-13 10:14:24,859 - INFO - BEGIN (implicit)
+2025-08-13 10:14:24,860 - INFO - SELECT sum(finally_carts.finally_price) AS sum_1 
+FROM carts JOIN finally_carts ON carts.id = finally_carts.cart_id JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:14:24,860 - INFO - [cached since 5.579s ago] {'telegram_1': 915010491}
+2025-08-13 10:14:24,860 - INFO - ROLLBACK
+2025-08-13 10:14:24,934 - INFO - Update id=269744338 is handled. Duration 547 ms by bot id=8008057895
+2025-08-13 10:14:26,817 - INFO - BEGIN (implicit)
+2025-08-13 10:14:26,819 - INFO - SELECT finally_carts.id, finally_carts.product_name, finally_carts.finally_price, finally_carts.quantity, finally_carts.cart_id 
+FROM finally_carts JOIN carts ON finally_carts.cart_id = carts.id JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:14:26,819 - INFO - [generated in 0.00033s] {'telegram_1': 915010491}
+2025-08-13 10:14:26,821 - INFO - ROLLBACK
+2025-08-13 10:14:26,960 - INFO - Update id=269744339 is handled. Duration 157 ms by bot id=8008057895
+2025-08-13 10:14:28,538 - INFO - BEGIN (implicit)
+2025-08-13 10:14:28,539 - INFO - SELECT users.phone 
+FROM users 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:14:28,539 - INFO - [generated in 0.00021s] {'telegram_1': 915010491}
+2025-08-13 10:14:28,540 - INFO - ROLLBACK
+2025-08-13 10:14:28,541 - INFO - BEGIN (implicit)
+2025-08-13 10:14:28,542 - INFO - SELECT finally_carts.product_name, finally_carts.quantity, finally_carts.finally_price, finally_carts.cart_id 
+FROM finally_carts JOIN carts ON carts.id = finally_carts.cart_id JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:14:28,542 - INFO - [generated in 0.00020s] {'telegram_1': 915010491}
+2025-08-13 10:14:28,542 - INFO - ROLLBACK
+2025-08-13 10:14:28,629 - INFO - BEGIN (implicit)
+2025-08-13 10:14:28,630 - INFO - SELECT carts.id, carts.total_price, carts.products, carts.user_id 
+FROM carts JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:14:28,630 - INFO - [cached since 6.339s ago] {'telegram_1': 915010491}
+2025-08-13 10:14:28,632 - INFO - ROLLBACK
+2025-08-13 10:14:28,633 - INFO - BEGIN (implicit)
+2025-08-13 10:14:28,635 - INFO - SELECT finally_carts.id AS finally_carts_id, finally_carts.product_name AS finally_carts_product_name, finally_carts.finally_price AS finally_carts_finally_price, finally_carts.quantity AS finally_carts_quantity, finally_carts.cart_id AS finally_carts_cart_id 
+FROM finally_carts 
+WHERE finally_carts.cart_id = %(cart_id_1)s
+2025-08-13 10:14:28,635 - INFO - [generated in 0.00058s] {'cart_id_1': 2}
+2025-08-13 10:14:28,638 - INFO - INSERT INTO orders (cart_id, product_name, quantity, final_price) VALUES (%(cart_id)s, %(product_name)s, %(quantity)s, %(final_price)s) RETURNING orders.id
+2025-08-13 10:14:28,638 - INFO - [generated in 0.00020s] {'cart_id': 2, 'product_name': 'Кокосовый', 'quantity': 1, 'final_price': Decimal('30.00')}
+2025-08-13 10:14:28,640 - INFO - COMMIT
+2025-08-13 10:14:28,656 - INFO - Added job "manage_scheduler" to job store "default"
+2025-08-13 10:14:28,657 - INFO - Напоминание для заказа 2 запланировано на 2025-08-13 10:14:38.650867
+2025-08-13 10:14:28,657 - INFO - BEGIN (implicit)
+2025-08-13 10:14:28,658 - INFO - SELECT carts.id, carts.total_price, carts.products, carts.user_id 
+FROM carts JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:14:28,658 - INFO - [cached since 6.367s ago] {'telegram_1': 915010491}
+2025-08-13 10:14:28,659 - INFO - ROLLBACK
+2025-08-13 10:14:28,659 - INFO - BEGIN (implicit)
+2025-08-13 10:14:28,660 - INFO - DELETE FROM finally_carts WHERE finally_carts.cart_id = %(cart_id_1)s
+2025-08-13 10:14:28,660 - INFO - [generated in 0.00016s] {'cart_id_1': 2}
+2025-08-13 10:14:28,660 - INFO - COMMIT
+2025-08-13 10:14:28,819 - INFO - Update id=269744340 is handled. Duration 297 ms by bot id=8008057895
+2025-08-13 10:14:38,672 - INFO - Removed job reminder_2
+2025-08-13 10:14:38,673 - INFO - Running job "manage_scheduler (trigger: date[2025-08-13 10:14:38 +03], next run at: 2025-08-13 10:14:38 +03)" (scheduled at 2025-08-13 10:14:38.650867+03:00)
+2025-08-13 10:14:38,685 - INFO - BEGIN (implicit)
+2025-08-13 10:14:38,688 - INFO - SELECT sum(orders.final_price) AS sum_1 
+FROM orders 
+WHERE orders.cart_id = %(cart_id_1)s
+2025-08-13 10:14:38,688 - INFO - [generated in 0.00027s] {'cart_id_1': 2}
+2025-08-13 10:14:38,690 - INFO - SELECT users.id AS users_id, users.name AS users_name, users.telegram AS users_telegram, users.phone AS users_phone 
+FROM users JOIN carts ON users.id = carts.user_id 
+WHERE carts.id = %(id_1)s 
+ LIMIT %(param_1)s
+2025-08-13 10:14:38,691 - INFO - [generated in 0.00021s] {'id_1': 2, 'param_1': 1}
+2025-08-13 10:14:38,692 - INFO - ROLLBACK
+2025-08-13 10:14:39,131 - INFO - Напоминание менеджеру отправлено
+2025-08-13 10:14:39,135 - INFO - Job "manage_scheduler (trigger: date[2025-08-13 10:14:38 +03], next run at: 2025-08-13 10:14:38 +03)" executed successfully
+2025-08-13 10:15:16,431 - INFO - BEGIN (implicit)
+2025-08-13 10:15:16,432 - INFO - SELECT users.id, users.name, users.telegram, users.phone 
+FROM users 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:15:16,432 - INFO - [cached since 70.77s ago] {'telegram_1': 915010491}
+2025-08-13 10:15:16,433 - INFO - ROLLBACK
+2025-08-13 10:15:16,523 - INFO - Update id=269744341 is handled. Duration 108 ms by bot id=8008057895
+2025-08-13 10:15:27,881 - INFO - BEGIN (implicit)
+2025-08-13 10:15:27,881 - INFO - UPDATE users SET phone=%(phone)s WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:15:27,881 - INFO - [generated in 0.00017s] {'phone': '+375292372907', 'telegram_1': 915010491}
+2025-08-13 10:15:27,883 - INFO - COMMIT
+2025-08-13 10:15:27,883 - INFO - BEGIN (implicit)
+2025-08-13 10:15:27,884 - INFO - SELECT users.id, users.name, users.telegram, users.phone 
+FROM users 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:15:27,884 - INFO - [cached since 82.22s ago] {'telegram_1': 915010491}
+2025-08-13 10:15:27,885 - INFO - ROLLBACK
+2025-08-13 10:15:28,036 - INFO - Update id=269744342 is handled. Duration 155 ms by bot id=8008057895
+2025-08-13 10:16:32,810 - INFO - BEGIN (implicit)
+2025-08-13 10:16:32,810 - INFO - SELECT categories.id, categories.category_name 
+FROM categories
+2025-08-13 10:16:32,810 - INFO - [cached since 133.5s ago] {}
+2025-08-13 10:16:32,811 - INFO - ROLLBACK
+2025-08-13 10:16:32,812 - INFO - BEGIN (implicit)
+2025-08-13 10:16:32,813 - INFO - SELECT sum(finally_carts.finally_price) AS sum_1 
+FROM carts JOIN finally_carts ON carts.id = finally_carts.cart_id JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:16:32,813 - INFO - [cached since 133.5s ago] {'telegram_1': 915010491}
+2025-08-13 10:16:32,814 - INFO - ROLLBACK
+2025-08-13 10:16:33,045 - INFO - Update id=269744343 is handled. Duration 485 ms by bot id=8008057895
+2025-08-13 10:16:41,271 - INFO - BEGIN (implicit)
+2025-08-13 10:16:41,271 - INFO - SELECT products.id, products.product_name, products.description, products.image, products.price, products.category_id 
+FROM products 
+WHERE products.category_id = %(category_id_1)s
+2025-08-13 10:16:41,271 - INFO - [cached since 140.2s ago] {'category_id_1': 1}
+2025-08-13 10:16:41,334 - INFO - Update id=269744344 is handled. Duration 79 ms by bot id=8008057895
+2025-08-13 10:16:43,383 - INFO - BEGIN (implicit)
+2025-08-13 10:16:43,384 - INFO - SELECT products.id, products.product_name, products.description, products.image, products.price, products.category_id 
+FROM products 
+WHERE products.id = %(id_1)s
+2025-08-13 10:16:43,389 - INFO - [cached since 141.1s ago] {'id_1': 1}
+2025-08-13 10:16:43,392 - INFO - ROLLBACK
+2025-08-13 10:16:43,393 - INFO - BEGIN (implicit)
+2025-08-13 10:16:43,394 - INFO - SELECT carts.id, carts.total_price, carts.products, carts.user_id 
+FROM carts JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:16:43,394 - INFO - [cached since 141.1s ago] {'telegram_1': 915010491}
+2025-08-13 10:16:43,398 - INFO - ROLLBACK
+2025-08-13 10:16:43,399 - INFO - Update id=269744345 is handled. Duration 250 ms by bot id=8008057895
+2025-08-13 10:16:52,865 - INFO - Update id=269744346 is handled. Duration 125 ms by bot id=8008057895
+2025-08-13 10:16:54,247 - INFO - BEGIN (implicit)
+2025-08-13 10:16:54,247 - INFO - SELECT categories.id, categories.category_name 
+FROM categories
+2025-08-13 10:16:54,247 - INFO - [cached since 155s ago] {}
+2025-08-13 10:16:54,250 - INFO - ROLLBACK
+2025-08-13 10:16:54,253 - INFO - BEGIN (implicit)
+2025-08-13 10:16:54,253 - INFO - SELECT sum(finally_carts.finally_price) AS sum_1 
+FROM carts JOIN finally_carts ON carts.id = finally_carts.cart_id JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:16:54,253 - INFO - [cached since 155s ago] {'telegram_1': 915010491}
+2025-08-13 10:16:54,256 - INFO - ROLLBACK
+2025-08-13 10:16:54,329 - INFO - Update id=269744347 is handled. Duration 172 ms by bot id=8008057895
+2025-08-13 10:16:55,475 - INFO - BEGIN (implicit)
+2025-08-13 10:16:55,476 - INFO - SELECT products.id, products.product_name, products.description, products.image, products.price, products.category_id 
+FROM products 
+WHERE products.category_id = %(category_id_1)s
+2025-08-13 10:16:55,476 - INFO - [cached since 154.4s ago] {'category_id_1': 1}
+2025-08-13 10:16:55,566 - INFO - Update id=269744348 is handled. Duration 92 ms by bot id=8008057895
+2025-08-13 10:16:56,516 - INFO - BEGIN (implicit)
+2025-08-13 10:16:56,517 - INFO - SELECT products.id, products.product_name, products.description, products.image, products.price, products.category_id 
+FROM products 
+WHERE products.id = %(id_1)s
+2025-08-13 10:16:56,517 - INFO - [cached since 154.2s ago] {'id_1': 1}
+2025-08-13 10:16:56,518 - INFO - ROLLBACK
+2025-08-13 10:16:56,519 - INFO - BEGIN (implicit)
+2025-08-13 10:16:56,519 - INFO - SELECT carts.id, carts.total_price, carts.products, carts.user_id 
+FROM carts JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:16:56,519 - INFO - [cached since 154.2s ago] {'telegram_1': 915010491}
+2025-08-13 10:16:56,521 - INFO - ROLLBACK
+2025-08-13 10:16:56,522 - INFO - Update id=269744349 is handled. Duration 125 ms by bot id=8008057895
+2025-08-13 10:17:07,918 - INFO - Polling stopped for bot @Yummy20_05_bot id=8008057895 - 'Yummy20_05'
+2025-08-13 10:17:07,919 - INFO - Polling stopped
+2025-08-13 10:17:13,089 - INFO - Scheduler started
+2025-08-13 10:17:13,089 - INFO - Планировщик запущен.
+2025-08-13 10:17:13,089 - INFO - Start polling
+2025-08-13 10:17:13,257 - INFO - Run polling for bot @Yummy20_05_bot id=8008057895 - 'Yummy20_05'
+2025-08-13 10:17:22,970 - INFO - select pg_catalog.version()
+2025-08-13 10:17:22,971 - INFO - [raw sql] {}
+2025-08-13 10:17:22,972 - INFO - select current_schema()
+2025-08-13 10:17:22,972 - INFO - [raw sql] {}
+2025-08-13 10:17:22,973 - INFO - show standard_conforming_strings
+2025-08-13 10:17:22,973 - INFO - [raw sql] {}
+2025-08-13 10:17:22,973 - INFO - BEGIN (implicit)
+2025-08-13 10:17:22,984 - INFO - SELECT users.id, users.name, users.telegram, users.phone 
+FROM users 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:17:22,984 - INFO - [generated in 0.00037s] {'telegram_1': 915010491}
+2025-08-13 10:17:22,987 - INFO - ROLLBACK
+2025-08-13 10:17:23,174 - INFO - Update id=269744350 is handled. Duration 297 ms by bot id=8008057895
+2025-08-13 10:17:38,851 - INFO - BEGIN (implicit)
+2025-08-13 10:17:38,853 - INFO - UPDATE users SET phone=%(phone)s WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:17:38,858 - INFO - [generated in 0.00460s] {'phone': '+375292372907', 'telegram_1': 915010491}
+2025-08-13 10:17:38,859 - INFO - COMMIT
+2025-08-13 10:17:38,860 - INFO - BEGIN (implicit)
+2025-08-13 10:17:38,860 - INFO - SELECT users.id, users.name, users.telegram, users.phone 
+FROM users 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:17:38,861 - INFO - [cached since 15.88s ago] {'telegram_1': 915010491}
+2025-08-13 10:17:38,862 - INFO - ROLLBACK
+2025-08-13 10:17:39,004 - INFO - Update id=269744351 is handled. Duration 155 ms by bot id=8008057895
+2025-08-13 10:18:15,853 - INFO - BEGIN (implicit)
+2025-08-13 10:18:15,855 - INFO - SELECT categories.id, categories.category_name 
+FROM categories
+2025-08-13 10:18:15,855 - INFO - [generated in 0.00027s] {}
+2025-08-13 10:18:15,859 - INFO - ROLLBACK
+2025-08-13 10:18:15,860 - INFO - BEGIN (implicit)
+2025-08-13 10:18:15,866 - INFO - SELECT sum(finally_carts.finally_price) AS sum_1 
+FROM carts JOIN finally_carts ON carts.id = finally_carts.cart_id JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:18:15,866 - INFO - [generated in 0.00022s] {'telegram_1': 915010491}
+2025-08-13 10:18:15,871 - INFO - ROLLBACK
+2025-08-13 10:18:15,944 - INFO - Update id=269744352 is handled. Duration 172 ms by bot id=8008057895
+2025-08-13 10:18:17,002 - INFO - BEGIN (implicit)
+2025-08-13 10:18:17,003 - INFO - SELECT products.id, products.product_name, products.description, products.image, products.price, products.category_id 
+FROM products 
+WHERE products.category_id = %(category_id_1)s
+2025-08-13 10:18:17,003 - INFO - [generated in 0.00025s] {'category_id_1': 1}
+2025-08-13 10:18:17,079 - INFO - Update id=269744353 is handled. Duration 77 ms by bot id=8008057895
+2025-08-13 10:18:17,829 - INFO - BEGIN (implicit)
+2025-08-13 10:18:17,831 - INFO - SELECT products.id, products.product_name, products.description, products.image, products.price, products.category_id 
+FROM products 
+WHERE products.id = %(id_1)s
+2025-08-13 10:18:17,832 - INFO - [generated in 0.00032s] {'id_1': 1}
+2025-08-13 10:18:17,833 - INFO - ROLLBACK
+2025-08-13 10:18:17,834 - INFO - BEGIN (implicit)
+2025-08-13 10:18:17,837 - INFO - SELECT carts.id, carts.total_price, carts.products, carts.user_id 
+FROM carts JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:18:17,837 - INFO - [generated in 0.00036s] {'telegram_1': 915010491}
+2025-08-13 10:18:17,838 - INFO - ROLLBACK
+2025-08-13 10:18:17,838 - INFO - Update id=269744354 is handled. Duration 79 ms by bot id=8008057895
+2025-08-13 10:18:47,195 - INFO - Polling stopped for bot @Yummy20_05_bot id=8008057895 - 'Yummy20_05'
+2025-08-13 10:18:47,196 - INFO - Polling stopped
+2025-08-13 10:19:11,546 - INFO - select pg_catalog.version()
+2025-08-13 10:19:11,546 - INFO - [raw sql] {}
+2025-08-13 10:19:11,548 - INFO - select current_schema()
+2025-08-13 10:19:11,548 - INFO - [raw sql] {}
+2025-08-13 10:19:11,548 - INFO - show standard_conforming_strings
+2025-08-13 10:19:11,548 - INFO - [raw sql] {}
+2025-08-13 10:19:11,550 - INFO - BEGIN (implicit)
+2025-08-13 10:19:11,550 - INFO - DROP SCHEMA IF EXISTS public CASCADE
+2025-08-13 10:19:11,550 - INFO - [generated in 0.00026s] {}
+2025-08-13 10:19:11,561 - INFO - CREATE SCHEMA IF NOT EXISTS public
+2025-08-13 10:19:11,562 - INFO - [generated in 0.00041s] {}
+2025-08-13 10:19:11,563 - INFO - COMMIT
+2025-08-13 10:19:11,587 - INFO - BEGIN (implicit)
+2025-08-13 10:19:11,592 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-08-13 10:19:11,593 - INFO - [generated in 0.00038s] {'table_name': 'categories', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-08-13 10:19:11,596 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-08-13 10:19:11,596 - INFO - [cached since 0.005054s ago] {'table_name': 'users', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-08-13 10:19:11,598 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-08-13 10:19:11,598 - INFO - [cached since 0.005943s ago] {'table_name': 'carts', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-08-13 10:19:11,599 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-08-13 10:19:11,599 - INFO - [cached since 0.006726s ago] {'table_name': 'finally_carts', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-08-13 10:19:11,599 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-08-13 10:19:11,600 - INFO - [cached since 0.007413s ago] {'table_name': 'products', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-08-13 10:19:11,600 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-08-13 10:19:11,600 - INFO - [cached since 0.008166s ago] {'table_name': 'orders', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-08-13 10:19:11,600 - INFO - 
+CREATE TABLE categories (
+	id SERIAL NOT NULL, 
+	category_name VARCHAR(30) NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (category_name)
+)
+
+
+2025-08-13 10:19:11,600 - INFO - [no key 0.00014s] {}
+2025-08-13 10:19:11,612 - INFO - 
+CREATE TABLE users (
+	id SERIAL NOT NULL, 
+	name VARCHAR(50), 
+	telegram BIGINT NOT NULL, 
+	phone VARCHAR, 
+	PRIMARY KEY (id), 
+	UNIQUE (telegram)
+)
+
+
+2025-08-13 10:19:11,612 - INFO - [no key 0.00021s] {}
+2025-08-13 10:19:11,618 - INFO - 
+CREATE TABLE carts (
+	id SERIAL NOT NULL, 
+	total_price DECIMAL(5, 2) NOT NULL, 
+	products INTEGER NOT NULL, 
+	user_id INTEGER NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (user_id), 
+	FOREIGN KEY(user_id) REFERENCES users (id)
+)
+
+
+2025-08-13 10:19:11,618 - INFO - [no key 0.00025s] {}
+2025-08-13 10:19:11,624 - INFO - 
+CREATE TABLE products (
+	id SERIAL NOT NULL, 
+	product_name VARCHAR(50) NOT NULL, 
+	description VARCHAR NOT NULL, 
+	image VARCHAR(255) NOT NULL, 
+	price DECIMAL(5, 2) NOT NULL, 
+	category_id INTEGER NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (product_name), 
+	FOREIGN KEY(category_id) REFERENCES categories (id)
+)
+
+
+2025-08-13 10:19:11,624 - INFO - [no key 0.00035s] {}
+2025-08-13 10:19:11,634 - INFO - 
+CREATE TABLE finally_carts (
+	id SERIAL NOT NULL, 
+	product_name VARCHAR(50) NOT NULL, 
+	finally_price DECIMAL(5, 2) NOT NULL, 
+	quantity INTEGER NOT NULL, 
+	cart_id INTEGER NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(cart_id) REFERENCES carts (id)
+)
+
+
+2025-08-13 10:19:11,634 - INFO - [no key 0.00033s] {}
+2025-08-13 10:19:11,638 - INFO - 
+CREATE TABLE orders (
+	id SERIAL NOT NULL, 
+	cart_id INTEGER NOT NULL, 
+	product_name VARCHAR(50) NOT NULL, 
+	quantity INTEGER NOT NULL, 
+	final_price DECIMAL(6, 2) NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(cart_id) REFERENCES carts (id)
+)
+
+
+2025-08-13 10:19:11,638 - INFO - [no key 0.00021s] {}
+2025-08-13 10:19:11,642 - INFO - COMMIT
+2025-08-13 10:19:11,644 - INFO - BEGIN (implicit)
+2025-08-13 10:19:11,653 - INFO - SELECT categories.id, categories.category_name 
+FROM categories 
+WHERE categories.category_name = %(category_name_1)s
+2025-08-13 10:19:11,653 - INFO - [generated in 0.00023s] {'category_name_1': 'Торты'}
+2025-08-13 10:19:11,657 - INFO - INSERT INTO categories (category_name) VALUES (%(category_name)s) RETURNING categories.id
+2025-08-13 10:19:11,657 - INFO - [generated in 0.00031s] {'category_name': 'Торты'}
+2025-08-13 10:19:11,658 - INFO - SELECT categories.id, categories.category_name 
+FROM categories 
+WHERE categories.category_name = %(category_name_1)s
+2025-08-13 10:19:11,660 - INFO - [cached since 0.006742s ago] {'category_name_1': 'Зефир'}
+2025-08-13 10:19:11,660 - INFO - INSERT INTO categories (category_name) VALUES (%(category_name)s) RETURNING categories.id
+2025-08-13 10:19:11,661 - INFO - [cached since 0.003116s ago] {'category_name': 'Зефир'}
+2025-08-13 10:19:11,661 - INFO - SELECT categories.id, categories.category_name 
+FROM categories 
+WHERE categories.category_name = %(category_name_1)s
+2025-08-13 10:19:11,661 - INFO - [cached since 0.008507s ago] {'category_name_1': 'Пирожные'}
+2025-08-13 10:19:11,662 - INFO - INSERT INTO categories (category_name) VALUES (%(category_name)s) RETURNING categories.id
+2025-08-13 10:19:11,662 - INFO - [cached since 0.004798s ago] {'category_name': 'Пирожные'}
+2025-08-13 10:19:11,664 - INFO - INSERT INTO products (product_name, description, image, price, category_id) SELECT p0::VARCHAR, p1::VARCHAR, p2::VARCHAR, p3::NUMERIC(5, 2), p4::INTEGER FROM (VALUES (%(product_name__0)s, %(description__0)s, %(image__0)s, %(price__0)s, %(category_id_ ... 582 characters truncated ... en(p0, p1, p2, p3, p4, sen_counter) ORDER BY sen_counter RETURNING products.id, products.id AS id__1
+2025-08-13 10:19:11,664 - INFO - [generated in 0.00008s (insertmanyvalues) 1/1 (ordered)] {'product_name__0': 'Медовик', 'description__0': 'Медовые коржи со сметанным или карамельным кремом, ягодным конфи, орехами и сухофруктами', 'category_id__0': 1, 'image__0': 'media/cakes/cake1.jpg', 'price__0': 60, 'product_name__1': 'Молочная девочка', 'description__1': 'Воздушные коржи на сгущённом молоке со сливочным кремом, ягодным конфи', 'category_id__1': 1, 'image__1': 'media/cakes/cake2.jpg', 'price__1': 60, 'product_name__2': 'Красный бархат', 'description__2': 'Шоколадный бисквит со сливочно-творожном кремом и ягодным конфи', 'category_id__2': 1, 'image__2': 'media/cakes/cake3.jpg', 'price__2': 60, 'product_name__3': 'Фруктово-ягодный', 'description__3': 'Нежнейший цветочный зефир, таящий во рту из фруктово-ягодной начинки', 'category_id__3': 2, 'image__3': 'media/marshmallows/marshmallow1.jpg', 'price__3': 30, 'product_name__4': 'Кокосовый', 'description__4': 'Нежнейший цветочный зефир, таящий во рту со вкусом кокоса', 'category_id__4': 2, 'image__4': 'media/marshmallows/marshmallow2.jpg', 'price__4': 30, 'product_name__5': 'Медовый', 'description__5': 'Воздушное медовое тесто с различным декором', 'category_id__5': 3, 'image__5': 'media/pies/pie1.jpg', 'price__5': 35, 'product_name__6': 'Вишня-шоколад', 'description__6': 'Воздушное вишнево-шоколадное тесто с различным декором', 'category_id__6': 3, 'image__6': 'media/pies/pie2.jpg', 'price__6': 35}
+2025-08-13 10:19:11,668 - INFO - COMMIT
+2025-08-13 10:19:11,889 - INFO - Scheduler started
+2025-08-13 10:19:11,890 - INFO - Планировщик запущен.
+2025-08-13 10:19:11,890 - INFO - Start polling
+2025-08-13 10:19:12,069 - INFO - Run polling for bot @Yummy20_05_bot id=8008057895 - 'Yummy20_05'
+2025-08-13 10:19:40,362 - INFO - BEGIN (implicit)
+2025-08-13 10:19:40,363 - INFO - SELECT users.id, users.name, users.telegram, users.phone 
+FROM users 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:19:40,363 - INFO - [generated in 0.00019s] {'telegram_1': 7003041125}
+2025-08-13 10:19:40,366 - INFO - ROLLBACK
+2025-08-13 10:19:40,618 - INFO - Update id=269744355 is handled. Duration 265 ms by bot id=8008057895
+2025-08-13 10:19:43,548 - INFO - BEGIN (implicit)
+2025-08-13 10:19:43,551 - INFO - UPDATE users SET phone=%(phone)s WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:19:43,551 - INFO - [generated in 0.00034s] {'phone': '+375292716301', 'telegram_1': 7003041125}
+2025-08-13 10:19:43,552 - INFO - COMMIT
+2025-08-13 10:19:43,553 - INFO - BEGIN (implicit)
+2025-08-13 10:19:43,554 - INFO - SELECT users.id, users.name, users.telegram, users.phone 
+FROM users 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:19:43,554 - INFO - [cached since 3.191s ago] {'telegram_1': 7003041125}
+2025-08-13 10:19:43,554 - INFO - ROLLBACK
+2025-08-13 10:19:44,022 - INFO - Update id=269744356 is handled. Duration 483 ms by bot id=8008057895
+2025-08-13 10:19:45,508 - INFO - BEGIN (implicit)
+2025-08-13 10:19:45,508 - INFO - SELECT categories.id, categories.category_name 
+FROM categories
+2025-08-13 10:19:45,508 - INFO - [generated in 0.00022s] {}
+2025-08-13 10:19:45,509 - INFO - ROLLBACK
+2025-08-13 10:19:45,510 - INFO - BEGIN (implicit)
+2025-08-13 10:19:45,513 - INFO - SELECT sum(finally_carts.finally_price) AS sum_1 
+FROM carts JOIN finally_carts ON carts.id = finally_carts.cart_id JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:19:45,513 - INFO - [generated in 0.00024s] {'telegram_1': 7003041125}
+2025-08-13 10:19:45,518 - INFO - ROLLBACK
+2025-08-13 10:19:45,599 - INFO - Update id=269744357 is handled. Duration 171 ms by bot id=8008057895
+2025-08-13 10:19:46,625 - INFO - BEGIN (implicit)
+2025-08-13 10:19:46,627 - INFO - SELECT products.id, products.product_name, products.description, products.image, products.price, products.category_id 
+FROM products 
+WHERE products.category_id = %(category_id_1)s
+2025-08-13 10:19:46,627 - INFO - [generated in 0.00019s] {'category_id_1': 2}
+2025-08-13 10:19:46,713 - INFO - Update id=269744358 is handled. Duration 94 ms by bot id=8008057895
+2025-08-13 10:19:47,624 - INFO - BEGIN (implicit)
+2025-08-13 10:19:47,626 - INFO - SELECT products.id, products.product_name, products.description, products.image, products.price, products.category_id 
+FROM products 
+WHERE products.id = %(id_1)s
+2025-08-13 10:19:47,626 - INFO - [generated in 0.00024s] {'id_1': 5}
+2025-08-13 10:19:47,628 - INFO - ROLLBACK
+2025-08-13 10:19:47,630 - INFO - BEGIN (implicit)
+2025-08-13 10:19:47,631 - INFO - SELECT carts.id, carts.total_price, carts.products, carts.user_id 
+FROM carts JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:19:47,632 - INFO - [generated in 0.00021s] {'telegram_1': 7003041125}
+2025-08-13 10:19:47,634 - INFO - ROLLBACK
+2025-08-13 10:19:47,636 - INFO - Update id=269744359 is handled. Duration 171 ms by bot id=8008057895
+2025-08-13 10:19:57,502 - INFO - Update id=269744360 is handled. Duration 188 ms by bot id=8008057895
+2025-08-13 10:19:58,599 - INFO - BEGIN (implicit)
+2025-08-13 10:19:58,602 - INFO - SELECT orders.id, orders.cart_id, orders.product_name, orders.quantity, orders.final_price 
+FROM orders JOIN carts ON orders.cart_id = carts.id JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s ORDER BY orders.id DESC 
+ LIMIT %(param_1)s
+2025-08-13 10:19:58,602 - INFO - [generated in 0.00049s] {'telegram_1': 7003041125, 'param_1': 5}
+2025-08-13 10:19:58,608 - INFO - ROLLBACK
+2025-08-13 10:19:58,707 - INFO - Update id=269744361 is handled. Duration 109 ms by bot id=8008057895
+2025-08-13 10:19:59,869 - INFO - BEGIN (implicit)
+2025-08-13 10:19:59,870 - INFO - SELECT finally_carts.id, finally_carts.product_name, finally_carts.finally_price, finally_carts.quantity, finally_carts.cart_id 
+FROM finally_carts JOIN carts ON finally_carts.cart_id = carts.id JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:19:59,870 - INFO - [generated in 0.00024s] {'telegram_1': 7003041125}
+2025-08-13 10:19:59,873 - INFO - ROLLBACK
+2025-08-13 10:19:59,949 - INFO - Update id=269744362 is handled. Duration 94 ms by bot id=8008057895
+2025-08-13 10:20:01,850 - INFO - Update id=269744363 is handled. Duration 250 ms by bot id=8008057895
+2025-08-13 10:20:05,148 - INFO - BEGIN (implicit)
+2025-08-13 10:20:05,148 - INFO - SELECT categories.id, categories.category_name 
+FROM categories
+2025-08-13 10:20:05,148 - INFO - [cached since 19.64s ago] {}
+2025-08-13 10:20:05,151 - INFO - ROLLBACK
+2025-08-13 10:20:05,151 - INFO - BEGIN (implicit)
+2025-08-13 10:20:05,152 - INFO - SELECT sum(finally_carts.finally_price) AS sum_1 
+FROM carts JOIN finally_carts ON carts.id = finally_carts.cart_id JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:20:05,152 - INFO - [cached since 19.64s ago] {'telegram_1': 7003041125}
+2025-08-13 10:20:05,155 - INFO - ROLLBACK
+2025-08-13 10:20:05,235 - INFO - Update id=269744364 is handled. Duration 155 ms by bot id=8008057895
+2025-08-13 10:20:07,945 - INFO - BEGIN (implicit)
+2025-08-13 10:20:07,945 - INFO - SELECT products.id, products.product_name, products.description, products.image, products.price, products.category_id 
+FROM products 
+WHERE products.category_id = %(category_id_1)s
+2025-08-13 10:20:07,945 - INFO - [cached since 21.32s ago] {'category_id_1': 3}
+2025-08-13 10:20:08,040 - INFO - Update id=269744365 is handled. Duration 110 ms by bot id=8008057895
+2025-08-13 10:20:10,576 - INFO - BEGIN (implicit)
+2025-08-13 10:20:10,576 - INFO - SELECT products.id, products.product_name, products.description, products.image, products.price, products.category_id 
+FROM products 
+WHERE products.id = %(id_1)s
+2025-08-13 10:20:10,576 - INFO - [cached since 22.95s ago] {'id_1': 7}
+2025-08-13 10:20:10,579 - INFO - ROLLBACK
+2025-08-13 10:20:10,579 - INFO - BEGIN (implicit)
+2025-08-13 10:20:10,579 - INFO - SELECT carts.id, carts.total_price, carts.products, carts.user_id 
+FROM carts JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:20:10,581 - INFO - [cached since 22.95s ago] {'telegram_1': 7003041125}
+2025-08-13 10:20:10,583 - INFO - ROLLBACK
+2025-08-13 10:20:10,583 - INFO - Update id=269744366 is handled. Duration 155 ms by bot id=8008057895
+2025-08-13 10:20:12,902 - INFO - Update id=269744367 is handled. Duration 125 ms by bot id=8008057895
+2025-08-13 10:20:56,213 - INFO - BEGIN (implicit)
+2025-08-13 10:20:56,213 - INFO - SELECT categories.id, categories.category_name 
+FROM categories
+2025-08-13 10:20:56,213 - INFO - [cached since 70.71s ago] {}
+2025-08-13 10:20:56,217 - INFO - ROLLBACK
+2025-08-13 10:20:56,217 - INFO - BEGIN (implicit)
+2025-08-13 10:20:56,219 - INFO - SELECT sum(finally_carts.finally_price) AS sum_1 
+FROM carts JOIN finally_carts ON carts.id = finally_carts.cart_id JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:20:56,219 - INFO - [cached since 70.71s ago] {'telegram_1': 7003041125}
+2025-08-13 10:20:56,223 - INFO - ROLLBACK
+2025-08-13 10:20:56,395 - INFO - Update id=269744368 is handled. Duration 250 ms by bot id=8008057895
+2025-08-13 10:20:58,131 - INFO - BEGIN (implicit)
+2025-08-13 10:20:58,131 - INFO - SELECT products.id, products.product_name, products.description, products.image, products.price, products.category_id 
+FROM products 
+WHERE products.category_id = %(category_id_1)s
+2025-08-13 10:20:58,131 - INFO - [cached since 71.5s ago] {'category_id_1': 2}
+2025-08-13 10:20:58,260 - INFO - Update id=269744369 is handled. Duration 140 ms by bot id=8008057895
+2025-08-13 10:20:59,307 - INFO - BEGIN (implicit)
+2025-08-13 10:20:59,307 - INFO - SELECT products.id, products.product_name, products.description, products.image, products.price, products.category_id 
+FROM products 
+WHERE products.id = %(id_1)s
+2025-08-13 10:20:59,307 - INFO - [cached since 71.68s ago] {'id_1': 4}
+2025-08-13 10:20:59,312 - INFO - ROLLBACK
+2025-08-13 10:20:59,312 - INFO - BEGIN (implicit)
+2025-08-13 10:20:59,313 - INFO - SELECT carts.id, carts.total_price, carts.products, carts.user_id 
+FROM carts JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:20:59,313 - INFO - [cached since 71.68s ago] {'telegram_1': 7003041125}
+2025-08-13 10:20:59,315 - INFO - ROLLBACK
+2025-08-13 10:20:59,316 - INFO - Update id=269744370 is handled. Duration 139 ms by bot id=8008057895
+2025-08-13 10:21:01,124 - INFO - Update id=269744371 is handled. Duration 125 ms by bot id=8008057895
+2025-08-13 10:22:00,847 - INFO - BEGIN (implicit)
+2025-08-13 10:22:00,847 - INFO - SELECT categories.id, categories.category_name 
+FROM categories
+2025-08-13 10:22:00,849 - INFO - [cached since 135.3s ago] {}
+2025-08-13 10:22:00,852 - INFO - ROLLBACK
+2025-08-13 10:22:00,852 - INFO - BEGIN (implicit)
+2025-08-13 10:22:00,853 - INFO - SELECT sum(finally_carts.finally_price) AS sum_1 
+FROM carts JOIN finally_carts ON carts.id = finally_carts.cart_id JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:22:00,853 - INFO - [cached since 135.3s ago] {'telegram_1': 7003041125}
+2025-08-13 10:22:00,854 - INFO - ROLLBACK
+2025-08-13 10:22:00,943 - INFO - Update id=269744372 is handled. Duration 171 ms by bot id=8008057895
+2025-08-13 10:22:02,194 - INFO - BEGIN (implicit)
+2025-08-13 10:22:02,194 - INFO - SELECT products.id, products.product_name, products.description, products.image, products.price, products.category_id 
+FROM products 
+WHERE products.category_id = %(category_id_1)s
+2025-08-13 10:22:02,194 - INFO - [cached since 135.6s ago] {'category_id_1': 1}
+2025-08-13 10:22:02,275 - INFO - Update id=269744373 is handled. Duration 94 ms by bot id=8008057895
+2025-08-13 10:22:03,157 - INFO - BEGIN (implicit)
+2025-08-13 10:22:03,159 - INFO - SELECT products.id, products.product_name, products.description, products.image, products.price, products.category_id 
+FROM products 
+WHERE products.id = %(id_1)s
+2025-08-13 10:22:03,159 - INFO - [cached since 135.5s ago] {'id_1': 1}
+2025-08-13 10:22:03,159 - INFO - ROLLBACK
+2025-08-13 10:22:03,161 - INFO - BEGIN (implicit)
+2025-08-13 10:22:03,161 - INFO - SELECT carts.id, carts.total_price, carts.products, carts.user_id 
+FROM carts JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:22:03,161 - INFO - [cached since 135.5s ago] {'telegram_1': 7003041125}
+2025-08-13 10:22:03,166 - INFO - ROLLBACK
+2025-08-13 10:22:03,167 - INFO - Update id=269744374 is handled. Duration 78 ms by bot id=8008057895
+2025-08-13 10:22:05,486 - INFO - Update id=269744375 is handled. Duration 155 ms by bot id=8008057895
+2025-08-13 10:35:50,518 - INFO - Polling stopped
+2025-08-13 10:35:50,519 - INFO - Polling stopped for bot @Yummy20_05_bot id=8008057895 - 'Yummy20_05'
+2025-08-13 10:40:02,961 - INFO - select pg_catalog.version()
+2025-08-13 10:40:02,961 - INFO - [raw sql] {}
+2025-08-13 10:40:02,963 - INFO - select current_schema()
+2025-08-13 10:40:02,969 - INFO - [raw sql] {}
+2025-08-13 10:40:02,969 - INFO - show standard_conforming_strings
+2025-08-13 10:40:02,969 - INFO - [raw sql] {}
+2025-08-13 10:40:02,971 - INFO - BEGIN (implicit)
+2025-08-13 10:40:02,971 - INFO - CREATE SCHEMA IF NOT EXISTS public
+2025-08-13 10:40:02,971 - INFO - [generated in 0.00025s] {}
+2025-08-13 10:40:02,972 - INFO - COMMIT
+2025-08-13 10:40:02,972 - INFO - BEGIN (implicit)
+2025-08-13 10:40:02,975 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-08-13 10:40:02,976 - INFO - [generated in 0.00023s] {'table_name': 'categories', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-08-13 10:40:02,979 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-08-13 10:40:02,979 - INFO - [cached since 0.003582s ago] {'table_name': 'users', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-08-13 10:40:02,980 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-08-13 10:40:02,980 - INFO - [cached since 0.0044s ago] {'table_name': 'carts', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-08-13 10:40:02,980 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-08-13 10:40:02,980 - INFO - [cached since 0.005156s ago] {'table_name': 'finally_carts', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-08-13 10:40:02,981 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-08-13 10:40:02,981 - INFO - [cached since 0.005895s ago] {'table_name': 'products', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-08-13 10:40:02,982 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-08-13 10:40:02,982 - INFO - [cached since 0.00679s ago] {'table_name': 'orders', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-08-13 10:40:02,983 - INFO - COMMIT
+2025-08-13 10:40:02,984 - INFO - BEGIN (implicit)
+2025-08-13 10:40:02,995 - INFO - SELECT categories.id, categories.category_name 
+FROM categories 
+WHERE categories.category_name = %(category_name_1)s
+2025-08-13 10:40:02,996 - INFO - [generated in 0.00030s] {'category_name_1': 'Торты'}
+2025-08-13 10:40:02,999 - INFO - SELECT categories.id, categories.category_name 
+FROM categories 
+WHERE categories.category_name = %(category_name_1)s
+2025-08-13 10:40:02,999 - INFO - [cached since 0.003772s ago] {'category_name_1': 'Зефир'}
+2025-08-13 10:40:03,000 - INFO - SELECT categories.id, categories.category_name 
+FROM categories 
+WHERE categories.category_name = %(category_name_1)s
+2025-08-13 10:40:03,000 - INFO - [cached since 0.004585s ago] {'category_name_1': 'Пирожные'}
+2025-08-13 10:40:03,002 - INFO - INSERT INTO products (product_name, description, image, price, category_id) SELECT p0::VARCHAR, p1::VARCHAR, p2::VARCHAR, p3::NUMERIC(5, 2), p4::INTEGER FROM (VALUES (%(product_name__0)s, %(description__0)s, %(image__0)s, %(price__0)s, %(category_id_ ... 582 characters truncated ... en(p0, p1, p2, p3, p4, sen_counter) ORDER BY sen_counter RETURNING products.id, products.id AS id__1
+2025-08-13 10:40:03,003 - INFO - [generated in 0.00008s (insertmanyvalues) 1/1 (ordered)] {'price__0': 60, 'product_name__0': 'Медовик', 'category_id__0': 1, 'description__0': 'Медовые коржи со сметанным или карамельным кремом, ягодным конфи, орехами и сухофруктами', 'image__0': 'media/cakes/cake1.jpg', 'price__1': 60, 'product_name__1': 'Молочная девочка', 'category_id__1': 1, 'description__1': 'Воздушные коржи на сгущённом молоке со сливочным кремом, ягодным конфи', 'image__1': 'media/cakes/cake2.jpg', 'price__2': 60, 'product_name__2': 'Красный бархат', 'category_id__2': 1, 'description__2': 'Шоколадный бисквит со сливочно-творожном кремом и ягодным конфи', 'image__2': 'media/cakes/cake3.jpg', 'price__3': 30, 'product_name__3': 'Фруктово-ягодный', 'category_id__3': 2, 'description__3': 'Нежнейший цветочный зефир, таящий во рту из фруктово-ягодной начинки', 'image__3': 'media/marshmallows/marshmallow1.jpg', 'price__4': 30, 'product_name__4': 'Кокосовый', 'category_id__4': 2, 'description__4': 'Нежнейший цветочный зефир, таящий во рту со вкусом кокоса', 'image__4': 'media/marshmallows/marshmallow2.jpg', 'price__5': 35, 'product_name__5': 'Медовый', 'category_id__5': 3, 'description__5': 'Воздушное медовое тесто с различным декором', 'image__5': 'media/pies/pie1.jpg', 'price__6': 35, 'product_name__6': 'Вишня-шоколад', 'category_id__6': 3, 'description__6': 'Воздушное вишнево-шоколадное тесто с различным декором', 'image__6': 'media/pies/pie2.jpg'}
+2025-08-13 10:40:03,005 - INFO - ROLLBACK
+2025-08-13 10:40:41,269 - INFO - select pg_catalog.version()
+2025-08-13 10:40:41,269 - INFO - [raw sql] {}
+2025-08-13 10:40:41,271 - INFO - select current_schema()
+2025-08-13 10:40:41,271 - INFO - [raw sql] {}
+2025-08-13 10:40:41,272 - INFO - show standard_conforming_strings
+2025-08-13 10:40:41,272 - INFO - [raw sql] {}
+2025-08-13 10:40:41,272 - INFO - BEGIN (implicit)
+2025-08-13 10:40:41,272 - INFO - DROP SCHEMA IF EXISTS public CASCADE
+2025-08-13 10:40:41,272 - INFO - [generated in 0.00024s] {}
+2025-08-13 10:40:41,282 - INFO - CREATE SCHEMA IF NOT EXISTS public
+2025-08-13 10:40:41,282 - INFO - [generated in 0.00022s] {}
+2025-08-13 10:40:41,283 - INFO - COMMIT
+2025-08-13 10:40:41,308 - INFO - BEGIN (implicit)
+2025-08-13 10:40:41,313 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-08-13 10:40:41,313 - INFO - [generated in 0.00062s] {'table_name': 'categories', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-08-13 10:40:41,317 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-08-13 10:40:41,317 - INFO - [cached since 0.00421s ago] {'table_name': 'users', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-08-13 10:40:41,317 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-08-13 10:40:41,317 - INFO - [cached since 0.004939s ago] {'table_name': 'carts', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-08-13 10:40:41,318 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-08-13 10:40:41,318 - INFO - [cached since 0.005719s ago] {'table_name': 'finally_carts', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-08-13 10:40:41,319 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-08-13 10:40:41,319 - INFO - [cached since 0.0064s ago] {'table_name': 'products', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-08-13 10:40:41,319 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = %(table_name)s AND pg_catalog.pg_class.relkind = ANY (ARRAY[%(param_1)s, %(param_2)s, %(param_3)s, %(param_4)s, %(param_5)s]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != %(nspname_1)s
+2025-08-13 10:40:41,319 - INFO - [cached since 0.007022s ago] {'table_name': 'orders', 'param_1': 'r', 'param_2': 'p', 'param_3': 'f', 'param_4': 'v', 'param_5': 'm', 'nspname_1': 'pg_catalog'}
+2025-08-13 10:40:41,320 - INFO - 
+CREATE TABLE categories (
+	id SERIAL NOT NULL, 
+	category_name VARCHAR(30) NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (category_name)
+)
+
+
+2025-08-13 10:40:41,320 - INFO - [no key 0.00014s] {}
+2025-08-13 10:40:41,330 - INFO - 
+CREATE TABLE users (
+	id SERIAL NOT NULL, 
+	name VARCHAR(50), 
+	telegram BIGINT NOT NULL, 
+	phone VARCHAR, 
+	PRIMARY KEY (id), 
+	UNIQUE (telegram)
+)
+
+
+2025-08-13 10:40:41,331 - INFO - [no key 0.00029s] {}
+2025-08-13 10:40:41,337 - INFO - 
+CREATE TABLE carts (
+	id SERIAL NOT NULL, 
+	total_price DECIMAL(5, 2) NOT NULL, 
+	products INTEGER NOT NULL, 
+	user_id INTEGER NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (user_id), 
+	FOREIGN KEY(user_id) REFERENCES users (id)
+)
+
+
+2025-08-13 10:40:41,337 - INFO - [no key 0.00024s] {}
+2025-08-13 10:40:41,345 - INFO - 
+CREATE TABLE products (
+	id SERIAL NOT NULL, 
+	product_name VARCHAR(50) NOT NULL, 
+	description VARCHAR NOT NULL, 
+	image VARCHAR(255) NOT NULL, 
+	price DECIMAL(5, 2) NOT NULL, 
+	category_id INTEGER NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (product_name), 
+	FOREIGN KEY(category_id) REFERENCES categories (id)
+)
+
+
+2025-08-13 10:40:41,345 - INFO - [no key 0.00034s] {}
+2025-08-13 10:40:41,353 - INFO - 
+CREATE TABLE finally_carts (
+	id SERIAL NOT NULL, 
+	product_name VARCHAR(50) NOT NULL, 
+	finally_price DECIMAL(5, 2) NOT NULL, 
+	quantity INTEGER NOT NULL, 
+	cart_id INTEGER NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(cart_id) REFERENCES carts (id)
+)
+
+
+2025-08-13 10:40:41,353 - INFO - [no key 0.00022s] {}
+2025-08-13 10:40:41,356 - INFO - 
+CREATE TABLE orders (
+	id SERIAL NOT NULL, 
+	cart_id INTEGER NOT NULL, 
+	product_name VARCHAR(50) NOT NULL, 
+	quantity INTEGER NOT NULL, 
+	final_price DECIMAL(6, 2) NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(cart_id) REFERENCES carts (id)
+)
+
+
+2025-08-13 10:40:41,357 - INFO - [no key 0.00020s] {}
+2025-08-13 10:40:41,359 - INFO - COMMIT
+2025-08-13 10:40:41,361 - INFO - BEGIN (implicit)
+2025-08-13 10:40:41,371 - INFO - SELECT categories.id, categories.category_name 
+FROM categories 
+WHERE categories.category_name = %(category_name_1)s
+2025-08-13 10:40:41,371 - INFO - [generated in 0.00026s] {'category_name_1': 'Торты'}
+2025-08-13 10:40:41,377 - INFO - INSERT INTO categories (category_name) VALUES (%(category_name)s) RETURNING categories.id
+2025-08-13 10:40:41,377 - INFO - [generated in 0.00023s] {'category_name': 'Торты'}
+2025-08-13 10:40:41,378 - INFO - SELECT categories.id, categories.category_name 
+FROM categories 
+WHERE categories.category_name = %(category_name_1)s
+2025-08-13 10:40:41,378 - INFO - [cached since 0.0067s ago] {'category_name_1': 'Зефир'}
+2025-08-13 10:40:41,379 - INFO - INSERT INTO categories (category_name) VALUES (%(category_name)s) RETURNING categories.id
+2025-08-13 10:40:41,379 - INFO - [cached since 0.002806s ago] {'category_name': 'Зефир'}
+2025-08-13 10:40:41,380 - INFO - SELECT categories.id, categories.category_name 
+FROM categories 
+WHERE categories.category_name = %(category_name_1)s
+2025-08-13 10:40:41,380 - INFO - [cached since 0.008417s ago] {'category_name_1': 'Пирожные'}
+2025-08-13 10:40:41,380 - INFO - INSERT INTO categories (category_name) VALUES (%(category_name)s) RETURNING categories.id
+2025-08-13 10:40:41,381 - INFO - [cached since 0.004519s ago] {'category_name': 'Пирожные'}
+2025-08-13 10:40:41,383 - INFO - INSERT INTO products (product_name, description, image, price, category_id) SELECT p0::VARCHAR, p1::VARCHAR, p2::VARCHAR, p3::NUMERIC(5, 2), p4::INTEGER FROM (VALUES (%(product_name__0)s, %(description__0)s, %(image__0)s, %(price__0)s, %(category_id_ ... 582 characters truncated ... en(p0, p1, p2, p3, p4, sen_counter) ORDER BY sen_counter RETURNING products.id, products.id AS id__1
+2025-08-13 10:40:41,383 - INFO - [generated in 0.00008s (insertmanyvalues) 1/1 (ordered)] {'image__0': 'media/cakes/cake1.jpg', 'price__0': 60, 'description__0': 'Медовые коржи со сметанным или карамельным кремом, ягодным конфи, орехами и сухофруктами', 'product_name__0': 'Медовик', 'category_id__0': 1, 'image__1': 'media/cakes/cake2.jpg', 'price__1': 60, 'description__1': 'Воздушные коржи на сгущённом молоке со сливочным кремом, ягодным конфи', 'product_name__1': 'Молочная девочка', 'category_id__1': 1, 'image__2': 'media/cakes/cake3.jpg', 'price__2': 60, 'description__2': 'Шоколадный бисквит со сливочно-творожном кремом и ягодным конфи', 'product_name__2': 'Красный бархат', 'category_id__2': 1, 'image__3': 'media/marshmallows/marshmallow1.jpg', 'price__3': 30, 'description__3': 'Нежнейший цветочный зефир, таящий во рту из фруктово-ягодной начинки', 'product_name__3': 'Фруктово-ягодный', 'category_id__3': 2, 'image__4': 'media/marshmallows/marshmallow2.jpg', 'price__4': 30, 'description__4': 'Нежнейший цветочный зефир, таящий во рту со вкусом кокоса', 'product_name__4': 'Кокосовый', 'category_id__4': 2, 'image__5': 'media/pies/pie1.jpg', 'price__5': 35, 'description__5': 'Воздушное медовое тесто с различным декором', 'product_name__5': 'Медовый', 'category_id__5': 3, 'image__6': 'media/pies/pie2.jpg', 'price__6': 35, 'description__6': 'Воздушное вишнево-шоколадное тесто с различным декором', 'product_name__6': 'Вишня-шоколад', 'category_id__6': 3}
+2025-08-13 10:40:41,389 - INFO - COMMIT
+2025-08-13 10:40:41,487 - INFO - Scheduler started
+2025-08-13 10:40:41,487 - INFO - Планировщик запущен.
+2025-08-13 10:40:41,487 - INFO - Start polling
+2025-08-13 10:40:41,761 - INFO - Run polling for bot @Yummy20_05_bot id=8008057895 - 'Yummy20_05'
+2025-08-13 10:40:55,444 - INFO - Update id=269744376 is handled. Duration 250 ms by bot id=8008057895
+2025-08-13 10:41:03,346 - INFO - Update id=269744377 is handled. Duration 78 ms by bot id=8008057895
+2025-08-13 10:41:04,569 - INFO - BEGIN (implicit)
+2025-08-13 10:41:04,569 - INFO - INSERT INTO users (name, telegram, phone) VALUES (%(name)s, %(telegram)s, %(phone)s) RETURNING users.id
+2025-08-13 10:41:04,570 - INFO - [generated in 0.00024s] {'name': 'Nick', 'telegram': 7003041125, 'phone': None}
+2025-08-13 10:41:04,573 - INFO - COMMIT
+2025-08-13 10:41:04,666 - INFO - Update id=269744378 is handled. Duration 110 ms by bot id=8008057895
+2025-08-13 10:41:06,780 - INFO - BEGIN (implicit)
+2025-08-13 10:41:06,780 - INFO - UPDATE users SET phone=%(phone)s WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:41:06,781 - INFO - [generated in 0.00021s] {'phone': '+375292716301', 'telegram_1': 7003041125}
+2025-08-13 10:41:06,783 - INFO - COMMIT
+2025-08-13 10:41:06,791 - INFO - BEGIN (implicit)
+2025-08-13 10:41:06,794 - INFO - SELECT users.id, users.name, users.telegram, users.phone 
+FROM users 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:41:06,794 - INFO - [generated in 0.00036s] {'telegram_1': 7003041125}
+2025-08-13 10:41:06,797 - INFO - INSERT INTO carts (total_price, products, user_id) VALUES (%(total_price)s, %(products)s, %(user_id)s) RETURNING carts.id
+2025-08-13 10:41:06,797 - INFO - [generated in 0.00030s] {'total_price': 0, 'products': 0, 'user_id': 1}
+2025-08-13 10:41:06,801 - INFO - COMMIT
+2025-08-13 10:41:06,945 - INFO - Update id=269744379 is handled. Duration 172 ms by bot id=8008057895
+2025-08-13 10:41:08,293 - INFO - BEGIN (implicit)
+2025-08-13 10:41:08,293 - INFO - SELECT categories.id, categories.category_name 
+FROM categories
+2025-08-13 10:41:08,293 - INFO - [generated in 0.00016s] {}
+2025-08-13 10:41:08,295 - INFO - ROLLBACK
+2025-08-13 10:41:08,296 - INFO - BEGIN (implicit)
+2025-08-13 10:41:08,299 - INFO - SELECT sum(finally_carts.finally_price) AS sum_1 
+FROM carts JOIN finally_carts ON carts.id = finally_carts.cart_id JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:41:08,299 - INFO - [generated in 0.00031s] {'telegram_1': 7003041125}
+2025-08-13 10:41:08,301 - INFO - ROLLBACK
+2025-08-13 10:41:08,383 - INFO - Update id=269744380 is handled. Duration 171 ms by bot id=8008057895
+2025-08-13 10:41:09,438 - INFO - BEGIN (implicit)
+2025-08-13 10:41:09,441 - INFO - SELECT products.id, products.product_name, products.description, products.image, products.price, products.category_id 
+FROM products 
+WHERE products.category_id = %(category_id_1)s
+2025-08-13 10:41:09,441 - INFO - [generated in 0.00045s] {'category_id_1': 2}
+2025-08-13 10:41:09,539 - INFO - Update id=269744381 is handled. Duration 110 ms by bot id=8008057895
+2025-08-13 10:41:10,283 - INFO - BEGIN (implicit)
+2025-08-13 10:41:10,284 - INFO - SELECT products.id, products.product_name, products.description, products.image, products.price, products.category_id 
+FROM products 
+WHERE products.id = %(id_1)s
+2025-08-13 10:41:10,289 - INFO - [generated in 0.00464s] {'id_1': 5}
+2025-08-13 10:41:10,291 - INFO - ROLLBACK
+2025-08-13 10:41:10,293 - INFO - BEGIN (implicit)
+2025-08-13 10:41:10,296 - INFO - SELECT carts.id, carts.total_price, carts.products, carts.user_id 
+FROM carts JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:41:10,296 - INFO - [generated in 0.00047s] {'telegram_1': 7003041125}
+2025-08-13 10:41:10,298 - INFO - ROLLBACK
+2025-08-13 10:41:10,298 - INFO - BEGIN (implicit)
+2025-08-13 10:41:10,300 - INFO - UPDATE carts SET total_price=%(total_price)s, products=%(products)s WHERE carts.id = %(id_1)s
+2025-08-13 10:41:10,300 - INFO - [generated in 0.00028s] {'total_price': Decimal('30.00'), 'products': 1, 'id_1': 1}
+2025-08-13 10:41:10,301 - INFO - COMMIT
+2025-08-13 10:41:10,510 - INFO - Update id=269744382 is handled. Duration 296 ms by bot id=8008057895
+2025-08-13 10:41:11,477 - INFO - BEGIN (implicit)
+2025-08-13 10:41:11,478 - INFO - SELECT carts.id, carts.total_price, carts.products, carts.user_id 
+FROM carts JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:41:11,478 - INFO - [cached since 1.183s ago] {'telegram_1': 7003041125}
+2025-08-13 10:41:11,479 - INFO - ROLLBACK
+2025-08-13 10:41:11,538 - INFO - BEGIN (implicit)
+2025-08-13 10:41:11,540 - INFO - SELECT finally_carts.id AS finally_carts_id, finally_carts.product_name AS finally_carts_product_name, finally_carts.finally_price AS finally_carts_finally_price, finally_carts.quantity AS finally_carts_quantity, finally_carts.cart_id AS finally_carts_cart_id 
+FROM finally_carts 
+WHERE finally_carts.cart_id = %(cart_id_1)s AND finally_carts.product_name = %(product_name_1)s 
+ LIMIT %(param_1)s
+2025-08-13 10:41:11,540 - INFO - [generated in 0.00020s] {'cart_id_1': 1, 'product_name_1': 'Кокосовый', 'param_1': 1}
+2025-08-13 10:41:11,543 - INFO - INSERT INTO finally_carts (product_name, finally_price, quantity, cart_id) VALUES (%(product_name)s, %(finally_price)s, %(quantity)s, %(cart_id)s) RETURNING finally_carts.id
+2025-08-13 10:41:11,543 - INFO - [generated in 0.00018s] {'product_name': 'Кокосовый', 'finally_price': Decimal('30.00'), 'quantity': 1, 'cart_id': 1}
+2025-08-13 10:41:11,544 - INFO - COMMIT
+2025-08-13 10:41:11,770 - INFO - BEGIN (implicit)
+2025-08-13 10:41:11,770 - INFO - SELECT categories.id, categories.category_name 
+FROM categories
+2025-08-13 10:41:11,770 - INFO - [cached since 3.476s ago] {}
+2025-08-13 10:41:11,771 - INFO - ROLLBACK
+2025-08-13 10:41:11,771 - INFO - BEGIN (implicit)
+2025-08-13 10:41:11,772 - INFO - SELECT sum(finally_carts.finally_price) AS sum_1 
+FROM carts JOIN finally_carts ON carts.id = finally_carts.cart_id JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:41:11,772 - INFO - [cached since 3.474s ago] {'telegram_1': 7003041125}
+2025-08-13 10:41:11,775 - INFO - ROLLBACK
+2025-08-13 10:41:11,854 - INFO - Update id=269744383 is handled. Duration 390 ms by bot id=8008057895
+2025-08-13 10:41:14,301 - INFO - BEGIN (implicit)
+2025-08-13 10:41:14,303 - INFO - SELECT finally_carts.id, finally_carts.product_name, finally_carts.finally_price, finally_carts.quantity, finally_carts.cart_id 
+FROM finally_carts JOIN carts ON finally_carts.cart_id = carts.id JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:41:14,303 - INFO - [generated in 0.00024s] {'telegram_1': 7003041125}
+2025-08-13 10:41:14,304 - INFO - ROLLBACK
+2025-08-13 10:41:14,575 - INFO - Update id=269744384 is handled. Duration 280 ms by bot id=8008057895
+2025-08-13 10:41:15,355 - INFO - BEGIN (implicit)
+2025-08-13 10:41:15,356 - INFO - SELECT users.phone 
+FROM users 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:41:15,356 - INFO - [generated in 0.00021s] {'telegram_1': 7003041125}
+2025-08-13 10:41:15,356 - INFO - ROLLBACK
+2025-08-13 10:41:15,358 - INFO - BEGIN (implicit)
+2025-08-13 10:41:15,359 - INFO - SELECT finally_carts.product_name, finally_carts.quantity, finally_carts.finally_price, finally_carts.cart_id 
+FROM finally_carts JOIN carts ON carts.id = finally_carts.cart_id JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:41:15,359 - INFO - [generated in 0.00017s] {'telegram_1': 7003041125}
+2025-08-13 10:41:15,360 - INFO - ROLLBACK
+2025-08-13 10:41:15,547 - INFO - BEGIN (implicit)
+2025-08-13 10:41:15,547 - INFO - SELECT carts.id, carts.total_price, carts.products, carts.user_id 
+FROM carts JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:41:15,547 - INFO - [cached since 5.252s ago] {'telegram_1': 7003041125}
+2025-08-13 10:41:15,548 - INFO - ROLLBACK
+2025-08-13 10:41:15,549 - INFO - BEGIN (implicit)
+2025-08-13 10:41:15,550 - INFO - SELECT finally_carts.id AS finally_carts_id, finally_carts.product_name AS finally_carts_product_name, finally_carts.finally_price AS finally_carts_finally_price, finally_carts.quantity AS finally_carts_quantity, finally_carts.cart_id AS finally_carts_cart_id 
+FROM finally_carts 
+WHERE finally_carts.cart_id = %(cart_id_1)s
+2025-08-13 10:41:15,551 - INFO - [generated in 0.00039s] {'cart_id_1': 1}
+2025-08-13 10:41:15,556 - INFO - INSERT INTO orders (cart_id, product_name, quantity, final_price) VALUES (%(cart_id)s, %(product_name)s, %(quantity)s, %(final_price)s) RETURNING orders.id
+2025-08-13 10:41:15,556 - INFO - [generated in 0.00035s] {'cart_id': 1, 'product_name': 'Кокосовый', 'quantity': 1, 'final_price': Decimal('30.00')}
+2025-08-13 10:41:15,565 - INFO - COMMIT
+2025-08-13 10:41:15,575 - INFO - Added job "manage_scheduler" to job store "default"
+2025-08-13 10:41:15,576 - INFO - Напоминание для заказа 1 запланировано на 2025-08-13 10:41:25.567987
+2025-08-13 10:41:15,577 - INFO - BEGIN (implicit)
+2025-08-13 10:41:15,578 - INFO - SELECT carts.id, carts.total_price, carts.products, carts.user_id 
+FROM carts JOIN users ON users.id = carts.user_id 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:41:15,578 - INFO - [cached since 5.282s ago] {'telegram_1': 7003041125}
+2025-08-13 10:41:15,579 - INFO - ROLLBACK
+2025-08-13 10:41:15,581 - INFO - BEGIN (implicit)
+2025-08-13 10:41:15,582 - INFO - DELETE FROM finally_carts WHERE finally_carts.cart_id = %(cart_id_1)s
+2025-08-13 10:41:15,583 - INFO - [generated in 0.00021s] {'cart_id_1': 1}
+2025-08-13 10:41:15,584 - INFO - COMMIT
+2025-08-13 10:41:15,943 - INFO - Update id=269744385 is handled. Duration 577 ms by bot id=8008057895
+2025-08-13 10:41:25,596 - INFO - Removed job reminder_1
+2025-08-13 10:41:25,597 - INFO - Running job "manage_scheduler (trigger: date[2025-08-13 10:41:25 +03], next run at: 2025-08-13 10:41:25 +03)" (scheduled at 2025-08-13 10:41:25.567987+03:00)
+2025-08-13 10:41:25,611 - INFO - BEGIN (implicit)
+2025-08-13 10:41:25,614 - INFO - SELECT sum(orders.final_price) AS sum_1 
+FROM orders 
+WHERE orders.cart_id = %(cart_id_1)s
+2025-08-13 10:41:25,614 - INFO - [generated in 0.00028s] {'cart_id_1': 1}
+2025-08-13 10:41:25,616 - INFO - SELECT users.id AS users_id, users.name AS users_name, users.telegram AS users_telegram, users.phone AS users_phone 
+FROM users JOIN carts ON users.id = carts.user_id 
+WHERE carts.id = %(id_1)s 
+ LIMIT %(param_1)s
+2025-08-13 10:41:25,617 - INFO - [generated in 0.00027s] {'id_1': 1, 'param_1': 1}
+2025-08-13 10:41:25,618 - INFO - ROLLBACK
+2025-08-13 10:41:26,061 - INFO - Напоминание менеджеру отправлено
+2025-08-13 10:41:26,063 - INFO - Job "manage_scheduler (trigger: date[2025-08-13 10:41:25 +03], next run at: 2025-08-13 10:41:25 +03)" executed successfully
+2025-08-13 10:43:00,564 - INFO - Update id=269744386 is handled. Duration 217 ms by bot id=8008057895
+2025-08-13 10:43:03,221 - INFO - BEGIN (implicit)
+2025-08-13 10:43:03,221 - INFO - INSERT INTO users (name, telegram, phone) VALUES (%(name)s, %(telegram)s, %(phone)s) RETURNING users.id
+2025-08-13 10:43:03,221 - INFO - [cached since 118.7s ago] {'name': 'Евгений', 'telegram': 915010491, 'phone': None}
+2025-08-13 10:43:03,223 - INFO - COMMIT
+2025-08-13 10:43:03,306 - INFO - Update id=269744387 is handled. Duration 92 ms by bot id=8008057895
+2025-08-13 10:43:05,785 - INFO - BEGIN (implicit)
+2025-08-13 10:43:05,786 - INFO - UPDATE users SET phone=%(phone)s WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:43:05,786 - INFO - [cached since 119s ago] {'phone': '+375292372907', 'telegram_1': 915010491}
+2025-08-13 10:43:05,786 - INFO - COMMIT
+2025-08-13 10:43:05,797 - INFO - BEGIN (implicit)
+2025-08-13 10:43:05,797 - INFO - SELECT users.id, users.name, users.telegram, users.phone 
+FROM users 
+WHERE users.telegram = %(telegram_1)s
+2025-08-13 10:43:05,797 - INFO - [cached since 119s ago] {'telegram_1': 915010491}
+2025-08-13 10:43:05,800 - INFO - INSERT INTO carts (total_price, products, user_id) VALUES (%(total_price)s, %(products)s, %(user_id)s) RETURNING carts.id
+2025-08-13 10:43:05,800 - INFO - [cached since 119s ago] {'total_price': 0, 'products': 0, 'user_id': 2}
+2025-08-13 10:43:05,801 - INFO - COMMIT
+2025-08-13 10:43:06,019 - INFO - Update id=269744388 is handled. Duration 234 ms by bot id=8008057895
+2025-08-13 10:43:47,594 - INFO - Polling stopped for bot @Yummy20_05_bot id=8008057895 - 'Yummy20_05'
+2025-08-13 10:43:47,595 - INFO - Polling stopped

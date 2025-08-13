@@ -14,8 +14,6 @@ def get_session():
 
 
 def db_register_user(full_name, chat_id):
-    """Регистрация юзеров в базе данных"""
-
     try:
         with get_session() as session:
             query = Users(name=full_name, telegram=chat_id)
@@ -24,15 +22,6 @@ def db_register_user(full_name, chat_id):
         return False
     except IntegrityError:
         return True
-
-
-def db_is_registered(chat_id):
-    """Проверка есть ли пользователь в базе данных"""
-
-    with get_session() as session:
-        user = session.execute(select(Users).where(Users.telegram == chat_id)).scalar_one_or_none()
-
-        return bool(user)
 
 
 def db_update_user(chat_id, phone: str):
