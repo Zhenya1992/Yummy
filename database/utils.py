@@ -339,20 +339,38 @@ def db_delete_user_by_telegram_id(chat_id):
 #             "total_price": float(total)
 #         }
 
-def db_get_last_order_info(order_id: int):
-    with get_session() as session:
-        order = session.query(Orders).filter_by(id=order_id).first()
-        if not order:
-            return {"username": "Неизвестно", "phone": "-", "total_price": 0.0}
+def db_get_last_order_info(cart_id: int):
+    """Функция для получения данных о последнем заказе"""
 
-        user = (session.query(Users)
-            .join(Carts, Users.id == Carts.user_id)
-            .filter(Carts.id == order.cart_id)
-            .first()
-        )
+    with (get_session() as session):
+        orders = session.query(Orders) \
+        .filter(Orders.cart_id==cart_id) \
+        .order_by(Orders.created_at.desc()).all()
+        if not orders:
+            return None
+
+        last_order_time = orders[0].created_at
+        last_order_items = [order for order in orders if order.created_at == last_order_time]
+
+        user = session.query(Users) \
+        .join(Carts, Users.id == Carts.user_id) \
+        .filter(Carts.id == cart_id).first()
+
+        items = []
+        total_price = 0
+        for item in last_order_items:
+            item_total = float(item.final_price) * item.quantity
+            items.append({
+                'name': item.product_name,
+                'quantity': item.quantity,
+                'price': float(item.final_price),
+                'total': item_total
+            })
+            total_price += item_total
 
         return {
             "username": user.name if user else "Неизвестно",
             "phone": user.phone if user else "-",
-            "total_price": float(order.final_price)
+            "total_price": total_price,
+            "items": items
         }

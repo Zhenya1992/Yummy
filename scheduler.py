@@ -1,18 +1,19 @@
 import os
-import logging
 from datetime import datetime, timedelta
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.jobstores.sqlalchemy import SQLAlchemyJobStore
 from aiogram import Bot
+import logging
 from dotenv import load_dotenv
+from sqlalchemy import DateTime
+
 from database.utils import db_get_last_order_info
 
 load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 BOT_TOKEN = os.getenv("TOKEN")
-MANAGER_CHAT_ID = int(os.getenv("MANAGER_CHAT_ID", "0"))
-
+MANAGER_ID = int(os.getenv("MANAGER_ID", "0"))
 
 if not os.path.exists("logs"):
     os.makedirs("logs")
@@ -24,52 +25,49 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-
 jobstores = {
     'default': SQLAlchemyJobStore(url=DATABASE_URL)
 }
 scheduler = AsyncIOScheduler(jobstores=jobstores)
 
 
-async def remind_manager(order_id: int, manager_chat_id: int):
+async def remind_manager(cart_id: int, manager_id: int):
+    bot = Bot(token=BOT_TOKEN)
 
-    async with Bot(token=BOT_TOKEN) as bot:
-        try:
-            order_info = db_get_last_order_info(order_id)
-            if not order_info:
-                logger.error(f"Заказ с ID {order_id} не найден")
-                return
+    order_info = db_get_last_order_info(cart_id)
+    if not order_info:
+        logger.error(f"Заказ с ID {cart_id} не найден.")
+        await bot.session.close()
+        return
 
-            text = (
-                f" Напоминание: заказ №{order_id}\n"
-                f"Клиент: {order_info['username']}\n"
-                f"Телефон: {order_info['phone']}\n"
-                f"Сумма заказа: {order_info['total_price']:.2f} BYN"
-            )
+    text = (
+        f"Время заказа: {datetime.now().strftime('%d.%m.%Y %H:%M')}\n"
+        f"Корзина : {cart_id} \n"
+        f"Клиент: {order_info['username']} \n"
+        f"Сумма: {order_info['total_price']:.2f} BYN \n"
+        f"Телефон: {order_info['phone']}"
+    )
+    logger.info(f"Отправка сообщения менеджеру... {text}")
 
-            await bot.send_message(manager_chat_id, text)
-            logger.info(f"Напоминание  отправлено (order_id={order_id})")
-
-        except Exception as e:
-            logger.exception(f"Ошибка при отправке напоминания: {e}")
+    await bot.send_message(manager_id, text)
+    await bot.session.close()
+    logger.info(f"Напоминание  отправлено (order_id={cart_id})")
 
 
-def schedule_reminder(order_id: int):
-
-    run_date = datetime.now() + timedelta(seconds=3)
+def schedule_reminder(cart_id: int):
+    run_date = datetime.now() + timedelta(seconds=10)
     scheduler.add_job(
         remind_manager,
         "date",
         run_date=run_date,
-        args=[order_id, MANAGER_CHAT_ID],
-        id=f"reminder_{order_id}",
+        args=[cart_id, MANAGER_ID],
+        id=f"reminder_{cart_id}",
         replace_existing=True
     )
-    logger.info(f"Задача для заказа {order_id} запланирована на {run_date}")
+    logger.info(f"Задача для заказа {cart_id} запланирована на {run_date}")
 
 
 def start_scheduler():
-
     if not scheduler.running:
         scheduler.start()
         logger.info("Планировщик запущен")
