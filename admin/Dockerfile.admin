@@ -6,6 +6,6 @@ COPY req_admin.txt ./
 
 RUN pip install -r req_admin.txt
 
-COPY ./app
+COPY . /app
 
-CMD["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
